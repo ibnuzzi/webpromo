@@ -1,0 +1,1538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from admin.pixelstrap.com/tivo/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 08:57:32 GMT -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="tivo admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Tivo admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="../assets/images/favicon/logogudang.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/favicon/logogudang.png" type="image/x-icon">
+    <title>ADMIN Gudang Promo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/font-awesome.css">
+    <!-- ico-font-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify.css">
+    <!-- Flag icon-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/flag-icon.css">
+    <!-- Feather icon-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/animate.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/chartist.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/prism.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/vector-map.css">
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body onload="startTime()">
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- Loader starts-->
+    <div class="loader-wrapper">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"> </div>
+        <div class="dot"></div>
+    </div>
+    <!-- Loader ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+        <!-- Page Header Start-->
+        <div class="page-header">
+            <div class="header-wrapper row m-0">
+                <form class="form-inline search-full col" action="#" method="get">
+                    <div class="form-group w-100">
+                        <div class="Typeahead Typeahead--twitterUsers">
+                            <div class="u-posRelative">
+                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
+                                    placeholder="Search Tivo .." name="q" title="" autofocus>
+                                <div class="spinner-border Typeahead-spinner" role="status"><span
+                                        class="sr-only">Loading...</span>
+                                </div><i class="close-search" data-feather="x"></i>
+                            </div>
+                            <div class="Typeahead-menu"></div>
+                        </div>
+                    </div>
+                </form>
+                <div class="header-logo-wrapper col-auto p-0">
+                    <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i>
+                    </div>
+                    <div class="logo-header-main"><a href="index.html"><img class="img-fluid for-light img-100"
+                                src="../assets/images/logo/logo2.png" alt=""><img class="img-fluid for-dark"
+                                src="../assets/images/logo/logo.png" alt=""></a></div>
+                </div>
+                <div class="left-header col horizontal-wrapper ps-0">
+                    <div class="left-menu-header">
+                        <ul class="app-list">
+                            <li class="onhover-dropdown">
+                                <div class="app-menu"> <i data-feather="folder-plus"></i></div>
+                                <ul class="onhover-show-div left-dropdown">
+                                    <li> <a href="file-manager.html">File Manager</a></li>
+                                    <li> <a href="kanban.html"> Kanban board</a></li>
+                                    <li> <a href="social-app.html"> Social App</a></li>
+                                    <li> <a href="bookmark.html"> Bookmark</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="header-left">
+                            <li class="onhover-dropdown"><span class="f-w-600" a
+                                    href="index.html">Beranda</span><span><i class="middle"
+                                        data-feather="chevron-down"></i></span>
+                                <ul class="onhover-show-div left-dropdown">
+                                    <li> <a href="index.html">Beranda</a></li>
+                                </ul>
+                            </li>
+                            <li class="onhover-dropdown"><span class="f-w-600">Menu</span><span><i class="middle"
+                                        data-feather="chevron-down"></i></span>
+                                <ul class="onhover-show-div left-dropdown">
+                                    <li class="flyout-right"><a href="javascript:void(0)">Produk</a>
+                                        <ul>
+
+                                            <li> <a href="createkategori.html">Tambah Kategori</a></li>
+                                            <li> <a href="tambahterbaru.html">Tambah Terbaru</a></li>
+                                            <li> <a href="tambahunggulan.html">Tambah Unggulan</a></li>
+                                            <li> <a href="tambahterpopuler.html">Tambah Terpopuler</a></li>
+                                            <li> <a href="tambahkilat.html">Tambah Kilat</a></li>
+
+                                            <!-- <li> <a href="projectcreate.html">Project Create</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="file-manager.html">File manager</a></li>
+                  <li><a href="kanban.html">kanban</a></li> -->
+                                    <li class="flyout-right"><a href="javascript:void(0)">Promo</a>
+                                        <ul>
+                                            <li> <a href="product.html">Detail Promo</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="flyout-right"><a href="javascript:void(0)">Admin</a>
+                                        <ul>
+                                            <li> <a href="user-profile.html">Profil Admin</a></li>
+                                            <li> <a href="edit-profile.html">Edit Profil Admin</a></li>
+                                            <!-- <li> <a href="user-cards.html">User Cards</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="flyout-right"><a href="javascript:void(0)">Tabel</a>
+                                        <ul>
+                                            <li> <a href="projectcreate.html">Produk</a></li>
+                                            <li> <a href="tabelpromotor.html">Promotor</a></li>
+                                            <li> <a href="tabelguest.html">Grafik</a></li>
+
+                                            <!-- <li> <a href="user-cards.html">User Cards</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="bookmark.html">Bookmarks</a></li>
+                  <li><a href="contacts.html">Contacts</a></li>
+                  <li><a href="social-app.html">Social App</a></li> -->
+                                </ul>
+                            </li>
+                            <!-- <li class="onhover-dropdown"> <span class="f-w-600">More pages</span><span><i class="middle"
+                    data-feather="chevron-down"></i></span>
+                <ul class="onhover-show-div left-dropdown">
+                  <li><a href="landing-page.html">Landing Page</a></li>
+                  <li><a href="sample-page.html">Sample Page</a></li>
+                  <li><a href="internationalization.html">Internationalization</a></li>
+                  <li class="flyout-right"><a href="javascript:void(0)">Starter-Kit</a>
+                    <ul>
+                      <li class="flyout-right"><a href="javascript:void(0)">Color version</a>
+                        <ul>
+                          <li> <a href="starter-kit/index.html">Layout Light</a></li>
+                          <li> <a href="starter-kit/layout-dark.html">Layout Dark</a></li>
+                        </ul>
+                      </li>
+                      <li class="flyout-right"><a href="javascript:void(0)">Page Layout</a>
+                        <ul>
+                          <li> <a href="starter-kit/boxed.html">Boxed</a></li>
+                          <li> <a href="starter-kit/layout-rtl.html">RTL</a></li>
+                        </ul>
+                      </li>
+                      <li> <a href="starter-kit/hide-on-scroll.html">Hide Menu On Scroll</a></li>
+                      <li class="flyout-right"><a href="javascript:void(0)">Footers</a>
+                        <ul>
+                          <li> <a href="starter-kit/footer-light.html">Footer Light</a></li>
+                          <li> <a href="starter-kit/footer-dark.html">Footer Dark </a></li>
+                          <li> <a href="starter-kit/footer-fixed.html">Footer Fixed</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul> -->
+                    </div>
+                </div>
+                <div class="nav-right col-6 pull-right right-header p-0">
+                    <ul class="nav-menus">
+                        <li>
+                            <div class="right-header ps-0">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text mobile-search"><i
+                                                class="fa fa-search"></i></span></div>
+                                    <input class="form-control" type="text" placeholder="Search Here........">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="serchinput">
+                            <div class="serchbox"><i data-feather="search"></i></div>
+                            <div class="form-group search-form">
+                                <input type="text" placeholder="Search here...">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mode"><i class="fa fa-moon-o"></i></div>
+                        </li>
+
+                        <li class="onhover-dropdown">
+                            <div class="message"><i data-feather="message-square"></i></div>
+                            <ul class="message-dropdown onhover-show-div">
+                                <li><i data-feather="message-square"> </i>
+                                    <h6 class="f-18 mb-0">Pesan</h6>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-start">
+                                        <div class="message-img bg-light-primary"><img src="../assets/images/user/3.jpg"
+                                                alt=""></div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="mb-1"><a href="email_inbox.html">Emay Walter</a></h5>
+                                            <p>Do you want to go see movie?</p>
+                                        </div>
+                                        <div class="notification-right"><i data-feather="x"></i></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-start">
+                                        <div class="message-img bg-light-primary"><img src="../assets/images/user/6.jpg"
+                                                alt=""></div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="mb-1"><a href="email_inbox.html">Jason Borne</a></h5>
+                                            <p>Thank you for rating us.</p>
+                                        </div>
+                                        <div class="notification-right"><i data-feather="x"></i></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-start">
+                                        <div class="message-img bg-light-primary"><img
+                                                src="../assets/images/user/10.jpg" alt=""></div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="mb-1"><a href="email_inbox.html">Sarah Loren</a></h5>
+                                            <p>What`s the project report update?</p>
+                                        </div>
+                                        <div class="notification-right"><i data-feather="x"></i></div>
+                                    </div>
+                                </li>
+                                <li><a class="btn btn-primary" href="email_inbox.html">Check Messages</a></li>
+                            </ul>
+                        </li>
+                        <li class="maximize"><a href="#!" onclick="javascript:toggleFullScreen()"><i
+                                    data-feather="maximize-2"></i></a></li>
+
+                        <li class="profile-nav onhover-dropdown">
+                            <div class="account-user"><i data-feather="user"></i></div>
+                            <ul class="profile-dropdown onhover-show-div">
+                                <li><a href="user-profile.html"><i data-feather="user"></i><span>Profil</span></a></li>
+                                <!-- <li><a href="email_inbox.html"><i data-feather="mail"></i><span>E-mail</span></a></li> -->
+                                <li><a href="edit-profile.html"><i
+                                            data-feather="settings"></i><span>Pengaturan</span></a></li>
+                                <li><a href="login.html"><i data-feather="log-in"> </i><span>Keluar</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <script class="result-template" type="text/x-handlebars-template">
+                    <div class="ProfileCard u-cf">
+            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+            <div class="ProfileCard-details">
+            <div class="ProfileCard-realName">{{name}}</div>
+            </div>
+            </div>
+          </script>
+                <script class="empty-template" type="text/x-handlebars-template">
+                    <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
+        </script>
+            </div>
+        </div>
+        <!-- Page Header Ends-->
+        <!-- Page Body Start-->
+        <div class="page-body-wrapper">
+            <!-- Page Sidebar Start-->
+            <div class="sidebar-wrapper">
+                <div>
+                    <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light"
+                                src="../assets/images/logo/promogudang.png" alt="" width=150px></a>
+                        <div class="back-btn"><i data-feather="grid"></i></div>
+                        <div class="toggle-sidebar icon-box-sidebar"><i class="status_toggle middle sidebar-toggle"
+                                data-feather="grid"> </i></div>
+                    </div>
+                    <div class="logo-icon-wrapper"><a href="index.html">
+                            <div class="icon-box-sidebar"><i data-feather="grid"></i></div>
+                        </a></div>
+                    <nav class="sidebar-main">
+                        <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+                        <div id="sidebar-menu">
+                            <ul class="sidebar-links" id="simple-bar">
+                                <li class="back-btn">
+                                    <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i data-feather="home"></i><span
+                                                    class="lan-3">Beranda</span></a>
+                                            <ul class="sidebar-submenu">
+
+                                                <!-- <li><a class="lan-5" href="dashboard-02.html">Ecommerce</a></li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+                                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i data-feather="box"></i><span>Produk
+                                                </span></a>
+                                            <ul class="sidebar-submenu">
+                                                <!-- <li><a href="projects.html">Project List</a></li> -->
+                                                <li><a href="list-produk.html">List Promo</a></li>
+                                                <!-- <li><a href="createkategori.html">Tambah Kategori</a></li>
+                        <li> <a href="tambahterbaru.html">Tambah Terbaru</a></li>
+                      <li> <a href="tambahunggulan.html">Tambah Unggulan</a></li>
+                      <li> <a href="tambahterpopuler.html">Tambah Terpopuler</a></li>
+                      <li> <a href="tambahkilat.html">Tambah Kilat</a></li> -->
+                                            </ul>
+                                        </li>
+
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i
+                                                    data-feather="shopping-bag"></i><span>Promo</span></a>
+                                            <ul class="sidebar-submenu">
+                                                <li><a href="product.html">Detail Promo</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i
+                                                    data-feather="users"></i><span>Admin</span></a>
+                                            <ul class="sidebar-submenu">
+                                                <li><a href="user-profile.html">Profil Admin</a></li>
+                                                <li><a href="edit-profile.html">Edit Profil Admin</a></li>
+                                                <!-- <li><a href="user-cards.html">Users Cards</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="bookmark.html"><i
+                          data-feather="heart"> </i><span>Bookmarks</span></a></li> -->
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="contacts.html"><i
+                          data-feather="list"> </i><span>Contacts</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="task.html"><i
+                          data-feather="check-square"> </i><span>Tasks</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                        href="calendar-basic.html"><i data-feather="calendar"> </i><span>Calendar</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="social-app.html"><i
+                          data-feather="zap"> </i><span>Social App</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="to-do.html"><i
+                          data-feather="clock"> </i><span>To-Do</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="search.html"><i
+                          data-feather="search"> </i><span>Search Result</span></a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="file-text"></i><span>Forms</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a class="submenu-title" href="javascript:void(0)">Form Controls<span class="sub-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                          <ul class="nav-sub-childmenu submenu-content">
+                            <li><a href="form-validation.html">Form Validation</a></li>
+                            <li><a href="base-input.html">Base Inputs</a></li>
+                            <li><a href="radio-checkbox-control.html">Checkbox & Radio</a></li>
+                            <li><a href="input-group.html">Input Groups</a></li>
+                            <li><a href="megaoptions.html">Mega Options</a></li>
+                          </ul>
+                        </li>
+                        <li><a class="submenu-title" href="javascript:void(0)">Form Widgets<span class="sub-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                          <ul class="nav-sub-childmenu submenu-content">
+                            <li><a href="datepicker.html">Datepicker</a></li>
+                            <li><a href="time-picker.html">Timepicker</a></li>
+                            <li><a href="datetimepicker.html">Datetimepicker</a></li>
+                            <li><a href="daterangepicker.html">Daterangepicker</a></li>
+                            <li><a href="touchspin.html">Touchspin</a></li>
+                            <li><a href="select2.html">Select2</a></li>
+                            <li><a href="switch.html">Switch</a></li>
+                            <li><a href="typeahead.html">Typeahead</a></li>
+                            <li><a href="clipboard.html">Clipboard</a></li>
+                          </ul>
+                        </li>
+                        <li><a class="submenu-title" href="javascript:void(0)">Form layout<span class="sub-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                          <ul class="nav-sub-childmenu submenu-content">
+                            <li><a href="default-form.html">Default Forms</a></li>
+                            <li><a href="form-wizard.html">Form Wizard 1</a></li>
+                            <li><a href="form-wizard-two.html">Form Wizard 2</a></li>
+                            <li><a href="form-wizard-three.html">Form Wizard 3</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li> -->
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i
+                                                    data-feather="server"></i><span>Tabel</span></a>
+                                            <ul class="sidebar-submenu">
+                                                <li><a class="submenu-title" href="javascript:void(0)">Produk<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="bootstrap-basic-table.html">Tabel Produk</a></li>
+                                                        <li><a href="tabelkategori.html">Tabel Kategori</a></li>
+
+                                                    </ul>
+                                                </li>
+                                                <li><a class="submenu-title" href="javascript:void(0)">Promotor<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="tabelpromotor.html">Tabel Promotor</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="submenu-title" href="javascript:void(0)">Grafik<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="tabelguest.html">Tabel Grafik</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="submenu-title" href="javascript:void(0)">Promo<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="tabelterbaru.html">Tabel Terbaru</a></li>
+                                                        <li><a href="tabelunggulan.html">Tabel Unggulan</a></li>
+                                                        <li><a href="tabelterpopuler.html">Tabel Terpopuler</a></li>
+                                                        <li><a href="tabelkilat.html">Tabel Kilat</a></li>
+
+                                                    </ul>
+                                                </li>
+                                                <!-- <li><a class="submenu-title" href="javascript:void(0)">Role<span class="sub-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                          <ul class="nav-sub-childmenu submenu-content">
+                            <li><a href="tabelrole.html">Tabel Role</a></li>
+
+                          </ul>
+                        </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="box"></i><span>Ui Kits</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="typography.html">Typography</a></li>
+                        <li><a href="avatars.html">Avatars</a></li>
+                        <li><a href="helper-classes.html">helper classes</a></li>
+                        <li><a href="grid.html">Grid</a></li>
+                        <li><a href="tag-pills.html">Tag & pills</a></li>
+                        <li><a href="progress-bar.html">Progress</a></li>
+                        <li><a href="modal.html">Modal</a></li>
+                        <li><a href="alert.html">Alert</a></li>
+                        <li><a href="popover.html">Popover</a></li>
+                        <li><a href="tooltip.html">Tooltip</a></li>
+                        <li><a href="loader.html">Spinners</a></li>
+                        <li><a href="dropdown.html">Dropdown</a></li>
+                        <li><a href="according.html">Accordion</a></li>
+                        <li><a class="submenu-title" href="javascript:void(0)">Tabs<span class="sub-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                          <ul class="nav-sub-childmenu submenu-content">
+                            <li><a href="tab-bootstrap.html">Bootstrap Tabs</a></li>
+                            <li><a href="tab-material.html">Line Tabs</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="box-shadow.html">Shadow</a></li>
+                        <li><a href="list.html">Lists</a></li>
+                      </ul>
+                    </li> -->
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="folder-plus"></i><span>Bonus Ui</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="scrollable.html">Scrollable</a></li>
+                        <li><a href="tree.html">Tree view</a></li>
+                        <li><a href="bootstrap-notify.html">Bootstrap Notify</a></li>
+                        <li><a href="rating.html">Rating</a></li>
+                        <li><a href="dropzone.html">dropzone</a></li>
+                        <li><a href="tour.html">Tour</a></li>
+                        <li><a href="sweet-alert2.html">SweetAlert2</a></li>
+                        <li><a href="modal-animated.html">Animated Modal</a></li>
+                        <li><a href="owl-carousel.html">Owl Carousel</a></li>
+                        <li><a href="ribbons.html">Ribbons</a></li>
+                        <li><a href="pagination.html">Pagination</a></li>
+                        <li><a href="breadcrumb.html">Breadcrumb</a></li>
+                        <li><a href="range-slider.html">Range Slider</a></li>
+                        <li><a href="image-cropper.html">Image cropper</a></li>
+                        <li><a href="sticky.html">Sticky</a></li>
+                        <li><a href="basic-card.html">Basic Cards</a></li>
+                        <li><a href="dragable-card.html">Draggable Card</a></li>
+                        <li><a class="submenu-title" href="javascript:void(0)">Timeline<span class="sub-arrow"><i
+                                class="fa fa-angle-right"></i></span></a>
+                          <ul class="nav-sub-childmenu submenu-content">
+                            <li><a href="timeline-v-1.html">Timeline 1</a></li>
+                            <li><a href="timeline-v-2.html">Timeline 2</a></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li> -->
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="edit-3"></i><span>Builders</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="form-builder-1.html"> Form Builder 1</a></li>
+                        <li><a href="form-builder-2.html"> Form Builder 2</a></li>
+                        <li><a href="pagebuild.html">Page Builder</a></li>
+                        <li><a href="button-builder.html">Button Builder</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="cloud-drizzle"></i><span>Animation</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="animate.html">Animate</a></li>
+                        <li><a href="scroll-reval.html">Scroll Reveal</a></li>
+                        <li><a href="AOS.html">AOS animation</a></li>
+                        <li><a href="tilt.html">Tilt Animation</a></li>
+                        <li><a href="wow.html">Wow Animation</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="command"></i><span>Icons</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="flag-icon.html">Flag icon</a></li>
+                        <li><a href="font-awesome.html">Fontawesome Icon</a></li>
+                        <li><a href="ico-icon.html">Ico Icon</a></li>
+                        <li><a href="themify-icon.html">Thimify Icon</a></li>
+                        <li><a href="feather-icon.html">Feather icon</a></li>
+                        <li><a href="whether-icon.html">Whether Icon</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="cloud"></i><span>Buttons</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="buttons.html">Default Style</a></li>
+                        <li><a href="button-group.html">Button Group</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="bar-chart"></i><span>Charts</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="chart-apex.html">Apex Chart</a></li>
+                        <li><a href="chart-sparkline.html">Sparkline chart</a></li>
+                        <li><a href="chart-flot.html">Flot Chart</a></li>
+                        <li><a href="chart-knob.html">Knob Chart</a></li>
+                        <li><a href="chart-morris.html">Morris Chart</a></li>
+                        <li><a href="chartjs.html">Chatjs Chart</a></li>
+                        <li><a href="chartist.html">Chartist Chart</a></li>
+                        <li><a href="chart-peity.html">Peity Chart</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-box">
+                  <ul>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="landing-page.html"><i
+                          data-feather="cast"> </i><span>Landing page</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="sample-page.html"><i
+                          data-feather="file-text"> </i><span>Sample page</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                        href="internationalization.html"><i data-feather="globe">
+                        </i><span>Internationalization</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                        href="https://admin.pixelstrap.com/tivo/starter-kit/index.html" target="_blank"><i
+                          data-feather="anchor"></i><span>Starter kit</span></a></li>
+                    <li class="mega-menu"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="layers"></i><span>Others</span></a>
+                      <div class="mega-menu-container menu-content">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col mega-box">
+                              <div class="link-section">
+                                <div class="submenu-title">
+                                  <h5>Error Page</h5>
+                                </div>
+                                <ul class="submenu-content opensubmegamenu">
+                                  <li><a href="error-page1.html">Error Page 1</a></li>
+                                  <li><a href="error-page2.html">Error Page 2</a></li>
+                                  <li><a href="error-page3.html">Error Page 3</a></li>
+                                  <li><a href="error-page4.html">Error Page 4</a></li>
+                                  <li><a href="error-page5.html">Error Page 5 </a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="col mega-box">
+                              <div class="link-section">
+                                <div class="submenu-title">
+                                  <h5> Authentication</h5>
+                                </div>
+                                <ul class="submenu-content opensubmegamenu">
+                                  <li><a href="login.html" target="_blank">Login Simple</a></li>
+                                  <li><a href="login_one.html" target="_blank">Login with bg image</a></li>
+                                  <li><a href="login_two.html" target="_blank">Login with image two </a></li>
+                                  <li><a href="login-bs-validation.html" target="_blank">Login With validation</a></li>
+                                  <li><a href="login-bs-tt-validation.html" target="_blank">Login with tooltip</a></li>
+                                  <li><a href="login-sa-validation.html" target="_blank">Login with sweetalert</a></li>
+                                  <li><a href="sign-up.html" target="_blank">Register Simple</a></li>
+                                  <li><a href="sign-up-one.html" target="_blank">Register with Bg Image</a></li>
+                                  <li><a href="sign-up-two.html" target="_blank">Register with Image Two</a></li>
+                                  <li><a href="unlock.html">Unlock User</a></li>
+                                  <li><a href="forget-password.html">Forget Password</a></li>
+                                  <li><a href="reset-password.html">Reset Password</a></li>
+                                  <li><a href="maintenance.html">Maintenance</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="col mega-box">
+                              <div class="link-section">
+                                <div class="submenu-title">
+                                  <h5>Coming Soon</h5>
+                                </div>
+                                <ul class="submenu-content opensubmegamenu">
+                                  <li><a href="comingsoon.html">Coming Simple</a></li>
+                                  <li><a href="comingsoon-bg-video.html">Coming with Bg video</a></li>
+                                  <li><a href="comingsoon-bg-img.html">Coming with Bg Image</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="col mega-box">
+                              <div class="link-section">
+                                <div class="submenu-title">
+                                  <h5>Email templates</h5>
+                                </div>
+                                <ul class="submenu-content opensubmegamenu">
+                                  <li><a href="basic-template.html">Basic Email</a></li>
+                                  <li><a href="email-header.html">Basic With Header</a></li>
+                                  <li><a href="template-email.html">Ecommerce Template</a></li>
+                                  <li><a href="template-email-2.html">Email Template 2</a></li>
+                                  <li><a href="ecommerce-templates.html">Ecommerce Email</a></li>
+                                  <li><a href="email-order-success.html">Order Success</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="menu-box">
+                  <ul>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="image"></i><span>Gallery</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="gallery.html">Gallery Grid</a></li>
+                        <li><a href="gallery-with-description.html">Gallery Grid Desc</a></li>
+                        <li><a href="gallery-masonry.html">Masonry Gallery</a></li>
+                        <li><a href="masonry-gallery-with-disc.html">Masonry with Desc</a></li>
+                        <li><a href="gallery-hover.html">Hover Effects</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="film"></i><span>Blog</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="blog.html">Blog Details</a></li>
+                        <li><a href="blog-single.html">Blog Single</a></li>
+                        <li><a href="add-post.html">Add Post</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="faq.html"><i
+                          data-feather="help-circle"> </i><span>FAQ</span></a></li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="package"></i><span>Job Search</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="job-cards-view.html">Cards view</a></li>
+                        <li><a href="job-list-view.html">List View</a></li>
+                        <li><a href="job-details.html">Job Details</a></li>
+                        <li><a href="job-apply.html">Apply</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="radio"></i><span>Learning</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="learning-list-view.html">Learning List</a></li>
+                        <li><a href="learning-detailed.html">Detailed Course</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="map"></i><span>Maps</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="map-js.html">Maps JS</a></li>
+                        <li><a href="vector-map.html">Vector Maps</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="edit"></i><span>Editors</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="summernote.html">Summer Note</a></li>
+                        <li><a href="ckeditor.html">CK editor</a></li>
+                        <li><a href="simple-MDE.html">MDE editor</a></li>
+                        <li><a href="ace-code-editor.html">ACE code editor</a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                          data-feather="sunrise"> </i><span>Knowledgebase</span></a>
+                      <ul class="sidebar-submenu">
+                        <li><a href="knowledgebase.html">Knowledgebase</a></li>
+                        <li><a href="knowledge-category.html">Knowledge category</a></li>
+                        <li><a href="knowledge-detail.html">Knowledge detail </a></li>
+                      </ul>
+                    </li>
+                    <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                        href="support-ticket.html"><i data-feather="users"> </i><span>Support Ticket</span></a></li>
+                  </ul>
+                </li> -->
+                                    </ul>
+                        </div>
+                        <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+                    </nav>
+                </div>
+            </div>
+            <!-- Page Sidebar Ends-->
+            <div class="page-body">
+                <div class="container-fluid">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Beranda</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a>
+                                    </li>
+                                    <li class="breadcrumb-item">Beranda</li>
+                                    <!-- <li class="breadcrumb-item active">Default</li> -->
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Container-fluid starts-->
+                <div class="container-fluid dashboard-default">
+                    <div class="row">
+                        <!-- <div class="col-xxl-6 col-xl-5 col-lg-6 dash-45 box-col-40">
+              <div class="card profile-greeting">
+                <div class="card-body">
+                  <div class="d-sm-flex d-block justify-content-between">
+                    <div class="flex-grow-1">
+                      <div class="weather d-flex">
+                        <h2 class="f-w-400"> <span>28<sup><i class="fa fa-circle-o f-10"></i></sup>C </span></h2>
+                        <div class="span sun-bg"><i class="icofont icofont-sun font-primary"></i></div>
+                      </div><span class="font-primary f-w-700">Sunny Day</span>
+                      <p>Beautiful Sunny Day Walk</p>
+                    </div>
+                    <div class="badge-group">
+                      <div class="badge badge-light-primary f-12"> <i class="fa fa-clock-o"></i><span id="txt"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="greeting-user">
+                    <div class="profile-vector">
+                      <ul class="dots-images">
+                        <li class="dot-small bg-info dot-1"></li>
+                        <li class="dot-medium bg-primary dot-2"></li>
+                        <li class="dot-medium bg-info dot-3"></li>
+                        <li class="semi-medium bg-primary dot-4"></li>
+                        <li class="dot-small bg-info dot-5"></li>
+                        <li class="dot-big bg-info dot-6"></li>
+                        <li class="dot-small bg-primary dot-7"></li>
+                        <li class="semi-medium bg-primary dot-8"></li>
+                        <li class="dot-big bg-info dot-9"></li>
+                      </ul><img class="img-fluid" src="../assets/images/dashboard/default/profile.png" alt="">
+                      <ul class="vector-image">
+                        <li> <img src="../assets/images/dashboard/default/ribbon1.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon3.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon4.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon5.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon6.png" alt=""></li>
+                        <li> <img src="../assets/images/dashboard/default/ribbon7.png" alt=""></li>
+                      </ul>
+                    </div>
+                    <h4><a href="user-profile.html"><span>Welcome Back</span> Admin </a><span class="right-circle"><i
+                          class="fa fa-check-circle font-primary f-14 middle"></i></span></h4>
+                    <div><span class="badge badge-primary">Your 5</span><span
+                        class="font-primary f-12 middle f-w-500 ms-2"> Task Is Pending</span></div>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card o-hidden">
+                                <div class="card-header pb-0">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1"><a href="bootstrap-basic-table.html">
+                                                <p class="square-after f-w-600 header-text-primary">Jumlah Promo<i
+                                                        class="fa fa-circle"> </i>
+                                                </p>
+                                                <h4>100</h4>
+                                            </a>
+
+                                        </div>
+                                        <div class="d-flex static-widget">
+                                            <svg class="fill-primary" width="48" height="48" viewBox="0 0 48 48"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M22.5938 14.1562V17.2278C20.9604 17.8102 19.7812 19.3566 19.7812 21.1875C19.7812 23.5138 21.6737 25.4062 24 25.4062C24.7759 25.4062 25.4062 26.0366 25.4062 26.8125C25.4062 27.5884 24.7759 28.2188 24 28.2188C23.2241 28.2188 22.5938 27.5884 22.5938 26.8125H19.7812C19.7812 28.6434 20.9604 30.1898 22.5938 30.7722V33.8438H25.4062V30.7722C27.0396 30.1898 28.2188 28.6434 28.2188 26.8125C28.2188 24.4862 26.3263 22.5938 24 22.5938C23.2241 22.5938 22.5938 21.9634 22.5938 21.1875C22.5938 20.4116 23.2241 19.7812 24 19.7812C24.7759 19.7812 25.4062 20.4116 25.4062 21.1875H28.2188C28.2188 19.3566 27.0396 17.8102 25.4062 17.2278V14.1562H22.5938Z">
+                                                </path>
+                                                <path
+                                                    d="M25.4062 0V11.4859C31.2498 12.1433 35.8642 16.7579 36.5232 22.5938H48C47.2954 10.5189 37.4829 0.704531 25.4062 0Z">
+                                                </path>
+                                                <path
+                                                    d="M14.1556 31.8558C12.4237 29.6903 11.3438 26.9823 11.3438 24C11.3438 17.5025 16.283 12.1958 22.5938 11.4859V0C10.0492 0.731813 0 11.2718 0 24C0 30.0952 2.39381 35.6398 6.14897 39.8624L14.1556 31.8558Z">
+                                                </path>
+                                                <path
+                                                    d="M47.9977 25.4062H36.5143C35.8044 31.717 30.4977 36.6562 24.0002 36.6562C21.0179 36.6562 18.3099 35.5763 16.1444 33.8444L8.13779 41.851C12.3604 45.6062 17.905 48 24.0002 48C36.7284 48 47.2659 37.9508 47.9977 25.4062Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="progress-widget">
+                                        <div class="progress sm-progress-bar progress-animate">
+                                            <div class="progress-gradient-primary" role="progressbar" style="width: 75%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span
+                                                    class="animate-circle"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card o-hidden user-widget">
+                                <div class="card-header pb-0">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1"><a href="tabelpromotor.html">
+                                                <p class="square-after f-w-600 header-text-info">Jumlah Promotor<i
+                                                        class="fa fa-circle"> </i>
+                                                </p>
+                                                <h4>200</h4>
+                                            </a>
+
+                                        </div>
+                                        <div class="d-flex static-widget">
+                                            <svg class="fill-info" width="41" height="46" viewBox="0 0 41 46"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M17.5245 23.3155C24.0019 23.3152 26.3325 16.8296 26.9426 11.5022C27.6941 4.93936 24.5906 0 17.5245 0C10.4593 0 7.35423 4.93899 8.10639 11.5022C8.71709 16.8296 11.047 23.316 17.5245 23.3155Z">
+                                                </path>
+                                                <path
+                                                    d="M31.6878 26.0152C31.8962 26.0152 32.1033 26.0214 32.309 26.0328C32.0007 25.5931 31.6439 25.2053 31.2264 24.8935C29.9817 23.9646 28.3698 23.6598 26.9448 23.0998C26.2511 22.8273 25.6299 22.5567 25.0468 22.2485C23.0787 24.4068 20.5123 25.5359 17.5236 25.5362C14.536 25.5362 11.9697 24.4071 10.0019 22.2485C9.41877 22.5568 8.79747 22.8273 8.10393 23.0998C6.67891 23.6599 5.06703 23.9646 3.82233 24.8935C1.6698 26.5001 1.11351 30.1144 0.676438 32.5797C0.315729 34.6148 0.0734026 36.6917 0.00267388 38.7588C-0.0521202 40.36 0.738448 40.5846 2.07801 41.0679C3.75528 41.6728 5.48712 42.1219 7.23061 42.4901C10.5977 43.2011 14.0684 43.7475 17.5242 43.7719C19.1987 43.76 20.8766 43.6249 22.5446 43.4087C21.3095 41.6193 20.5852 39.4517 20.5852 37.1179C20.5853 30.9957 25.5658 26.0152 31.6878 26.0152Z">
+                                                </path>
+                                                <path
+                                                    d="M31.6878 28.2357C26.7825 28.2357 22.8057 32.2126 22.8057 37.1179C22.8057 42.0232 26.7824 46 31.6878 46C36.5932 46 40.57 42.0232 40.57 37.1179C40.57 32.2125 36.5931 28.2357 31.6878 28.2357ZM35.5738 38.6417H33.2118V41.0037C33.2118 41.8453 32.5295 42.5277 31.6879 42.5277C30.8462 42.5277 30.1639 41.8453 30.1639 41.0037V38.6417H27.802C26.9603 38.6417 26.278 37.9595 26.278 37.1177C26.278 36.276 26.9602 35.5937 27.802 35.5937H30.1639V33.2318C30.1639 32.3901 30.8462 31.7078 31.6879 31.7078C32.5296 31.7078 33.2118 32.3901 33.2118 33.2318V35.5937H35.5738C36.4155 35.5937 37.0978 36.276 37.0978 37.1177C37.0977 37.9595 36.4155 38.6417 35.5738 38.6417Z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="progress-widget">
+                                        <div class="progress sm-progress-bar progress-animate">
+                                            <div class="progress-gradient-info" role="progressbar" style="width: 48%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span
+                                                    class="animate-circle"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card o-hidden message-widget">
+                                <div class="card-header pb-0">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1"><a href="tabelkategori.html">
+                                                <p class="square-after f-w-600 header-text-secondary">Jumlah Kategori<i
+                                                        class="fa fa-circle"> </i>
+                                                </p>
+                                                <h4>10</h4>
+                                            </a>
+
+                                        </div>
+                                        <div class="d-flex static-widget">
+                                            <svg class="fill-warning" xmlns="http://www.w3.org/2000/svg" class="ionicon"
+                                                viewBox="0 0 512 512">
+                                                <title>Newspaper</title>
+                                                <path
+                                                    d="M439.91 112h-23.82a.09.09 0 00-.09.09V416a32 32 0 0032 32 32 32 0 0032-32V152.09A40.09 40.09 0 00439.91 112z" />
+                                                <path
+                                                    d="M384 416V72a40 40 0 00-40-40H72a40 40 0 00-40 40v352a56 56 0 0056 56h342.85a1.14 1.14 0 001.15-1.15 1.14 1.14 0 00-.85-1.1A64.11 64.11 0 01384 416zM96 128a16 16 0 0116-16h64a16 16 0 0116 16v64a16 16 0 01-16 16h-64a16 16 0 01-16-16zm208 272H112.45c-8.61 0-16-6.62-16.43-15.23A16 16 0 01112 368h191.55c8.61 0 16 6.62 16.43 15.23A16 16 0 01304 400zm0-64H112.45c-8.61 0-16-6.62-16.43-15.23A16 16 0 01112 304h191.55c8.61 0 16 6.62 16.43 15.23A16 16 0 01304 336zm0-64H112.45c-8.61 0-16-6.62-16.43-15.23A16 16 0 01112 240h191.55c8.61 0 16 6.62 16.43 15.23A16 16 0 01304 272zm0-64h-63.55c-8.61 0-16-6.62-16.43-15.23A16 16 0 01240 176h63.55c8.61 0 16 6.62 16.43 15.23A16 16 0 01304 208zm0-64h-63.55c-8.61 0-16-6.62-16.43-15.23A16 16 0 01240 112h63.55c8.61 0 16 6.62 16.43 15.23A16 16 0 01304 144z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="progress-widget">
+                                        <div class="progress sm-progress-bar progress-animate">
+                                            <div class="progress-gradient-secondary" role="progressbar"
+                                                style="width: 48%" aria-valuenow="75" aria-valuemin="0"
+                                                aria-valuemax="100"><span class="animate-circle"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card o-hidden product-widget">
+                                <div class="card-header pb-0">
+                                    <div class="d-flex">
+                                        <div class="flex-grow-1"><a href="tabelguest.html">
+                                                <p class="square-after f-w-600 header-text-success">Jumlah Guest<i
+                                                        class="fa fa-circle"> </i></p>
+                                                <h4>100</h4>
+                                            </a>
+
+                                        </div>
+                                        <div class="d-flex static-widget">
+                                            <svg class="fill-success" xmlns=" http://www.w3.org/2000/svg"
+                                                class="ionicon" viewBox="0 0 512 512">
+                                                <title>People</title>
+                                                <path
+                                                    d="M336 256c-20.56 0-40.44-9.18-56-25.84-15.13-16.25-24.37-37.92-26-61-1.74-24.62 5.77-47.26 21.14-63.76S312 80 336 80c23.83 0 45.38 9.06 60.7 25.52 15.47 16.62 23 39.22 21.26 63.63-1.67 23.11-10.9 44.77-26 61C376.44 246.82 356.57 256 336 256zm66-88zM467.83 432H204.18a27.71 27.71 0 01-22-10.67 30.22 30.22 0 01-5.26-25.79c8.42-33.81 29.28-61.85 60.32-81.08C264.79 297.4 299.86 288 336 288c36.85 0 71 9 98.71 26.05 31.11 19.13 52 47.33 60.38 81.55a30.27 30.27 0 01-5.32 25.78A27.68 27.68 0 01467.83 432zM147 260c-35.19 0-66.13-32.72-69-72.93-1.42-20.6 5-39.65 18-53.62 12.86-13.83 31-21.45 51-21.45s38 7.66 50.93 21.57c13.1 14.08 19.5 33.09 18 53.52-2.87 40.2-33.8 72.91-68.93 72.91zM212.66 291.45c-17.59-8.6-40.42-12.9-65.65-12.9-29.46 0-58.07 7.68-80.57 21.62-25.51 15.83-42.67 38.88-49.6 66.71a27.39 27.39 0 004.79 23.36A25.32 25.32 0 0041.72 400h111a8 8 0 007.87-6.57c.11-.63.25-1.26.41-1.88 8.48-34.06 28.35-62.84 57.71-83.82a8 8 0 00-.63-13.39c-1.57-.92-3.37-1.89-5.42-2.89z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <div class="progress-widget">
+                                        <div class="progress sm-progress-bar progress-animate">
+                                            <div class="progress-gradient-success" role="progressbar" style="width: 60%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"><span
+                                                    class="animate-circle"></span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- <div class="col-xl-4 col-lg-6 box-col-30">
+              <div class="card our-earning">
+                <div class="card-header pb-0">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">Our Total Earning<i class="fa fa-circle"> </i>
+                      </p>
+                      <h4>96.564%</h4>
+                      <div class="setting-list">
+                        <ul class="list-unstyled setting-option">
+                          <li>
+                            <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                          </li>
+                          <li><i class="view-html fa fa-code font-white"></i></li>
+                          <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                          <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                          <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                          <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body p-0">
+                  <div class="earning-chart">
+                    <div id="earning-chart"></div>
+                  </div>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#earning"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="earning">&lt;div class="card our-earning"&gt;
+  &lt;div class="card-header pb-0"&gt;
+    &lt;div class="d-flex justify-content-between"&gt;
+      &lt;div class="flex-grow-1"&gt;
+        &lt;p class="square-after f-w-600 header-text-primary"&gt; Our Total Earning
+          &lt;i class="fa fa-circle"&gt;&lt;/i&gt;
+        &lt;/p&gt;
+        &lt;h4&gt; 96.564% &lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="setting-list"&gt;
+        &lt;ul class="list-unstyled setting-option"&gt;
+          &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body p-0"&gt;
+    &lt;div class="earning-chart"&gt;
+      &lt;div id="earning-chart"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer"&gt;
+    &lt;ul class="d-sm-flex d-block"&gt;
+      &lt;li&gt;
+        &lt;p class="f-w-600 font-primary f-12"&gt; Daily Earning
+        &lt;span class="f-w-600"&gt; 96.564% &lt;/span&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p class="f-w-600 font-primary f-12"&gt; Monthly Earning
+        &lt;span class="f-w-600"&gt; 96.564% &lt;/span&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <ul class="d-sm-flex d-block">
+                    <li>
+                      <p class="f-w-600 font-primary f-12">Daily Earning</p><span class="f-w-600">96.564%</span>
+                    </li>
+                    <li>
+                      <p class="f-w-600 font-primary f-12">Monthly Earning </p><span class="f-w-600">96.564%</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div> -->
+                        <div class="col-xl-12 box-col-12">
+                            <div class="card total-growth">
+                                <div class="card-header pb-0"><a href="tabelguest.html">
+                                        <div class="d-flex justify-content-between">
+                                            <div class="flex-grow-1">
+                                                <p class="square-after f-w-600 header-text-primary">Total Grafik
+                                                    Pengunjung Web Dan Promotor
+                                                    Terbaru <i class="fa fa-circle"> </i>
+                                                </p>
+                                                <h4>40% - 80%</h4>
+                                            </div>
+
+                                        </div>
+                                    </a>
+
+                                </div>
+                                <div class="card-body pb-0">
+                                    <div class="growth-chart">
+                                        <div id="growth-chart"></div>
+                                    </div>
+                                    <div class="code-box-copy">
+                                        <button class="code-box-copy__btn btn-clipboard"
+                                            data-clipboard-target="#growth"><i
+                                                class="icofont icofont-copy-alt"></i></button>
+                                        <pre><code class="language-html" id="growth">&lt;div class="card total-growth"&gt;
+  &lt;div class="card-header pb-0"&gt;
+    &lt;div class="d-flex justify-content-between"&gt;
+      &lt;div class="flex-grow-1"&gt;
+        &lt;p class="square-after f-w-600 header-text-primary"&gt; Our Total Growth
+          &lt;i class="fa fa-circle"&gt;&lt;/i&gt;
+        &lt;/p&gt;
+        &lt;h4&gt; 96.564%&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="setting-list"&gt;
+        &lt;ul class="list-unstyled setting-option"&gt;
+          &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body p-0"&gt;
+    &lt;div class="growth-chart"&gt;
+      &lt;div id="growth-chart"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xl-4 col-md-6 box-col-4">
+              <div class="card">
+                <div class="card-header pb-0">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">Recent Activity<i class="fa fa-circle"> </i>
+                      </p>
+                      <h4>New & Update</h4>
+                    </div>
+                    <div class="setting-list">
+                      <ul class="list-unstyled setting-option">
+                        <li>
+                          <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                        </li>
+                        <li><i class="view-html fa fa-code font-white"></i></li>
+                        <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                        <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="activity-timeline">
+                    <div class="d-flex">
+                      <div class="activity-line"></div>
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1"><span class="f-w-600 d-block">Updated Product</span>
+                        <p class="mb-0">I like to be real. I don't like things to be staged or fussy.</p>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1"><span class="f-w-600 d-block">You liked James products</span>
+                        <p class="mb-0">If you have it, you can make anything look good.</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start">
+                      <div class="activity-dot-secondary"></div>
+                      <div class="flex-grow-1"><span class="f-w-600 d-block">James just like your product</span>
+                        <p class="mb-0">I like to design everything to do with the body.</p>
+                      </div><i class="fa fa-circle circle-dot-primary"></i>
+                    </div>
+                    <div class="d-flex">
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1"><span class="f-w-600 d-block">Jenna commented on your product</span>
+                        <p class="mb-0">Fashion fades, only style remain the same.</p>
+                      </div>
+                    </div>
+                    <div class="d-flex align-items-start">
+                      <div class="activity-dot-secondary"></div>
+                      <div class="flex-grow-1"><span class="f-w-600 d-block">Jihan Doe just like your product</span>
+                        <p class="mb-0">Design and style should work toward making you look good and feel good without
+                          lot of effort.</p>
+                      </div><i class="fa fa-circle circle-dot-secondary"></i>
+                    </div>
+                  </div>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#activity"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="activity">&lt;div class="card"&gt;
+  &lt;div class="card-header pb-0"&gt;
+    &lt;div class="d-flex justify-content-between"&gt;
+      &lt;div class="flex-grow-1"&gt;
+        &lt;p class="square-after f-w-600 header-text-primary"&gt; Recent Activity
+          &lt;i class="fa fa-circle"&gt;&lt;/i&gt;
+        &lt;/p&gt;
+        &lt;h4&gt; New & Update &lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="setting-list"&gt;
+        &lt;ul class="list-unstyled setting-option"&gt;
+          &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body p-0"&gt;
+    &lt;div class="activity-timeline"&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div class="activity-line"&gt;&lt;/div&gt;
+        &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;span class="f-w-600 d-block"&gt; Updated Product &lt;/span &gt;
+          &lt;p class="mb-0"&gt; I like to be real. I don't like things to be staged or fussy.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;span class="f-w-600 d-block"&gt; You liked James products &lt;/span &gt;
+          &lt;p class="mb-0"&gt; If you have it, you can make anything look good.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="d-flex align-items-start"&gt;
+        &lt;div class="activity-dot-secondary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;span class="f-w-600 d-block"&gt; James just like your product &lt;/span &gt;
+          &lt;p class="mb-0"&gt; I like to design everything to do with the body.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;span class="f-w-600 d-block"&gt; Jenna commented on your product &lt;/span &gt;
+          &lt;p class="mb-0"&gt;Fashion fades, only style remain the same.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="d-flex align-items-start"&gt;
+        &lt;div class="activity-dot-secondary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;span class="f-w-600 d-block"&gt; James just like your product &lt;/span &gt;
+          &lt;p class="mb-0"&gt;Design and style should work toward making you look good and feel good without lot of effort.&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; </code></pre>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+                        <!-- <div class="col-xl-4 proorder box-col-4">
+              <div class="card user-chat">
+                <div class="card-header pb-0">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">Chat With Our Users<i class="fa fa-circle">
+                        </i></p>
+                      <h4>Chat</h4>
+                    </div>
+                    <div class="setting-list">
+                      <ul class="list-unstyled setting-option">
+                        <li>
+                          <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                        </li>
+                        <li><i class="view-html fa fa-code font-white"></i></li>
+                        <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                        <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body chat-box">
+                  <div class="d-flex left-chat">
+                    <div class="flex-grow-1">
+                      <div class="message-main">
+                        <p class="mb-0">Hii</p>
+                      </div>
+                      <div class="sub-message message-main">
+                        <p class="mb-0">Good Evening, My Friend</p>
+                      </div>
+                    </div>
+                    <p class="f-w-500 mb-0 px-0">7:28 PM</p>
+                  </div>
+                  <div class="d-flex right-chat">
+                    <div class="flex-grow-1 text-end">
+                      <div class="message-main pull-right">
+                        <p class="text-start mb-0">What can do for you</p>
+                        <div class="clearfix"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex left-chat">
+                    <div class="flex-grow-1">
+                      <div class="sub-message message-main mt-0">
+                        <p class="mb-0">Can i Borrow some money</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group">
+                    <input class="form-control" id="mail" type="text" placeholder="Type Your Message" name="text">
+                    <div class="send-msg"><i data-feather="send"></i></div>
+                  </div>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#chat"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="chat">&lt;div class="card user-chat"&gt;
+  &lt;div class="card-header pb-0"&gt;
+    &lt;div class="d-flex justify-content-between"&gt;
+      &lt;div class="flex-grow-1"&gt;
+        &lt;p class="square-after f-w-600 header-text-primary"&gt; Chat With Our Users
+          &lt;i class="fa fa-circle"&gt;&lt;/i&gt;
+        &lt;/p&gt;
+        &lt;h4&gt; Chat&lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="setting-list"&gt;
+        &lt;ul class="list-unstyled setting-option"&gt;
+          &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body chat-box"&gt;
+    &lt;div class="d-flex left-chat"&gt;
+      &lt;div class="flex-grow-1"&gt;
+        &lt;div class="message-main"&gt;
+          &lt;p class="mb-0"&gt; Hii &lt;/p&gt;
+        &lt;/div &gt;
+        &lt;div class="sub-message message-main"&gt;
+          &lt;p class="mb-0"&gt; Good Evening, My Friend &lt;/p&gt;
+        &lt;/div &gt;
+      &lt;/div&gt;
+      &lt;p class="f-w-500 mb-0 px-0"&gt; 7:28 PM &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="d-flex right-chat"&gt;
+      &lt;div class="flex-grow-1 text-end"&gt;
+        &lt;div class="message-main pull-right"&gt;
+          &lt;p class="text-start mb-0"&gt; What can do for you &lt;/p&gt;
+          &lt;div class="clearfix"&gt;&lt;/div&gt;
+        &lt;/div &gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="d-flex left-chat"&gt;
+      &lt;div class="flex-grow-1"&gt;
+        &lt;div class="sub-message message-main mt-0"&gt;
+          &lt;p class="mb-0"&gt; Can i Borrow some money &lt;/p&gt;
+        &lt;/div &gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="input-group"&gt;
+      &lt;input id="mail" class="form-control" type="text" placeholder="Type Your Message" name="text"/&gt;
+      &lt;div class="send-msg"&gt;
+        &lt;i class="feather feather-send"&gt;&lt;/i&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-md-6 box-col-4">
+              <div class="card our-todolist">
+                <div class="card-header pb-0">
+                  <div class="d-flex justify-content-between">
+                    <div class="flex-grow-1">
+                      <p class="square-after f-w-600 header-text-primary">Our To-Do List<i class="fa fa-circle"> </i>
+                      </p>
+                      <h4>Todo List</h4>
+                    </div>
+                    <div class="setting-list">
+                      <ul class="list-unstyled setting-option">
+                        <li>
+                          <div class="setting-light"><i class="icon-layout-grid2"></i></div>
+                        </li>
+                        <li><i class="view-html fa fa-code font-white"></i></li>
+                        <li><i class="icofont icofont-maximize full-card font-white"></i></li>
+                        <li><i class="icofont icofont-minus minimize-card font-white"></i></li>
+                        <li><i class="icofont icofont-refresh reload-card font-white"></i></li>
+                        <li><i class="icofont icofont-error close-card font-white"> </i></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="activity-timeline todo-timeline">
+                    <div class="d-flex">
+                      <div class="activity-line"></div>
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1">
+                        <p class="mt-0 todo-font"><span class="font-primary">20-04-2022 </span>Today</p>
+                        <div class="d-flex mt-0"><img class="img-fluid img-30"
+                            src="../assets/images/dashboard/default/todo.png" alt="">
+                          <div class="flex-grow-1"><span class="f-w-600">New Order $2340<i
+                                class="fa fa-circle circle-dot-primary pull-right"></i></span>
+                            <p class="mb-0">Update New Product Pdf And Delivery Product</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="activity-dot-secondary"></div>
+                      <div class="flex-grow-1">
+                        <p class="mt-0 todo-font"><span class="font-primary">20-04-2022 </span>Today<span
+                            class="badge badge-primary ms-2">New</span></p><span class="f-w-600">James just like your
+                          product<i class="fa fa-circle circle-dot-secondary pull-right"></i></span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1">
+                        <p class="mt-0 todo-font"><span class="font-primary">20-04-2022 </span>Today</p><span
+                          class="f-w-600">Jihan Doe just like your product</span>
+                        <p class="mb-0">Design and style should work making you look good and feel good without lot of
+                          effort.</p>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <div class="activity-dot-primary"></div>
+                      <div class="flex-grow-1">
+                        <p class="mt-0 todo-font"><span class="font-primary">20-04-2022 </span>Today</p><span
+                          class="f-w-600">Take Our Client Metting<i
+                            class="fa fa-circle circle-dot-primary pull-right"></i></span>
+                        <p class="mb-0">Hosting an effective client meeting.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="code-box-copy">
+                    <button class="code-box-copy__btn btn-clipboard" data-clipboard-target="#to-do"><i
+                        class="icofont icofont-copy-alt"></i></button>
+                    <pre><code class="language-html" id="to-do">&lt;div class="card our-todolist"&gt;
+  &lt;div class="card-header pb-0"&gt;
+    &lt;div class="d-flex justify-content-between"&gt;
+      &lt;div class="flex-grow-1"&gt;
+        &lt;p class="square-after f-w-600 header-text-primary"&gt; Our To-Do List
+          &lt;i class="fa fa-circle"&gt;&lt;/i&gt;
+        &lt;/p&gt;
+        &lt;h4&gt; Todo List &lt;/h4&gt;
+      &lt;/div&gt;
+      &lt;div class="setting-list"&gt;
+        &lt;ul class="list-unstyled setting-option"&gt;
+          &lt;li&gt;&lt;div class="setting-light"&gt;&lt;i class="icon-layout-grid2"&gt;&lt;/i&gt;&lt;/div&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="view-html fa fa-code font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-maximize full-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-minus minimize-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-refresh reload-card font-white"&gt;&lt;/i&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;i class="icofont icofont-error close-card font-white"&gt; &lt;/i&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body p-0"&gt;
+    &lt;div class="activity-timeline"&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div class="activity-line"&gt;&lt;/div&gt;
+        &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;p class="todo-font mt-0"&gt;
+            &lt;span class="font-primary"&gt; 20-04-2022 &lt;/span&gt;
+            Today
+          &lt;/p &gt;
+          &lt;div class="d-flex mt-0"&gt;
+            &lt;img class="img-fluid img-30" src="../assets/images/dashboard/default/todo.png" alt=""/&gt;
+            &lt;div class="flex-grow-1"&gt;
+              &lt;span class="f-w-600"&gt; New Order $2340
+                New Order $2340
+                &lt;i class="fa fa-circle circle-dot-primary pull-right"&gt;
+              &lt;/span&gt;
+              &lt;p class="mb-0"&gt; Update New Product Pdf And Delivery Product &lt;/p&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div class="activity-dot-secondary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;p class="todo-font mt-0"&gt;
+            &lt;span class="font-primary"&gt; 20-04-2022 &lt;/span&gt;
+            Today
+            &lt;span class="badge badge-primary ms-2"&gt; New &lt;/span&gt;
+          &lt;/p &gt;
+          &lt;span class="f-w-600"&gt; James just like your product
+            &lt;i class="fa fa-circle circle-dot-secondary pull-right"&gt;&lt;/i&gt;
+          &lt;/span&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;p class="mt-0 todo-font"&gt;
+            &lt;span class="font-primary"&gt; 20-04-2022 &lt;/span&gt;
+            Today
+          &lt;/p &gt;
+          &lt;span class="f-w-600"&gt; Jihan Doe just like your product
+          &lt;/span&gt;
+          &lt;p class="mb-0"&gt; Design and style should work making you look good and feel good without lot of effort. &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="d-flex"&gt;
+        &lt;div class="activity-dot-primary"&gt;&lt;/div&gt;
+        &lt;div class="flex-grow-1"&gt;
+          &lt;p class="todo-font mt-0"&gt;
+            &lt;span class="font-primary"&gt; 20-04-2022 &lt;/span&gt;
+            Today
+          &lt;/p &gt;
+          &lt;span class="f-w-600"&gt; Take Our Client Metting
+            &lt;i class="fa fa-circle circle-dot-primary pull-right"&gt;&lt;/i&gt;
+          &lt;/span&gt;
+          &lt;p class="mb-0"&gt; Hosting an effective client meeting. &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt; </code></pre>
+                  </div>
+                </div>
+              </div>
+            </div> -->
+                    </div>
+                </div>
+                <!-- Container-fluid Ends-->
+            </div>
+            <!-- footer start-->
+            <!-- <footer class="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6 p-0 footer-left">
+              <p class="mb-0">Copyright © 2023 Tivo. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 p-0 footer-right">
+              <p class="mb-0">Hand-crafted & made with <i class="fa fa-heart font-danger"></i></p>
+            </div>
+          </div>
+        </div>
+      </footer> -->
+        </div>
+    </div>
+    <!-- latest jquery-->
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- feather icon js-->
+    <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
+    <!-- scrollbar js-->
+    <script src="../assets/js/scrollbar/simplebar.js"></script>
+    <script src="../assets/js/scrollbar/custom.js"></script>
+    <!-- Sidebar jquery-->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/sidebar-menu.js"></script>
+    <script src="../assets/js/chart/chartist/chartist.js"></script>
+    <script src="../assets/js/chart/chartist/chartist-plugin-tooltip.js"></script>
+    <script src="../assets/js/chart/apex-chart/apex-chart.js"></script>
+    <script src="../assets/js/chart/apex-chart/stock-prices.js"></script>
+    <script src="../assets/js/prism/prism.min.js"></script>
+    <script src="../assets/js/clipboard/clipboard.min.js"></script>
+    <script src="../assets/js/custom-card/custom-card.js"></script>
+    <script src="../assets/js/notify/bootstrap-notify.min.js"></script>
+    <script src="../assets/js/vector-map/jquery-jvectormap-2.0.2.min.js"></script>
+    <script src="../assets/js/vector-map/map/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../assets/js/vector-map/map/jquery-jvectormap-us-aea-en.js"></script>
+    <script src="../assets/js/vector-map/map/jquery-jvectormap-uk-mill-en.js"></script>
+    <script src="../assets/js/vector-map/map/jquery-jvectormap-au-mill.js"></script>
+    <script src="../assets/js/vector-map/map/jquery-jvectormap-chicago-mill-en.js"></script>
+    <script src="../assets/js/vector-map/map/jquery-jvectormap-in-mill.js"></script>
+    <script src="../assets/js/vector-map/map/jquery-jvectormap-asia-mill.js"></script>
+    <script src="../assets/js/dashboard/default.js"></script>
+    <script src="../assets/js/notify/index.js"></script>
+    <script src="../assets/js/typeahead/handlebars.js"></script>
+    <script src="../assets/js/typeahead/typeahead.bundle.js"></script>
+    <script src="../assets/js/typeahead/typeahead.custom.js"></script>
+    <script src="../assets/js/typeahead-search/handlebars.js"></script>
+    <script src="../assets/js/typeahead-search/typeahead-custom.js"></script>
+    <!-- Template js-->
+    <script src="../assets/js/script.js"></script>
+    <!-- <script src="../assets/js/theme-customizer/customizer.js"> </script> -->
+    <!-- login js-->
+</body>
+
+<!-- Mirrored from admin.pixelstrap.com/tivo/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 09:01:23 GMT -->
+
+</html>

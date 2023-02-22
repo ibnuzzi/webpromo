@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from admin.pixelstrap.com/tivo/template/bootstrap-basic-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 09:04:53 GMT -->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="tivo admin is super flexible, powerful, clean &amp; modern responsive bootstrap 5 admin template with unlimited possibilities.">
+    <meta name="keywords"
+        content="admin template, Tivo admin template, dashboard template, flat admin template, responsive admin template, web app">
+    <meta name="author" content="pixelstrap">
+    <link rel="icon" href="../assets/images/favicon/logogudang.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../assets/images/favicon/logogudang.png" type="image/x-icon">
+    <title>ADMIN Gudang Promo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/font-awesome.css">
+    <!-- ico-font-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/icofont.css">
+    <!-- Themify icon-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/themify.css">
+    <!-- Flag icon-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/flag-icon.css">
+    <!-- Feather icon-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/feather-icon.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/scrollbar.css">
+    <!-- Bootstrap css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/vendors/bootstrap.css">
+    <!-- App css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+    <link id="color" rel="stylesheet" href="../assets/css/color-1.css" media="screen">
+    <!-- Responsive css-->
+    <link rel="stylesheet" type="text/css" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- tap on top starts-->
+    <div class="tap-top"><i data-feather="chevrons-up"></i></div>
+    <!-- tap on tap ends-->
+    <!-- Loader starts-->
+    <div class="loader-wrapper">
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"></div>
+        <div class="dot"> </div>
+        <div class="dot"></div>
+    </div>
+    <!-- Loader ends-->
+    <!-- page-wrapper Start-->
+    <div class="page-wrapper compact-wrapper" id="pageWrapper">
+        <!-- Page Header Start-->
+        <div class="page-header">
+            <div class="header-wrapper row m-0">
+                <form class="form-inline search-full col" action="#" method="get">
+                    <div class="form-group w-100">
+                        <div class="Typeahead Typeahead--twitterUsers">
+                            <div class="u-posRelative">
+                                <input class="demo-input Typeahead-input form-control-plaintext w-100" type="text"
+                                    placeholder="Search Tivo .." name="q" title="" autofocus>
+                                <div class="spinner-border Typeahead-spinner" role="status"><span
+                                        class="sr-only">Loading...</span>
+                                </div><i class="close-search" data-feather="x"></i>
+                            </div>
+                            <div class="Typeahead-menu"></div>
+                        </div>
+                    </div>
+                </form>
+                <div class="header-logo-wrapper col-auto p-0">
+                    <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i>
+                    </div>
+                    <div class="logo-header-main"><a href="index.html"><img class="img-fluid for-light img-100"
+                                src="../assets/images/logo/logo2.png" alt=""><img class="img-fluid for-dark"
+                                src="../assets/images/logo/logo.png" alt=""></a></div>
+                </div>
+                <div class="left-header col horizontal-wrapper ps-0">
+                    <div class="left-menu-header">
+                        <ul class="app-list">
+                            <li class="onhover-dropdown">
+                                <div class="app-menu"> <i data-feather="folder-plus"></i></div>
+                                <ul class="onhover-show-div left-dropdown">
+                                    <li> <a href="file-manager.html">File Manager</a></li>
+                                    <li> <a href="kanban.html"> Kanban board</a></li>
+                                    <li> <a href="social-app.html"> Social App</a></li>
+                                    <li> <a href="bookmark.html"> Bookmark</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="header-left">
+                            <li class="onhover-dropdown"><span class="f-w-600" a
+                                    href="index.html">Beranda</span><span><i class="middle"
+                                        data-feather="chevron-down"></i></span>
+                                <ul class="onhover-show-div left-dropdown">
+                                    <li> <a href="index.html">Home</a></li>
+                                </ul>
+                            </li>
+                            <li class="onhover-dropdown"><span class="f-w-600">Menu</span><span><i class="middle"
+                                        data-feather="chevron-down"></i></span>
+                                <ul class="onhover-show-div left-dropdown">
+                                    <li class="flyout-right"><a href="javascript:void(0)">Produk</a>
+                                        <ul>
+                                            <li> <a href="projects.html">Tambah Produk</a></li>
+                                            <li> <a href="createkategori.html">Tambah Kategori</a></li>
+                                            <li> <a href="createpromo.html">Tambah Promo</a></li>
+                                            <!-- <li> <a href="projectcreate.html">Project Create</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="file-manager.html">File manager</a></li>
+              <li><a href="kanban.html">kanban</a></li> -->
+                                    <li class="flyout-right"><a href="javascript:void(0)">Promo</a>
+                                        <ul>
+                                            <li> <a href="product.html">List Promo</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="flyout-right"><a href="javascript:void(0)">Admin</a>
+                                        <ul>
+                                            <li> <a href="user-profile.html">Profil Admin</a></li>
+                                            <li> <a href="edit-profile.html">Edit Profil Admin</a></li>
+                                            <!-- <li> <a href="user-cards.html">User Cards</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="flyout-right"><a href="javascript:void(0)">Tabel</a>
+                                        <ul>
+                                            <li> <a href="projectcreate.html">Produk</a></li>
+                                            <li> <a href="tabelpromotor.html">Promotor</a></li>
+                                            <li> <a href="tabelguest.html">Grafik</a></li>
+                                            <!-- <li> <a href="user-cards.html">User Cards</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <!-- <li><a href="bookmark.html">Bookmarks</a></li>
+              <li><a href="contacts.html">Contacts</a></li>
+              <li><a href="social-app.html">Social App</a></li> -->
+                                </ul>
+                            </li>
+                            <!-- <li class="onhover-dropdown"> <span class="f-w-600">More pages</span><span><i class="middle"
+                data-feather="chevron-down"></i></span>
+            <ul class="onhover-show-div left-dropdown">
+              <li><a href="landing-page.html">Landing Page</a></li>
+              <li><a href="sample-page.html">Sample Page</a></li>
+              <li><a href="internationalization.html">Internationalization</a></li>
+              <li class="flyout-right"><a href="javascript:void(0)">Starter-Kit</a>
+                <ul>
+                  <li class="flyout-right"><a href="javascript:void(0)">Color version</a>
+                    <ul>
+                      <li> <a href="starter-kit/index.html">Layout Light</a></li>
+                      <li> <a href="starter-kit/layout-dark.html">Layout Dark</a></li>
+                    </ul>
+                  </li>
+                  <li class="flyout-right"><a href="javascript:void(0)">Page Layout</a>
+                    <ul>
+                      <li> <a href="starter-kit/boxed.html">Boxed</a></li>
+                      <li> <a href="starter-kit/layout-rtl.html">RTL</a></li>
+                    </ul>
+                  </li>
+                  <li> <a href="starter-kit/hide-on-scroll.html">Hide Menu On Scroll</a></li>
+                  <li class="flyout-right"><a href="javascript:void(0)">Footers</a>
+                    <ul>
+                      <li> <a href="starter-kit/footer-light.html">Footer Light</a></li>
+                      <li> <a href="starter-kit/footer-dark.html">Footer Dark </a></li>
+                      <li> <a href="starter-kit/footer-fixed.html">Footer Fixed</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul> -->
+                    </div>
+                </div>
+                <div class="nav-right col-6 pull-right right-header p-0">
+                    <ul class="nav-menus">
+                        <li>
+                            <div class="right-header ps-0">
+                                <div class="input-group">
+                                    <div class="input-group-prepend"><span class="input-group-text mobile-search"><i
+                                                class="fa fa-search"></i></span></div>
+                                    <input class="form-control" type="text" placeholder="Search Here........">
+                                </div>
+                            </div>
+                        </li>
+                        <li class="serchinput">
+                            <div class="serchbox"><i data-feather="search"></i></div>
+                            <div class="form-group search-form">
+                                <input type="text" placeholder="Search here...">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="mode"><i class="fa fa-moon-o"></i></div>
+                        </li>
+
+                        <li class="onhover-dropdown">
+                            <div class="message"><i data-feather="message-square"></i></div>
+                            <ul class="message-dropdown onhover-show-div">
+                                <li><i data-feather="message-square"> </i>
+                                    <h6 class="f-18 mb-0">Messages</h6>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-start">
+                                        <div class="message-img bg-light-primary"><img src="../assets/images/user/3.jpg"
+                                                alt=""></div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="mb-1"><a href="email_inbox.html">Emay Walter</a></h5>
+                                            <p>Do you want to go see movie?</p>
+                                        </div>
+                                        <div class="notification-right"><i data-feather="x"></i></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-start">
+                                        <div class="message-img bg-light-primary"><img src="../assets/images/user/6.jpg"
+                                                alt=""></div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="mb-1"><a href="email_inbox.html">Jason Borne</a></h5>
+                                            <p>Thank you for rating us.</p>
+                                        </div>
+                                        <div class="notification-right"><i data-feather="x"></i></div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="d-flex align-items-start">
+                                        <div class="message-img bg-light-primary"><img
+                                                src="../assets/images/user/10.jpg" alt=""></div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="mb-1"><a href="email_inbox.html">Sarah Loren</a></h5>
+                                            <p>What`s the project report update?</p>
+                                        </div>
+                                        <div class="notification-right"><i data-feather="x"></i></div>
+                                    </div>
+                                </li>
+                                <li><a class="btn btn-primary" href="email_inbox.html">Check Messages</a></li>
+                            </ul>
+                        </li>
+                        <li class="maximize"><a href="#!" onclick="javascript:toggleFullScreen()"><i
+                                    data-feather="maximize-2"></i></a></li>
+
+                        <li class="profile-nav onhover-dropdown">
+                            <div class="account-user"><i data-feather="user"></i></div>
+                            <ul class="profile-dropdown onhover-show-div">
+                                <li><a href="user-profile.html"><i data-feather="user"></i><span>Profil</span></a></li>
+                                <!-- <li><a href="email_inbox.html"><i data-feather="mail"></i><span>Inbox</span></a></li> -->
+                                <li><a href="edit-profile.html"><i
+                                            data-feather="settings"></i><span>Pengaturan</span></a></li>
+                                <li><a href="login.html"><i data-feather="log-in"> </i><span>Keluar</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <script class="result-template" type="text/x-handlebars-template">
+                    <div class="ProfileCard u-cf">                        
+            <div class="ProfileCard-avatar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-airplay m-0"><path d="M5 17H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-1"></path><polygon points="12 15 17 21 7 21 12 15"></polygon></svg></div>
+            <div class="ProfileCard-details">
+            <div class="ProfileCard-realName">{{name}}</div>
+            </div>
+            </div>
+          </script>
+                <script class="empty-template" type="text/x-handlebars-template">
+                    <div class="EmptyMessage">Your search turned up 0 results. This most likely means the backend is down, yikes!</div>
+        </script>
+            </div>
+        </div>
+        <!-- Page Header Ends-->
+        <!-- Page Body Start-->
+        <div class="page-body-wrapper">
+            <!-- Page Sidebar Start-->
+            <div class="sidebar-wrapper">
+                <div>
+                    <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light"
+                                src="../assets/images/logo/promogudang.png" alt="" width=150px></a>
+                        <div class="back-btn"><i data-feather="grid"></i></div>
+                        <div class="toggle-sidebar icon-box-sidebar"><i class="status_toggle middle sidebar-toggle"
+                                data-feather="grid"> </i></div>
+                    </div>
+                    <div class="logo-icon-wrapper"><a href="index.html">
+                            <div class="icon-box-sidebar"><i data-feather="grid"></i></div>
+                        </a></div>
+                    <nav class="sidebar-main">
+                        <div class="left-arrow" id="left-arrow"><i data-feather="arrow-left"></i></div>
+                        <div id="sidebar-menu">
+                            <ul class="sidebar-links" id="simple-bar">
+                                <li class="back-btn">
+                                    <div class="mobile-back text-end"><span>Back</span><i class="fa fa-angle-right ps-2"
+                                            aria-hidden="true"></i></div>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i data-feather="home"></i><span
+                                                    class="lan-3">Beranda</span></a>
+                                            <ul class="sidebar-submenu">
+
+                                                <!-- <li><a class="lan-5" href="dashboard-02.html">Ecommerce</a></li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+                                        <li class="sidebar-list"> <a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i data-feather="box"></i><span>Produk
+                                                </span></a>
+                                            <ul class="sidebar-submenu">
+                                                <!-- <li><a href="projects.html">Project List</a></li> -->
+                                                <li><a href="projectcreate.html">Tambah Produk</a></li>
+                                                <li><a href="createkategori.html">Tambah Kategori</a></li>
+                                                <li><a href="createpromo.html">Tambah Promo</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i
+                                                    data-feather="shopping-bag"></i><span>Promo</span></a>
+                                            <ul class="sidebar-submenu">
+                                                <li><a href="product.html">List Promo</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i
+                                                    data-feather="users"></i><span>Admin</span></a>
+                                            <ul class="sidebar-submenu">
+                                                <li><a href="user-profile.html">Profil Admin</a></li>
+                                                <li><a href="edit-profile.html">Edit Profil Admin</a></li>
+                                                <!-- <li><a href="user-cards.html">Users Cards</a></li> -->
+                                            </ul>
+                                        </li>
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="bookmark.html"><i
+                        data-feather="heart"> </i><span>Bookmarks</span></a></li> -->
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="contacts.html"><i
+                        data-feather="list"> </i><span>Contacts</span></a></li>
+                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="task.html"><i
+                        data-feather="check-square"> </i><span>Tasks</span></a></li>
+                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav"
+                      href="calendar-basic.html"><i data-feather="calendar"> </i><span>Calendar</span></a></li>
+                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="social-app.html"><i
+                        data-feather="zap"> </i><span>Social App</span></a></li>
+                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="to-do.html"><i
+                        data-feather="clock"> </i><span>To-Do</span></a></li>
+                  <li class="sidebar-list"><a class="sidebar-link sidebar-title link-nav" href="search.html"><i
+                        data-feather="search"> </i><span>Search Result</span></a></li> -->
+                                    </ul>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+                                        <!-- <li class="sidebar-list"><a class="sidebar-link sidebar-title" href="javascript:void(0)"><i
+                        data-feather="file-text"></i><span>Forms</span></a>
+                    <ul class="sidebar-submenu">
+                      <li><a class="submenu-title" href="javascript:void(0)">Form Controls<span class="sub-arrow"><i
+                              class="fa fa-angle-right"></i></span></a>
+                        <ul class="nav-sub-childmenu submenu-content">
+                          <li><a href="form-validation.html">Form Validation</a></li>
+                          <li><a href="base-input.html">Base Inputs</a></li>
+                          <li><a href="radio-checkbox-control.html">Checkbox & Radio</a></li>
+                          <li><a href="input-group.html">Input Groups</a></li>
+                          <li><a href="megaoptions.html">Mega Options</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="submenu-title" href="javascript:void(0)">Form Widgets<span class="sub-arrow"><i
+                              class="fa fa-angle-right"></i></span></a>
+                        <ul class="nav-sub-childmenu submenu-content">
+                          <li><a href="datepicker.html">Datepicker</a></li>
+                          <li><a href="time-picker.html">Timepicker</a></li>
+                          <li><a href="datetimepicker.html">Datetimepicker</a></li>
+                          <li><a href="daterangepicker.html">Daterangepicker</a></li>
+                          <li><a href="touchspin.html">Touchspin</a></li>
+                          <li><a href="select2.html">Select2</a></li>
+                          <li><a href="switch.html">Switch</a></li>
+                          <li><a href="typeahead.html">Typeahead</a></li>
+                          <li><a href="clipboard.html">Clipboard</a></li>
+                        </ul>
+                      </li>
+                      <li><a class="submenu-title" href="javascript:void(0)">Form layout<span class="sub-arrow"><i
+                              class="fa fa-angle-right"></i></span></a>
+                        <ul class="nav-sub-childmenu submenu-content">
+                          <li><a href="default-form.html">Default Forms</a></li>
+                          <li><a href="form-wizard.html">Form Wizard 1</a></li>
+                          <li><a href="form-wizard-two.html">Form Wizard 2</a></li>
+                          <li><a href="form-wizard-three.html">Form Wizard 3</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li> -->
+                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
+                                                href="javascript:void(0)"><i
+                                                    data-feather="server"></i><span>Tabel</span></a>
+                                            <ul class="sidebar-submenu">
+                                                <li><a class="submenu-title" href="javascript:void(0)">Produk<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="bootstrap-basic-table.html">Tabel Produk</a></li>
+                                                        <li><a href="tabelkategori.html">Tabel Kategori</a></li>
+                                                        <li><a href="tabelpromo.html">Tabel Promo</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="submenu-title" href="javascript:void(0)">Promotor<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="tabelpromotor.html">Tabel Promotor</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="submenu-title" href="javascript:void(0)">Grafik<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="tabelguest.html">Tabel Grafik</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a class="submenu-title" href="javascript:void(0)">Promo<span
+                                                            class="sub-arrow"><i
+                                                                class="fa fa-angle-right"></i></span></a>
+                                                    <ul class="nav-sub-childmenu submenu-content">
+                                                        <li><a href="tabelterbaru.html">Tabel Terbaru</a></li>
+                                                        <li><a href="tabelunggulan.html">Tabel Unggulan</a></li>
+                                                        <li><a href="tabelterpopuler.html">Tabel Terpopuler</a></li>
+                                                        <li><a href="tabelkilat.html">Tabel Kilat</a></li>
+                                                        <li><a href="tabelmerek.html">Tabel Merek</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- <li><a class="submenu-title" href="javascript:void(0)">Role<span class="sub-arrow"><i
+                              class="fa fa-angle-right"></i></span></a>
+                        <ul class="nav-sub-childmenu submenu-content">
+                          <li><a href="tabelrole.html">Tabel Role</a></li>
+
+                        </ul>
+                      </li> -->
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="menu-box">
+                                    <ul>
+
+                                    </ul>
+                        </div>
+                        <div class="right-arrow" id="right-arrow"><i data-feather="arrow-right"></i></div>
+                    </nav>
+                </div>
+            </div>
+            <!-- Page Sidebar Ends-->
+            <div class="page-body">
+                <div class="container-fluid">
+                    <div class="page-title">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Tabel Produk Terbaru</h3>
+                            </div>
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html"> <i data-feather="home"></i></a>
+                                    </li>
+                                    <li class="breadcrumb-item">Tabel</li>
+                                    <li class="breadcrumb-item active">Tabel Produk Terbaru</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Container-fluid starts-->
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <p>Cari : <input type="search" style="border-radius: 5px;"></p>
+                                </div>
+                                <div class="table-responsive theme-scrollbar">
+                                    <table class="table">
+                                        <thead>
+                                            <tr class="border-bottom-primary">
+                                                <th scope="col">No</th>
+                                                <th scope="col">Nama Promotor</th>
+                                                <th scope="col">Nama Promo</th>
+                                                <th scope="col">Nama Merek</th>
+                                                <th scope="col">Kategori Promo</th>
+                                                <th scope="col">Deskripsi Promo</th>
+                                                <th scope="col">Masa Promo</th>
+                                                <th scope="col">Limit Promo</th>
+                                                <th scope="col">Foto Promo</th>
+                                                <th scope="col">Status Promo</th>
+                                                <th scope="col">Aksi</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="border-bottom-secondary">
+                                                <th scope="row">1</th>
+                                                <td>Stephan</td>
+                                                <td>Promo Hokben Spesial Hoka Ramen Mulai Dari Rp 55K</td>
+                                                <td>Hokben</td>
+                                                <td>Makanan</td>
+                                                <td>Rekomendasi makan siang istimewa bareng keluarga atau temen kantor
+                                                    nih.
+                                                    Kamu bisa pesan paket Special Hoka Ramen di HokBen.</td>
+                                                <td>1 - 18 Februari 2023</td>
+                                                <td>200 Orang</td>
+                                                <td><img src="../assets/images/makanan 1.jpg" width="100%" alt=""></td>
+                                                <td> <span class="badge badge-light-success">aktif</span></td>
+                                                <td>
+                                                    
+
+
+                                                    <button class="btn-danger" style="border-radius: 5px;"
+                                                        type="button"><i
+                                                        class="fa-solid fa-trash"></i></button>
+                                                </td>
+                                            </tr>
+                                            
+                                        </tbody>
+                                    </table>
+                                    <nav aria-label="Page navigation example">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="#" aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Container-fluid Ends-->
+                </div>
+            </div>
+            <!-- Container-fluid Ends-->
+        </div>
+        <!-- footer start-->
+        <!-- <footer class="footer">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-6 p-0 footer-left">
+            <p class="mb-0">Copyright © 2023 Tivo. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 p-0 footer-right">
+            <p class="mb-0">Hand-crafted & made with <i class="fa fa-heart font-danger"></i></p>
+          </div>
+        </div>
+      </div>
+    </footer> -->
+    </div>
+    </div>
+
+
+    <!-- latest jquery-->
+    <script src="../assets/js/jquery-3.6.0.min.js"></script>
+    <!-- Bootstrap js-->
+    <script src="../assets/js/bootstrap/bootstrap.bundle.min.js"></script>
+    <!-- feather icon js-->
+    <script src="../assets/js/icons/feather-icon/feather.min.js"></script>
+    <script src="../assets/js/icons/feather-icon/feather-icon.js"></script>
+    <!-- scrollbar js-->
+    <script src="../assets/js/scrollbar/simplebar.js"></script>
+    <script src="../assets/js/scrollbar/custom.js"></script>
+    <!-- Sidebar jquery-->
+    <script src="../assets/js/config.js"></script>
+    <script src="../assets/js/sidebar-menu.js"></script>
+    <script src="../assets/js/tooltip-init.js"></script>
+    <!-- Template js-->
+    <script src="../assets/js/script.js"></script>
+    <!-- <script src="../assets/js/theme-customizer/customizer.js"> </script> -->
+    <!-- login js-->
+</body>
+
+<!-- Mirrored from admin.pixelstrap.com/tivo/template/bootstrap-basic-table.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 09:04:53 GMT -->
+
+</html>
