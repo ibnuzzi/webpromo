@@ -1,0 +1,33 @@
+HTTrack3.49-2+htsswf+htsjava launched on Wed, 08 Feb 2023 15:57:28 at https://admin.pixelstrap.com/tivo/template/index.html +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://admin.pixelstrap.com/tivo/template/index.html -O1 "C:\tamplate_promotor" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/index.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/layout-dark.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/boxed.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/layout-rtl.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/hide-on-scroll.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/footer-light.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/footer-dark.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:04:37	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/starter-kit/footer-fixed.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:05:08	Warning: 	Retry after error -4 (Connect Error) at link https://admin.pixelstrap.com/tivo/template/dropdown.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:05:08	Warning: 	Retry after error -4 (Connect Error) at link https://admin.pixelstrap.com/tivo/template/tab-bootstrap.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:05:08	Warning: 	Retry after error -4 (Connect Error) at link https://admin.pixelstrap.com/tivo/template/tab-material.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:08:06	Warning: 	Retry after error -4 (Connect Error) at link https://admin.pixelstrap.com/tivo/template/error-page5.html (from https://admin.pixelstrap.com/tivo/template/index.html)
+16:08:43	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/sample.pdf (from https://admin.pixelstrap.com/tivo/template/datatable-basic-init.html)
+16:08:46	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/template/cropped.jpg (from https://admin.pixelstrap.com/tivo/template/image-cropper.html)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/css/vendors/preloader.gif (from https://admin.pixelstrap.com/tivo/assets/css/vendors/photoswipe.css)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/css/vendors/dropzone-spritemap.png (from https://admin.pixelstrap.com/tivo/assets/css/vendors/dropzone.css)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/css/vendors/${file-1x} (from https://admin.pixelstrap.com/tivo/assets/css/vendors/rating.css)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/css/vendors/${file-2x} (from https://admin.pixelstrap.com/tivo/assets/css/vendors/rating.css)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/css/images/tree/32px.png (from https://admin.pixelstrap.com/tivo/assets/css/vendors/tree.css)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/css/images/tree/40px.png (from https://admin.pixelstrap.com/tivo/assets/css/vendors/tree.css)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/images/icon-tree.png (from https://admin.pixelstrap.com/tivo/assets/css/vendors/tree.css)
+16:08:52	Error: 	"Not Found" (404) at link https://admin.pixelstrap.com/tivo/assets/images/tree-1.png (from https://admin.pixelstrap.com/tivo/assets/css/vendors/tree.css)
+
+HTTrack Website Copier/3.49-2 mirror complete in 11 minutes 24 seconds : 786 links scanned, 763 files written (109191594 bytes overall) [98584622 bytes received at 144129 bytes/sec], 12627281 bytes transferred using HTTP compression in 182 files, ratio 13%, 4.2 requests per connection
+(18 errors, 4 warnings, 0 messages)
