@@ -10,7 +10,7 @@
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html"><i data-feather="home"></i></a>
+                        <li class="breadcrumb-item"><a href="/beranda"><i data-feather="home"></i></a>
                         </li>
                         <li class="breadcrumb-item">Beranda</li>
                         <!-- <li class="breadcrumb-item active">Default</li> -->
@@ -198,7 +198,8 @@
                             <button class="code-box-copy__btn btn-clipboard"
                                 data-clipboard-target="#growth"><i
                                     class="icofont icofont-copy-alt"></i></button>
-                            <pre><code class="language-html" id="growth">&lt;div class="card total-growth"&gt;
+                            <pre><code class="language-html" id="growth">
+&lt;div class="card total-growth"&gt;
 &lt;div class="card-header pb-0"&gt;
 &lt;div class="d-flex justify-content-between"&gt;
 &lt;div class="flex-grow-1"&gt;

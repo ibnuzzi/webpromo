@@ -79,7 +79,7 @@
                 <div class="header-logo-wrapper col-auto p-0">
                     <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i>
                     </div>
-                    <div class="logo-header-main"><a href="index.html"><img class="img-fluid for-light img-100"
+                    <div class="logo-header-main"><a href="/beranda"><img class="img-fluid for-light img-100"
                                 src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/images/logo/logo2.png') }}" alt=""><img class="img-fluid for-dark"
                                 src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/images/logo/logo.png') }}" alt=""></a></div>
                 </div>
@@ -98,10 +98,10 @@
                         </ul>
                         <ul class="header-left">
                             <li class="onhover-dropdown"><span class="f-w-600" a
-                                    href="index.html">Beranda</span><span><i class="middle"
+                                    href="/beranda">Beranda</span><span><i class="middle"
                                         data-feather="chevron-down"></i></span>
                                 <ul class="onhover-show-div left-dropdown">
-                                    <li> <a href="index.html">Beranda</a></li>
+                                    <li> <a href="/beranda">Beranda</a></li>
                                 </ul>
                             </li>
                             <li class="onhover-dropdown"><span class="f-w-600">Menu</span><span><i class="middle"
@@ -122,7 +122,7 @@
 
                                     <li class="flyout-right"><a href="javascript:void(0)">Promo</a>
                                         <ul>
-                                            <li> <a href="product.html">Detail Promo</a></li>
+                                            <li> <a href="/detail-promo">Detail Promo</a></li>
                                         </ul>
                                     </li>
                                     <li class="flyout-right"><a href="javascript:void(0)">Admin</a>
@@ -135,8 +135,8 @@
                                     <li class="flyout-right"><a href="javascript:void(0)">Tabel</a>
                                         <ul>
                                             <li> <a href="projectcreate.html">Produk</a></li>
-                                            <li> <a href="tabelpromotor.html">Promotor</a></li>
-                                            <li> <a href="tabelguest.html">Grafik</a></li>
+                                            <li> <a href="/tabel-promotor">Promotor</a></li>
+                                            <li> <a href="/tabel-grafik">Grafik</a></li>
 
                                             <!-- <li> <a href="user-cards.html">User Cards</a></li> -->
                                         </ul>
@@ -245,13 +245,13 @@
             <!-- Page Sidebar Start-->
             <div class="sidebar-wrapper">
                 <div>
-                    <div class="logo-wrapper"><a href="index.html"><img class="img-fluid for-light"
+                    <div class="logo-wrapper"><a href="/beranda"><img class="img-fluid for-light"
                                 src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/images/logo/promogudang.png') }}" alt="" width=150px></a>
                         <div class="back-btn"><i data-feather="grid"></i></div>
                         <div class="toggle-sidebar icon-box-sidebar"><i class="status_toggle middle sidebar-toggle"
                                 data-feather="grid"> </i></div>
                     </div>
-                    <div class="logo-icon-wrapper"><a href="index.html">
+                    <div class="logo-icon-wrapper"><a href="/beranda">
                             <div class="icon-box-sidebar"><i data-feather="grid"></i></div>
                         </a></div>
                     <nav class="sidebar-main">
@@ -281,7 +281,7 @@
                                                 </span></a>
                                             <ul class="sidebar-submenu">
                                                 <!-- <li><a href="projects.html">Project List</a></li> -->
-                                                <li><a href="list-produk.html">List Promo</a></li>
+                                                <li><a href="/list-promo">List    </a></li>
 
                                             </ul>
                                         </li>
@@ -290,7 +290,7 @@
                                                 href="javascript:void(0)"><i
                                                     data-feather="shopping-bag"></i><span>Promo</span></a>
                                             <ul class="sidebar-submenu">
-                                                <li><a href="product.html">Detail Promo</a></li>
+                                                <li><a href="/detail-promo">Detail Promo</a></li>
                                             </ul>
                                         </li>
                                         <li class="sidebar-list"><a class="sidebar-link sidebar-title"
@@ -316,8 +316,8 @@
                                                             class="sub-arrow"><i
                                                                 class="fa fa-angle-right"></i></span></a>
                                                     <ul class="nav-sub-childmenu submenu-content">
-                                                        <li><a href="bootstrap-basic-table.html">Tabel Produk</a></li>
-                                                        <li><a href="tabelkategori.html">Tabel Kategori</a></li>
+                                                        <li><a href="/produk">Tabel Produk</a></li>
+                                                        <li><a href="/tabelkategori">Tabel Kategori</a></li>
 
                                                     </ul>
                                                 </li>
@@ -325,14 +325,14 @@
                                                             class="sub-arrow"><i
                                                                 class="fa fa-angle-right"></i></span></a>
                                                     <ul class="nav-sub-childmenu submenu-content">
-                                                        <li><a href="tabelpromotor.html">Tabel Promotor</a></li>
+                                                        <li><a href="/tabel-promotor">Tabel Promotor</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a class="submenu-title" href="javascript:void(0)">Grafik<span
                                                             class="sub-arrow"><i
                                                                 class="fa fa-angle-right"></i></span></a>
                                                     <ul class="nav-sub-childmenu submenu-content">
-                                                        <li><a href="tabelguest.html">Tabel Grafik</a></li>
+                                                        <li><a href="/tabel-grafik">Tabel Grafik</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a class="submenu-title" href="javascript:void(0)">Promo<span

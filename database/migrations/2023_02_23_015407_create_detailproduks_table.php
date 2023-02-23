@@ -11,14 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_user', function (Blueprint $table) {
+        Schema::create('detailproduks', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_lengkap');
-            $table->string('nama_merek');
-            $table->string('foto_merek');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->timestamps();
         });
     }
@@ -28,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_user');
+        Schema::dropIfExists('detailproduks');
     }
 };
