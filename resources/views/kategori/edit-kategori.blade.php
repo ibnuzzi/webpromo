@@ -37,6 +37,7 @@
                             <input class="form-control" name="kategori" type="text" placeholder="" value="{{$data->kategori}}">
                           </div>
                         </div>
+                        <img src="/fotoproduk/{{$photo->fotoproduk}}" style="height: 250px;width:250px;" class="mb-3">
                         <div class="input-group mb-3">
                             <input type="file" name="fotoproduk" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload" value="{{$data->fotoproduk}}">
                         </div>

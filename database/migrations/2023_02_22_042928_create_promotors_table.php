@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('promotors', function (Blueprint $table) {
             $table->id();
-            $table->string('deskripsi');
+            $table->foreignId('user_id')->constrained( );
             $table->string('namapromotor');
-            $table->string('kategori');
-            $table->string('masapromo');
-            $table->string('limit');
-            $table->string('brand');
-            $table->string('namapromo');
+            $table->string('namamerek');
+            $table->string('fotomerek');
+            $table->string('email');
             $table->timestamps();
         });
     }

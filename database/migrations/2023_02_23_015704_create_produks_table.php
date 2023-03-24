@@ -13,6 +13,17 @@ return new class extends Migration
     {
         Schema::create('produks', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id');
+            $table->string('namamerek');
+            $table->string('namapromo');
+            $table->text('deskripsipromo');
+            $table->bigInteger('kategoripromo');
+            $table->date('masapromo')->nullable();
+            $table->string('sampul');
+            $table->integer('limit');
+            $table->boolean('status')->default(0);
+            $table->text('pesan')->nullable();
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

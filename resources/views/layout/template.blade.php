@@ -42,6 +42,7 @@
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/css/responsive.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    @stack('css')
 </head>
 
 <body onload="startTime()">
@@ -216,11 +217,11 @@
                         <li class="profile-nav onhover-dropdown">
                             <div class="account-user"><i data-feather="user"></i></div>
                             <ul class="profile-dropdown onhover-show-div">
-                                <li><a href="user-profile.html"><i data-feather="user"></i><span>Profil</span></a></li>
+                                <li><a href="profiladmin"><i data-feather="user"></i><span>Profil</span></a></li>
                                 <!-- <li><a href="email_inbox.html"><i data-feather="mail"></i><span>E-mail</span></a></li> -->
                                 <li><a href="edit-profile.html"><i
                                             data-feather="settings"></i><span>Pengaturan</span></a></li>
-                                <li><a href="login.html"><i data-feather="log-in"> </i><span>Keluar</span></a></li>
+                                <li><a href="/logout"><i data-feather="log-in"> </i><span>Keluar</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -281,23 +282,16 @@
                                                 </span></a>
                                             <ul class="sidebar-submenu">
                                                 <!-- <li><a href="projects.html">Project List</a></li> -->
-                                                <li><a href="/list-promo">List    </a></li>
-
-                                            </ul>
-                                        </li>
-
-                                        <li class="sidebar-list"><a class="sidebar-link sidebar-title"
-                                                href="javascript:void(0)"><i
-                                                    data-feather="shopping-bag"></i><span>Promo</span></a>
-                                            <ul class="sidebar-submenu">
-                                                <li><a href="/detail-promo">Detail Promo</a></li>
+                                                <li><a href="/promoaktif">Promo Aktif</a></li>
+                                                <li><a href="/promopendingpromotor">Promo Pending</a></li>
+                                                <li><a href="/ditolak">Promo Ditolak</a></li>
                                             </ul>
                                         </li>
                                         <li class="sidebar-list"><a class="sidebar-link sidebar-title"
                                                 href="javascript:void(0)"><i
                                                     data-feather="users"></i><span>Admin</span></a>
                                             <ul class="sidebar-submenu">
-                                                <li><a href="user-profile.html">Profil Admin</a></li>
+                                                <li><a href="profiladmin">Profil Admin</a></li>
                                                 <li><a href="edit-profile.html">Edit Profil Admin</a></li>
                                                 <!-- <li><a href="user-cards.html">Users Cards</a></li> -->
                                             </ul>
@@ -316,16 +310,15 @@
                                                             class="sub-arrow"><i
                                                                 class="fa fa-angle-right"></i></span></a>
                                                     <ul class="nav-sub-childmenu submenu-content">
-                                                        <li><a href="/produk">Tabel Produk</a></li>
                                                         <li><a href="/tabelkategori">Tabel Kategori</a></li>
-
+                                                        <li><a href="/tabelbanner">Tabel Banner</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a class="submenu-title" href="javascript:void(0)">Promotor<span
                                                             class="sub-arrow"><i
                                                                 class="fa fa-angle-right"></i></span></a>
                                                     <ul class="nav-sub-childmenu submenu-content">
-                                                        <li><a href="/tabel-promotor">Tabel Promotor</a></li>
+                                                        <li><a href="/tabelpromotor">Tabel Promotor</a></li>
                                                     </ul>
                                                 </li>
                                                 <li><a class="submenu-title" href="javascript:void(0)">Grafik<span
@@ -367,7 +360,7 @@
         <div class="container-fluid">
             <div class="row">
             <div class="col-md-6 p-0 footer-left">
-                <p class="mb-0">Copyright © 2023 X-CODE. All rights reserved.</p>
+                <p class="mb-0">Copyright © 2023 Tivo. All rights reserved.</p>
             </div>
             <div class="col-md-6 p-0 footer-right">
                 <p class="mb-0">Hand-crafted & made with <i class="fa fa-heart font-danger"></i></p>
@@ -376,6 +369,7 @@
         </div>
         </footer>
         </div>
+    </div>
     </div>
     <!-- latest jquery-->
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/jquery-3.6.0.min.js') }}"></script>
@@ -407,8 +401,8 @@
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/vector-map/map/jquery-jvectormap-in-mill.js') }}"></script>
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/vector-map/map/jquery-jvectormap-asia-mill.js') }}"></script>
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/dashboard/default.js') }}"></script>
-    <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/notify/index.js') }}"></script>
-    <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/typeahead/handlebars.js') }}"></script>
+    {{-- <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/notify/index.js') }}"></script> --}}
+    {{-- <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/typeahead/handlebars.js') }}"></script> --}}
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/typeahead/typeahead.bundle.js') }}"></script>
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/typeahead/typeahead.custom.js') }}"></script>
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/typeahead-search/handlebars.js') }}"></script>
@@ -417,6 +411,7 @@
     <script src="{{ asset('admin/tamplate_promotor/admin.pixelstrap.com/tivo/assets/js/script.js') }}"></script>
     <!-- <script src="../assets/js/theme-customizer/customizer.js"> </script> -->
     <!-- login js-->
+    @stack('script')
 </body>
 
 <!-- Mirrored from admin.pixelstrap.com/tivo/template/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 09:01:23 GMT -->
