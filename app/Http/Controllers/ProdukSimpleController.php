@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\produk;
 use App\Models\kategori;
+use App\Models\kilat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -25,21 +26,26 @@ class ProdukSimpleController extends Controller
 
     public function tampilpopuler(Request $request) {
         $cari = $request->input('cari');
-        $kategori = kategori::all();
-        $query = produk::query();
+        $kategori = Kategori::all();
+        $query = Produk::query();
         if ($request->has('category')) {
-            $category = $request->input('category');
-            $query->where('category', $category);
+          $category = $request->input('category');
+          $query->where('category', $category);
         }
         $products = $query->get();
-        $data = produk::where('status', 1)
-                    ->where('namapromo', 'LIKE', '%'.$cari.'%')
-                    ->paginate(4);
+        $data = Produk::where('status', 1)
+                  ->where('namapromo', 'LIKE', '%'.$cari.'%')
+                  ->paginate(4);
         if ($request->ajax()) {
-            return view('home-guest.tampilpopuler-ajax', compact('data'));
+          return response()->json([
+            'view' => view('home-guest.tampilpopuler-ajax', compact('data'))->render(),
+          ]);
         }
         return view('home-guest.tampilpopuler', compact('data', 'kategori', 'query'));
     }
+
+
+
     public function tampilterbaru(){
         $kategori = kategori::all();
         $data = produk::where('status', 1)->get();
@@ -50,34 +56,48 @@ class ProdukSimpleController extends Controller
         ->where('masapromo', '>', now())->get();
         return view('home-guest.homeguest', compact('promo'));
     }
-    public function filter(Request $request){
-        $cari = $request->cari;
-        $kategori = kategori::all();
-        $active = $request->kategori;
-        if($request->pilihan==='terbaru'){
-            $status=1;
-            $data = produk::where('status', 1)->latest()
-            ->where('namapromo','LIKE','%'.$cari.'%')->get();
-            return view('home-guest.filter', compact('data','status','kategori','active'));
-        }
-        if ($request->pilihan==='terpopuler'){
-            $status=2;
-            $data = produk::where('status', 1)->orderBy('views', 'desc')
-            ->where('namapromo','LIKE','%'.$cari.'%')->get();
-            return view('home-guest.filter', compact('data','status','kategori','active'));
 
-        }
-        if ($request->pilihan==='kilat'){
-            $status=3;
-            $data = kilat::where('status', 1)->orderBy('views', 'desc')->get();
-            return view('home-guest.filterkilat', compact('data','status','kategori','active'));
-        }
-        if ($request->kategori){
-            $status=4;
-            $data = produk::where('kategoripromo', $request->kategori)->get();
+    public function filter(Request $request)
+{
+    $cari = $request->cari;
+    $items = Kategori::all();
+    $active = $request->kategori;
+    $status = null;
+    $data = null;
 
-            return view('home-guest.filter', compact('data','status','kategori','active'));
+    $query = Produk::where('namapromo', 'LIKE', '%' . $cari . '%')->where('status', 1);
+
+    if ($request->has('kategori')) {
+        $kategori = $request->kategori;
+        if (is_array($kategori)) {
+            $query->whereIn('kategoripromo', $kategori);
+        } else {
+            $query->where('kategoripromo', $kategori);
         }
     }
+
+    if ($request->has('pilihan') && $request->pilihan === 'terbaru') {
+        $status = 1;
+        $query->latest();
+    } elseif ($request->has('pilihan') && $request->pilihan === 'terpopuler') {
+        $status = 2;
+        $query->orderBy('views', 'desc');
+    } elseif ($request->has('pilihan') && $request->pilihan === 'kilat') {
+        $status = 3;
+        $data = Kilat::where('status', 1)->orderBy('views', 'desc')->paginate(4);
+    }
+
+    $data = $query->paginate(4);
+    $terbaruCount = Produk::where('namapromo', 'LIKE', '%' . $cari . '%')->where('status', 1)->count();
+
+    return view('home-guest.filter', [
+        'data' => $data,
+        'status' => $status,
+        'items' => $items,
+        'active' => $active,
+        'terbaruCount' => $terbaruCount
+    ]);
+}
+
 
 }

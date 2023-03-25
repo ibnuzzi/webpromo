@@ -22,6 +22,13 @@
     <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/css/profile.css') }}"/>
+    <style>
+        .separator {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    }
+
+    </style>
 </head>
 
 <body>
@@ -60,14 +67,14 @@
             <div class="header-content">
                 <div class="header-media-group">
                     <button class="header-user"><img src="images/user.png" alt="user" /></button><a
-                        href="home-category.html"><img src="images/removepromo.png" alt="logo" /></a><button
+                        href="home-category.html"><img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}" alt="logo" /></a><button
                         class="header-src"><i class="fas fa-search"></i></button>
                 </div>
-                <a href="home-category.html" class="header-logo"><img style="height:80px;" src="images/removepromo.png"
+                <a href="home-category.html" class="header-logo"><img style="height:80px;" src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
                         alt="logo" /></a>
-                        <form action="{{url('filter')}}" method="GET" class="header-form">
+                        {{-- <form action="{{url('filter')}}" method="GET" class="header-form">
                             <input type="search" name="cari" value="{{Request::get('cari')}}" placeholder="Cari sesuatu..." /><button type="submit"><i class="fas fa-search"></i></button>
-                        </form>
+                        </form> --}}
                         @guest
                         <a href="/login" class="header-widget" title="My Account">
                             <img src="{{ 'template/mironmahmud.com/greeny/assets/ltr/images/user.png' }}" alt="user" />
@@ -98,190 +105,30 @@
                     <div class="navbar-content">
                         <ul class="navbar-list">
                             <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="{{url('homeguests')}}">Beranda</a>
+                                <a class="navbar-link" href="{{url('homeguest')}}">Beranda</a>
                             </li>
                             <!-- Product Link -->
-                            <li class="navbar-item dropdown">
+                            {{-- <li class="navbar-item dropdown-megamenu">
                                 <a class="navbar-link dropdown-arrow" href="#">Kategori</a>
-                                <ul class="dropdown-position-list">
-                                    <div style="display: flex;">
-                                        <div>
-                                            <li><a href="product-simple.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Fast Food</title>
-                                                        <path
-                                                            d="M322 416c0 35.35-20.65 64-56 64H134c-35.35 0-56-28.65-56-64M336 336c17.67 0 32 17.91 32 40h0c0 22.09-14.33 40-32 40H64c-17.67 0-32-17.91-32-40h0c0-22.09 14.33-40 32-40"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-miterlimit="10" stroke-width="32" />
-                                                        <path
-                                                            d="M344 336H179.31a8 8 0 00-5.65 2.34l-26.83 26.83a4 4 0 01-5.66 0l-26.83-26.83a8 8 0 00-5.65-2.34H56a24 24 0 01-24-24h0a24 24 0 0124-24h288a24 24 0 0124 24h0a24 24 0 01-24 24zM64 276v-.22c0-55 45-83.78 100-83.78h72c55 0 100 29 100 84v-.22M241 112l7.44 63.97"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-miterlimit="10" stroke-width="32" />
-                                                        <path d="M256 480h139.31a32 32 0 0031.91-29.61L463 112"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-miterlimit="10" stroke-width="32" />
-                                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32"
-                                                            d="M368 112l16-64 47-16" />
-                                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-miterlimit="10" stroke-width="32" d="M224 112h256" />
-                                                    </svg>Promo Makanan</a></li>
-                                            <li><a href="product-kecantikan.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Woman</title>
-                                                        <path
-                                                            d="M208 368v104a23.73 23.73 0 0024 24h0a23.73 23.73 0 0024-24"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-miterlimit="10" stroke-width="32" />
-                                                        <path
-                                                            d="M256 368v104a23.73 23.73 0 0024 24h0a23.73 23.73 0 0024-24V368M183 274a23.73 23.73 0 01-29.84 16.18h0a23.72 23.72 0 01-16.17-29.84l25-84.28A44.85 44.85 0 01205 144h102a44.85 44.85 0 0143 32.08l25 84.28a23.72 23.72 0 01-16.17 29.84h0a23.73 23.73 0 01-29.78-16.2"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-miterlimit="10" stroke-width="32" />
-                                                        <circle cx="256" cy="56" r="40" fill="none"
-                                                            stroke="currentColor" stroke-linecap="round"
-                                                            stroke-miterlimit="10" stroke-width="32" />
-                                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32"
-                                                            d="M208 192l-48 160h192l-48-160" />
-                                                    </svg>Promo Kecantikan</a></li>
-                                            <li><a href="product-pakaian.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Shirt</title>
-                                                        <path
-                                                            d="M314.56 48s-22.78 8-58.56 8-58.56-8-58.56-8a31.94 31.94 0 00-10.57 1.8L32 104l16.63 88 48.88 5.52a24 24 0 0121.29 24.58L112 464h288l-6.8-241.9a24 24 0 0121.29-24.58l48.88-5.52L480 104 325.13 49.8a31.94 31.94 0 00-10.57-1.8zM333.31 52.66a80 80 0 01-154.62 0"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                    </svg>Promo Pakaian</a></li>
-                                            <li><a href="product-hiburan.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Megaphone</title>
-                                                        <path
-                                                            d="M407.94 52.22S321.3 160 240 160H80a16 16 0 00-16 16v96a16 16 0 0016 16h160c81.3 0 167.94 108.23 167.94 108.23 6.06 8 24.06 2.52 24.06-9.83V62c0-12.31-17-18.82-24.06-9.78zM64 256s-16-6-16-32 16-32 16-32M448 246s16-4.33 16-22-16-22-16-22M256 160v128M112 160v128"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                        <path
-                                                            d="M144 288v168a8 8 0 008 8h53a16 16 0 0015.29-20.73C211.91 416.39 192 386.08 192 336h16a16 16 0 0016-16v-16a16 16 0 00-16-16h-16"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                    </svg>Promo Hiburan</a></li>
-                                            <li><a href="product-elektronik.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Desktop</title>
-                                                        <rect x="32" y="64" width="448" height="320" rx="32" ry="32"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <path stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32"
-                                                            d="M304 448l-8-64h-80l-8 64h96z" />
-                                                        <path fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32"
-                                                            d="M368 448H144" />
-                                                        <path
-                                                            d="M32 304v48a32.09 32.09 0 0032 32h384a32.09 32.09 0 0032-32v-48zm224 64a16 16 0 1116-16 16 16 0 01-16 16z" />
-                                                    </svg>Promo Elektronik</a></li>
-                                            <li><a href="product-bioskop.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Film</title>
-                                                        <rect x="48" y="96" width="416" height="320" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="384" y="336" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="384" y="256" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="384" y="176" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="384" y="96" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="48" y="336" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="48" y="256" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="48" y="176" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="48" y="96" width="80" height="80" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="128" y="96" width="256" height="160" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                        <rect x="128" y="256" width="256" height="160" rx="28" ry="28"
-                                                            fill="none" stroke="currentColor" stroke-linejoin="round"
-                                                            stroke-width="32" />
-                                                    </svg>Promo Bioskop</a></li>
-                                            <li><a href="product-valentaine.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Heart Circle</title>
-                                                        <path
-                                                            d="M448 256c0-106-86-192-192-192S64 150 64 256s86 192 192 192 192-86 192-192z"
-                                                            fill="none" stroke="currentColor" stroke-miterlimit="10"
-                                                            stroke-width="32" />
-                                                        <path
-                                                            d="M256 360a16 16 0 01-9-2.78c-39.3-26.68-56.32-45-65.7-56.41-20-24.37-29.58-49.4-29.3-76.5.31-31.06 25.22-56.33 55.53-56.33 20.4 0 35 10.63 44.1 20.41a6 6 0 008.72 0c9.11-9.78 23.7-20.41 44.1-20.41 30.31 0 55.22 25.27 55.53 56.33.28 27.1-9.31 52.13-29.3 76.5-9.38 11.44-26.4 29.73-65.7 56.41A16 16 0 01256 360z" />
-                                                    </svg>Promo Valentine</a></li>
-                                            <li><a href="jasa-promo.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Walk</title>
-                                                        <path
-                                                            d="M314.21 482.32l-56.77-114.74-44.89-57.39a72.82 72.82 0 01-10.13-37.05V144h15.67a40.22 40.22 0 0140.23 40.22v183.36M127.9 293.05v-74.52S165.16 144 202.42 144M370.1 274.42L304 231M170.53 478.36L224 400"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                        <circle cx="258.32" cy="69.48" r="37.26" fill="none"
-                                                            stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                    </svg>Promo Jasa</a></li>
-                                            <li><a href=""><svg style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Bag Handle</title>
-                                                        <path
-                                                            d="M80 176a16 16 0 00-16 16v216c0 30.24 25.76 56 56 56h272c30.24 0 56-24.51 56-54.75V192a16 16 0 00-16-16zM160 176v-32a96 96 0 0196-96h0a96 96 0 0196 96v32"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                        <path d="M160 224v16a96 96 0 0096 96h0a96 96 0 0096-96v-16"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                    </svg>Katalog Belanja</a></li>
-                                            <li><a href="product-liburan.html"><svg
-                                                        style="height:20px; width:20px; margin-right:5px;"
-                                                        xmlns="http://www.w3.org/2000/svg" class="ionicon"
-                                                        viewBox="0 0 512 512">
-                                                        <title>Airplane</title>
-                                                        <path
-                                                            d="M407.72 224c-3.4 0-14.79.1-18 .3l-64.9 1.7a1.83 1.83 0 01-1.69-.9L193.55 67.56a9 9 0 00-6.66-3.56H160l73 161a2.35 2.35 0 01-2.26 3.35l-121.69 1.8a8.06 8.06 0 01-6.6-3.1l-37-45c-3-3.9-8.62-6-13.51-6H33.08c-1.29 0-1.1 1.21-.75 2.43l19.84 71.42a16.3 16.3 0 010 11.9L32.31 333c-.59 1.95-.52 3 1.77 3H52c8.14 0 9.25-1.06 13.41-6.3l37.7-45.7a8.19 8.19 0 016.6-3.1l120.68 2.7a2.7 2.7 0 012.43 3.74L160 448h26.64a9 9 0 006.65-3.55L323.14 287c.39-.6 2-.9 2.69-.9l63.9 1.7c3.3.2 14.59.3 18 .3C452 288.1 480 275.93 480 256s-27.88-32-72.28-32z"
-                                                            fill="none" stroke="currentColor" stroke-linecap="round"
-                                                            stroke-linejoin="round" stroke-width="32" />
-                                                    </svg>Promo Liburan</a></li>
-                                        </div>
-                                        <div style="display: flex;">
-                                            <div>
-
+                                <div class="megamenu">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">Halaman Kategori</h5>
+                                                    <ul class="megamenu-list row">
+                                                        @foreach ($kategori as $row)
+                                                            <li class="col-3"><a
+                                                                    href="/produksimple/{{ $row->kategori }}">{{ $row->kategori }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
-                                </ul>
+                                    </div>
+                                </div>
+                            </li> --}}
                                 <!-- <li class="navbar-item dropdown-megamenu">
                     <a class="navbar-link dropdown-arrow" href="#">Kategori Promo</a>
                     <div class="megamenu">
@@ -318,15 +165,12 @@
                   </li> -->
                                 <!-- End Link -->
 
-                            <li class="navbar-item dropdown">
-                                <a class="navbar-link dropdown-arrow" href="#">Halaman</a>
-                                <ul class="dropdown-position-list">
-                                    <li><a href="offer.html">penawaran</a></li>
-
-                                    <li><a href="about.html">tentang kami</a></li>
-                                    <li><a href="contact.html">kontak kami</a></li>
-                                </ul>
-                            </li>
+                                <li class="navbar-item dropdown">
+                                    <a class="navbar-link dropdown" href="/tentangkami">Tentang Kami</a>
+                                </li>
+                                <li class="navbar-item dropdown">
+                                    <a class="navbar-link dropdown" href="/kontak">Kontak Kami</a>
+                                </li>
                             <!-- <li class="navbar-item dropdown">
                     <a class="navbar-link dropdown-arrow" href="#">authentic</a>
                     <ul class="dropdown-position-list">
@@ -721,7 +565,7 @@
             </div>
         </div>
     </div>
-    <section class="inner-section single-banner" style="background: url(images/single-banner.jpg) no-repeat center;">
+    <section class="inner-section single-banner" style="background: url(/templatebanner/bannerwebpromosi.jpg) no-repeat center;') }}) no-repeat center;">
         <div class="container">
             <h2>Cari Jenis-Jenis Promo Sesuai Dengan Keinginan mu</h2>
 
@@ -747,39 +591,80 @@
                     $no3=0;
                     @endphp
 
+                    {{-- Filter --}}
                     <div class="shop-widget">
                         <h6 class="shop-widget-title">Filter Jenis Deals</h6>
-                        <form action="/filter" method="GET" ><input class="shop-widget-search" type="text" placeholder="Search...">
+                            <form method="GET" action="/filter">
+                                <input class="shop-widget-search" type="text" name="q" placeholder="Search...">
+                                <button type="submit">Search</button>
                             @csrf
-                            <ul class="shop-widget-list ">
+                            <ul class="shop-widget-list">
                                 <li>
-                                    <div class="shop-widget-content"><input type="checkbox" id="terbaru" name="pilihan" value="terbaru"  {{$status == '1' ? 'checked' : ''}}><label
-                                            for="brand1">Promo Terbaru</label></div><span class="shop-widget-number">@foreach ($data as $a)@php ++$no @endphp @endforeach{{$no}}</span>
+                                    <div class="shop-widget-content">
+                                        <input type="checkbox" id="terbaru" name="pilihan" value="terbaru">
+                                        <label for="terbaru">Promo Terbaru</label>
+                                    </div>
+                                    @if ($data)
+                                        <span class="shop-widget-number">
+                                            @php $no = 0 @endphp
+                                            @foreach ($data as $a)
+                                                @php ++$no @endphp
+                                            @endforeach
+                                            {{ $no }}
+                                        </span>
+                                    @endif
                                 </li>
                                 <li>
-                                    <div class="shop-widget-content"><input type="checkbox" id="terpopuler" name="pilihan" value="terpopuler"  {{$status == '2' ? 'checked' : ''}}><label
-                                            for="brand2">Promo Terpopuler</label></div><span
-                                        class="shop-widget-number">@foreach ($data as $a)@php ++$no1 @endphp @endforeach{{$no1}}</span>
+                                    <div class="shop-widget-content">
+                                        <input type="checkbox" id="terpopuler" name="pilihan" value="terpopuler">
+                                        <label for="terpopuler">Promo Terpopuler</label>
+                                    </div>
+                                    <span class="shop-widget-number">
+                                        @php $no1 = 0 @endphp
+                                        @if ($data)
+                                            @foreach ($data as $a)
+                                                @php ++$no1 @endphp
+                                            @endforeach
+                                            {{ $no1 }}
+                                        @endif
+                                    </span>
                                 </li>
-                                @foreach ($kategori as $item)
                                 <li>
-                                    <div class="shop-widget-content"><input type="checkbox"  name="kategori[]" value="{{$item->kategoripromo}}" {{$item->id == $active ? 'checked' : ''}}><label
-                                            for="cate10">{{$item->kategori}}</label></div><span
-                                        class="shop-widget-number">@foreach ($data as $a)@php ++$no3 @endphp @endforeach{{$no3}}</span>
+                                    <div class="shop-widget-content">
+                                        <input type="checkbox" id="unggulan" name="pilihan" value="unggulan">
+                                        <label for="unggulan">Promo Unggulan</label>
+                                    </div>
+                                    <span class="shop-widget-number">
+                                        @if ($data)
+                                            @php $no2 = 0 @endphp
+                                            @foreach ($data as $a)
+                                                @php ++$no2 @endphp
+                                            @endforeach
+                                            {{ $no2 }}
+                                        @else
+                                            0
+                                        @endif
+                                    </span>
                                 </li>
-                                @endforeach
-
-
-                            </ul><button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
-
-                            </ul><a type="button" class="shop-widget-btn" href="/tampilpopuler"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></a>
-
-
-
-
-
+                                <div class="separator"></div>
+                                <div style="height: 200px; overflow-y: scroll;">
+                                    @foreach ($items as $item)
+                                        <li>
+                                            <div class="shop-widget-content">
+                                                <input type="checkbox" name="kategori[]" id="{{$item->kategori}}" value="{{$item->id}}">
+                                                <label for="{{$item->kategori}}">{{$item->kategori}}</label>
+                                            </div>
+                                            <span class="shop-widget-number"></span>
+                                        </li>
+                                    @endforeach
+                                    {{ $data->links() }}
+                                </div>
+                            </ul>
+                            <button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
+                            <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
                         </form>
                     </div>
+                {{-- EndFilter --}}
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
@@ -796,13 +681,14 @@
                             </div>
                         </div>
                     </div>
+                    @if($data)
                     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
                         @foreach ($data as $row)
                         <div class="col">
                             <div class="product-card">
                                 <div class="product-media">
                                     <button class="product-wish wish"><i class="fas fa-heart"></i></button><a
-                                        class="product-image" href="/detpopuler/{{ $row->id}}"><img
+                                        class="product-image" href="/deskripsifoto/{{ $row->id}}"><img
                                             src="{{asset('sampul/'. $row->sampul)}}" alt="product"></a>
                                 </div>
                                 <div class="product-content">
@@ -821,7 +707,11 @@
                         </div>
                         @endforeach
                     </div>
-                    <div class="row">
+                    @else
+                        <p>Tidak ada data yang ditemukan.</p>
+                    @endif
+
+                    {{-- <div class="row">
                         <div class="col-lg-12">
                             <div class="bottom-paginate">
                                 <p class="page-info">Menampilkan 20 dari 5 Hasil</p>
@@ -839,7 +729,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
@@ -850,7 +740,7 @@
             <div class="row">
                 <div class="col-sm-6 col-xl-4">
                     <div class="footer-widget">
-                        <a class="footer-logo" href="#"><img src="images/removepromo.png" alt="logo" /></a>
+                        <a class="footer-logo" href="#"><img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}" alt="logo" /></a>
                         <p class="footer-desc"><a style="color:red;">Gudang Promo</a> adalah suatu website yang berisi
                             tentang
                             brbagai macam diskon dengan berbagai macam kategori. Website ini adalah website resmi <a
@@ -936,23 +826,44 @@
     <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/main.js')}}"></script>
 </body>
 <!-- Mirrored from mironmahmud.com/greeny/assets/ltr/shop-4column.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 06:52:54 GMT -->
-<script>
-    var checkboxes = document.getElementsByName('pilihan');
-    var currentChecked = null;
 
-    function checkboxClicked() {
-        if (currentChecked != this) {
-            currentChecked = this;
-            for (var i = 0; i < checkboxes.length; i++) {
-                if (checkboxes[i] != currentChecked) {
-                    checkboxes[i].checked = false;
+    <script>
+        var checkboxes = document.getElementsByName('pilihan');
+        var currentChecked = null;
+
+        function checkboxClicked() {
+            if (currentChecked != this) {
+                currentChecked = this;
+                for (var i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i] != currentChecked) {
+                        checkboxes[i].checked = false;
+                    }
                 }
             }
         }
-    }
 
-    for (var i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].addEventListener('click', checkboxClicked);
-    }
-    </script>
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].addEventListener('click', checkboxClicked);
+        }
+        </script>
+        <script>
+            // Menangani submit form pencarian dengan AJAX
+    $('#search-form').submit(function(e) {
+        e.preventDefault();
+
+        var url = $(this).attr('action');
+        var query = $('input[name="query"]').val();
+
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                query: query
+            },
+            success: function(data) {
+                $('#search-results').html(data);
+            }
+        });
+    });
+        </script>
 </html>

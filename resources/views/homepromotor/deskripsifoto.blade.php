@@ -79,11 +79,11 @@
                 <form class="header-form">
                     <input type="text" placeholder="Cari sesuatu..." /><button><i class="fas fa-search"></i></button>
                 </form>
-                @if (Auth::user()->fotoprofil)
-                    <a href="/profile" class="header-widget ms-auto" title="My Account">
-                        <img style="height:50px; width:50px;"
-                            src="{{ asset('fotoprofil/' . Auth::user()->fotoprofil) }}" alt="user" />
-                    </a>
+                @if (Auth::check() && Auth::user()->fotoprofil)
+                <a href="/profile" class="header-widget ms-auto" title="My Account">
+                    <img style="height:50px; width:50px;"
+                        src="{{ asset('fotoprofil/' . Auth::user()->fotoprofil) }}" alt="user" />
+                </a>
                 @else
                     <a href="/profile" class="header-widget" title="My Account">
                         <img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/user.png') }}"

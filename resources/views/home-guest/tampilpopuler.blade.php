@@ -22,6 +22,13 @@
     <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/css/main.css') }}" />
     <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/css/profile.css') }}"/>
+    <style>
+        .separator {
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    }
+
+    </style>
 </head>
 
 <body>
@@ -65,9 +72,9 @@
                 </div>
                 <a href="home-category.html" class="header-logo"><img style="height:80px;" src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
                         alt="logo" /></a>
-                        <form action="{{url('tampilpopuler')}}" method="GET" class="header-form">
+                        {{-- <form action="{{url('tampilpopuler')}}" method="GET" class="header-form">
                             <input type="search" name="cari" value="{{Request::get('cari')}}" placeholder="Cari sesuatu..." /><button type="submit"><i class="fas fa-search"></i></button>
-                        </form>
+                        </form> --}}
                         @guest
                         <a href="/login" class="header-widget" title="My Account">
                             <img src="{{ 'template/mironmahmud.com/greeny/assets/ltr/images/user.png' }}" alt="user" />
@@ -101,7 +108,7 @@
                                 <a class="navbar-link" href="{{url('homeguest')}}">Beranda</a>
                             </li>
                             <!-- Product Link -->
-                            <li class="navbar-item dropdown-megamenu">
+                            {{-- <li class="navbar-item dropdown-megamenu">
                                 <a class="navbar-link dropdown-arrow" href="#">Kategori</a>
                                 <div class="megamenu">
                                     <div class="container">
@@ -121,7 +128,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </li>
+                            </li> --}}
                                 <!-- <li class="navbar-item dropdown-megamenu">
                     <a class="navbar-link dropdown-arrow" href="#">Kategori Promo</a>
                     <div class="megamenu">
@@ -558,7 +565,7 @@
             </div>
         </div>
     </div>
-    <section class="inner-section single-banner" style="background: url({{ asset('templatebanner/bannerwebpromosi.jpg   ') }}) no-repeat center;">
+    <section class="inner-section single-banner" style="background: url(/templatebanner/bannerwebpromosi.jpg) no-repeat center;') }}) no-repeat center;">
         <div class="container">
             <h2>Cari Jenis-Jenis Promo Sesuai Dengan Keinginan mu</h2>
 
@@ -580,40 +587,58 @@
                      $no2=0;
                      @endphp
 
-                    <div class="shop-widget">
-                        <h6 class="shop-widget-title">Filter Jenis Deals</h6>
-                        <form action="/filter" method="GET"><input class="shop-widget-search" type="text" placeholder="Search...">
-                            @csrf
-                            <ul class="shop-widget-list ">
-                                <li>
-                                    <div class="shop-widget-content"><input type="checkbox" id="terbaru" name="pilihan" value="terbaru"><label
-                                            for="brand1">Promo Terbaru</label></div><span class="shop-widget-number">@foreach ($data as $a)@php ++$no @endphp @endforeach{{$no}}</span>
-                                </li>
-                                <li>
-                                    <div class="shop-widget-content"><input type="checkbox" id="terpopuler" name="pilihan" value="terpopuler"><label
-                                            for="brand2">Promo Terpopuler</label></div><span
-                                        class="shop-widget-number">@foreach ($data as $a)@php ++$no1 @endphp @endforeach{{$no1}}</span>
-                                </li>
-                                <li>
-                                    <div class="shop-widget-content"><input type="checkbox" id="unggulan" name="pilihan" value="unggulan"><label
-                                            for="brand3">Promo Unggulan</label></div><span
-                                        class="shop-widget-number">@foreach ($data as $a)@php ++$no2 @endphp @endforeach{{$no2}}</span>
-                                </li>
-                                    @foreach ($kategori as $item)
-                                    <li>
-                                        <div class="shop-widget-content"><input type="checkbox" name="kategori" id="{{$item->kategori}}" value="{{$item->id}}"><label
-                                                for="cate10">{{$item->kategori}}</label></div><span
-                                            class="shop-widget-number"></span>
-                                    </li>
-                                    @endforeach
 
-                            </ul><button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
+                {{-- Filter --}}
+                <div class="shop-widget">
+                    <h6 class="shop-widget-title">Filter Jenis Deals</h6>
+                    <form id="search-form" action="{{ route('tampilpopuler') }}" method="GET">
+                        <input id="search-input" class="shop-widget-search" type="text" name="cari" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                        @csrf
+                        <ul class="shop-widget-list ">
+                            <li>
+                                <div class="shop-widget-content">
+                                    <input type="checkbox" id="terbaru" name="pilihan" value="terbaru">
+                                    <label for="brand1">Promo Terbaru</label>
+                                </div>
+                                <span class="shop-widget-number">@foreach ($data as $a)@php ++$no @endphp @endforeach{{$no}}</span>
+                            </li>
+                            <li>
+                                <div class="shop-widget-content">
+                                    <input type="checkbox" id="terpopuler" name="pilihan" value="terpopuler">
+                                    <label for="brand2">Promo Terpopuler</label>
+                                </div>
+                                <span class="shop-widget-number">@foreach ($data as $a)@php ++$no1 @endphp @endforeach{{$no1}}</span>
+                            </li>
+                            <li>
+                                <div class="shop-widget-content">
+                                    <input type="checkbox" id="unggulan" name="pilihan" value="unggulan">
+                                    <label for="brand3">Promo Unggulan</label>
+                                </div>
+                                <span class="shop-widget-number">@foreach ($data as $a)@php ++$no2 @endphp @endforeach{{$no2}}</span>
+                            </li>
 
-                            </ul><button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
+                            <div class="separator"></div>
 
+                            <div style="height: 200px; overflow-y: scroll;">
+                            @foreach ($kategori as $item)
+                            <li>
+                                <div class="shop-widget-content">
+                                    <input type="checkbox" name="kategori[]" id="{{$item->kategori}}" value="{{$item->id}}">
+                                    <label for="cate10">{{$item->kategori}}</label>
+                                </div>
+                                <span class="shop-widget-number"></span>
+                            </li>
+                            @endforeach
+                            </div>
 
-                        </form>
-                    </div>
+                        </ul>
+                        <button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
+                        <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
+                    </form>
+                </div>
+                {{-- EndFilter --}}
+
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
@@ -811,4 +836,27 @@ $('#search-form').submit(function(e) {
     });
 });
     </script>
+
+    <script>
+        $(document).ready(function() {
+          $('#search-form').on('submit', function(event) {
+            event.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+            var input = $('#search-input').val();
+            $.ajax({
+              url: url,
+              type: 'GET',
+              data: {cari: input},
+              success: function(response) {
+                $('#search-results').html(response);
+              },
+              error: function(xhr) {
+                console.log(xhr.responseText);
+              }
+            });
+          });
+        });
+        </script>
+
 </html>
