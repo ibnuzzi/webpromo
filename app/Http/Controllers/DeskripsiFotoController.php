@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\produk;
 use App\Models\kategori;
 use App\Models\fotoproduks;
+use App\Models\kilat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

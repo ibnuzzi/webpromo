@@ -591,45 +591,69 @@
                 {{-- Filter --}}
                 <div class="shop-widget">
                     <h6 class="shop-widget-title">Filter Jenis Deals</h6>
-                    <form id="search-form" action="{{ route('tampilpopuler') }}" method="GET">
-                        <input id="search-input" class="shop-widget-search" type="text" name="cari" placeholder="Search...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
+                    <form action="/filter" method="GET">
                         @csrf
-                        <ul class="shop-widget-list ">
+                        <input class="shop-widget-search" type="text" name="cari" placeholder="Search...">
+                        <ul class="shop-widget-list">
                             <li>
                                 <div class="shop-widget-content">
-                                    <input type="checkbox" id="terbaru" name="pilihan" value="terbaru">
-                                    <label for="brand1">Promo Terbaru</label>
+                                    <input type="checkbox" id="terbaru" name="pilihan[]" value="terbaru">
+                                    <label for="terbaru">Promo Terbaru</label>
                                 </div>
-                                <span class="shop-widget-number">@foreach ($data as $a)@php ++$no @endphp @endforeach{{$no}}</span>
+                                @if ($data)
+                                    <span class="shop-widget-number">
+                                        @php $no = 0 @endphp
+                                        @foreach ($data as $a)
+                                            @php ++$no @endphp
+                                        @endforeach
+                                        {{ $no }}
+                                    </span>
+                                @endif
                             </li>
                             <li>
                                 <div class="shop-widget-content">
-                                    <input type="checkbox" id="terpopuler" name="pilihan" value="terpopuler">
-                                    <label for="brand2">Promo Terpopuler</label>
+                                    <input type="checkbox" id="terpopuler" name="pilihan[]" value="terpopuler">
+                                    <label for="terpopuler">Promo Terpopuler</label>
                                 </div>
-                                <span class="shop-widget-number">@foreach ($data as $a)@php ++$no1 @endphp @endforeach{{$no1}}</span>
+                                <span class="shop-widget-number">
+                                    @php $no1 = 0 @endphp
+                                    @if ($data)
+                                        @foreach ($data as $a)
+                                            @php ++$no1 @endphp
+                                        @endforeach
+                                        {{ $no1 }}
+                                    @endif
+                                </span>
                             </li>
                             <li>
                                 <div class="shop-widget-content">
-                                    <input type="checkbox" id="unggulan" name="pilihan" value="unggulan">
-                                    <label for="brand3">Promo Unggulan</label>
+                                    <input type="checkbox" id="unggulan" name="pilihan[]" value="unggulan">
+                                    <label for="unggulan">Promo Unggulan</label>
                                 </div>
-                                <span class="shop-widget-number">@foreach ($data as $a)@php ++$no2 @endphp @endforeach{{$no2}}</span>
+                                <span class="shop-widget-number">
+                                    @if ($data)
+                                        @php $no2 = 0 @endphp
+                                        @foreach ($data as $a)
+                                            @php ++$no2 @endphp
+                                        @endforeach
+                                        {{ $no2 }}
+                                    @else
+                                        0
+                                    @endif
+                                </span>
                             </li>
-
                             <div class="separator"></div>
-
                             <div style="height: 200px; overflow-y: scroll;">
-                            @foreach ($kategori as $item)
-                            <li>
-                                <div class="shop-widget-content">
-                                    <input type="checkbox" name="kategori[]" id="{{$item->kategori}}" value="{{$item->id}}">
-                                    <label for="cate10">{{$item->kategori}}</label>
-                                </div>
-                                <span class="shop-widget-number"></span>
-                            </li>
-                            @endforeach
+                                @foreach ($kategori as $item)
+                                    <li>
+                                        <div class="shop-widget-content">
+                                            <input type="checkbox" name="kategori[]" id="{{$item->kategori}}" value="{{$item->id}}">
+                                            <label for="{{$item->kategori}}">{{$item->kategori}}</label>
+                                        </div>
+                                        <span class="shop-widget-number"></span>
+                                    </li>
+                                @endforeach
+                                {{ $data->links() }}
                             </div>
 
                         </ul>
@@ -637,6 +661,7 @@
                         <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
                     </form>
                 </div>
+
                 {{-- EndFilter --}}
 
                 </div>

@@ -594,14 +594,13 @@
                     {{-- Filter --}}
                     <div class="shop-widget">
                         <h6 class="shop-widget-title">Filter Jenis Deals</h6>
-                            <form method="GET" action="/filter">
-                                <input class="shop-widget-search" type="text" name="q" placeholder="Search...">
-                                <button type="submit">Search</button>
+                        <form action="/filter" method="GET">
                             @csrf
+                            <input class="shop-widget-search" type="text" name="cari" placeholder="Search...">
                             <ul class="shop-widget-list">
                                 <li>
                                     <div class="shop-widget-content">
-                                        <input type="checkbox" id="terbaru" name="pilihan" value="terbaru">
+                                        <input type="checkbox" id="terbaru" name="pilihan[]" value="terbaru">
                                         <label for="terbaru">Promo Terbaru</label>
                                     </div>
                                     @if ($data)
@@ -616,7 +615,7 @@
                                 </li>
                                 <li>
                                     <div class="shop-widget-content">
-                                        <input type="checkbox" id="terpopuler" name="pilihan" value="terpopuler">
+                                        <input type="checkbox" id="terpopuler" name="pilihan[]" value="terpopuler">
                                         <label for="terpopuler">Promo Terpopuler</label>
                                     </div>
                                     <span class="shop-widget-number">
@@ -631,7 +630,7 @@
                                 </li>
                                 <li>
                                     <div class="shop-widget-content">
-                                        <input type="checkbox" id="unggulan" name="pilihan" value="unggulan">
+                                        <input type="checkbox" id="unggulan" name="pilihan[]" value="unggulan">
                                         <label for="unggulan">Promo Unggulan</label>
                                     </div>
                                     <span class="shop-widget-number">
@@ -657,14 +656,16 @@
                                             <span class="shop-widget-number"></span>
                                         </li>
                                     @endforeach
-                                    {{ $data->links() }}
+                                  
                                 </div>
+
                             </ul>
                             <button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
                             <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
                         </form>
                     </div>
-                {{-- EndFilter --}}
+                    {{-- EndFilter --}}
+
                 </div>
                 <div class="col-lg-9">
                     <div class="row">
