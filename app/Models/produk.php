@@ -21,6 +21,7 @@ class produk extends Model
         'namamerek',
         'limit',
         'masapromo',
+        'used_by_guest',
         'sampul',
         'user_id',
         'status',

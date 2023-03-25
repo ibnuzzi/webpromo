@@ -72,9 +72,9 @@
                 </div>
                 <a href="home-category.html" class="header-logo"><img style="height:80px;" src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
                         alt="logo" /></a>
-                        {{-- <form action="{{url('tampilpopuler')}}" method="GET" class="header-form">
+                        <form action="{{url('tampilpopuler')}}" method="GET" class="header-form">
                             <input type="search" name="cari" value="{{Request::get('cari')}}" placeholder="Cari sesuatu..." /><button type="submit"><i class="fas fa-search"></i></button>
-                        </form> --}}
+                        </form>
                         @guest
                         <a href="/login" class="header-widget" title="My Account">
                             <img src="{{ 'template/mironmahmud.com/greeny/assets/ltr/images/user.png' }}" alt="user" />
@@ -592,8 +592,8 @@
                 <div class="shop-widget">
                     <h6 class="shop-widget-title">Filter Jenis Deals</h6>
                     <form id="search-form" action="{{ route('tampilpopuler') }}" method="GET">
-                        <input id="search-input" class="shop-widget-search" type="text" name="cari" placeholder="Search...">
-                        <button type="submit"><i class="fas fa-search"></i></button>
+                        {{-- <input id="search-input" class="shop-widget-search" type="text" name="cari" placeholder="Search...">
+                        <button type="submit"><i class="fas fa-search"></i></button> --}}
                         @csrf
                         <ul class="shop-widget-list ">
                             <li>

@@ -29,19 +29,53 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'admin'], $remember)) {
             $user = Auth::user();
             $user->setRememberToken(Str::random(60));
-            return redirect('/beranda')->with('success', 'Berhasil Login');
+            return redirect('/beranda')->with('success', 'Berhasil Login Menjadi Admin');
         }
 
     if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'promotor'], $remember)) {
         $user = Auth::user();
         $user->setRememberToken(Str::random(60));
-        return redirect('/home')->with('success', 'Berhasil Login');
+        return redirect('/home')->with('success', 'Berhasil Login Menjadi Promotor');
+    }
+
+    if (Auth::attempt(['email' => $request->email, 'password' => $request->password, 'role' => 'guest'], $remember)) {
+        $user = Auth::user();
+        $user->setRememberToken(Str::random(60));
+        return redirect('/')->with('success', 'Berhasil Login Menjadi User');
     }
 
         return redirect('login')->with('gagal', 'Akun Yang Anda Masukkan Belum Terdaftar');
     }
     public function registerGuest(){
         return view('loginpromotor.registeruser');
+    }
+
+    public function registerPengunjung(Request $request)
+    {
+    $this->validate($request, [
+        'name' => 'required',
+        'email' => 'required|unique:users,email',
+        'password' => 'required|min:5|max:50',
+        'terms' => 'accepted',
+    ],[
+        'name.required' => 'Nama harus diisi',
+        'email.unique' => 'Email sudah dipakai',
+            'email.required' => 'Email harus diisi',
+            'password.required' => 'Sandi harus diisi',
+            'password.min' => 'Password harus diisi minimal 5',
+            'password.max' => 'Password harus diisi maksimal 50',
+            'terms.accepted' => 'Anda harus menyetujui persyaratan dan ketentuan.',
+    ]);
+    $data = User::create([
+        'name' => $request->name,
+        'email' => $request->email,
+        'password' => bcrypt($request->password),
+        'remember_token' => Str::random(60),
+        'role' => 'guest',
+    ]);
+
+    return redirect('/login')->with('success', 'Pendaftaran Akun Berhasil');
+
     }
 
     public function register()

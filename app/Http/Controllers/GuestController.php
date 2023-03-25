@@ -35,7 +35,7 @@ class GuestController extends Controller
         ->where('views', '>=', 100)
         ->orderBy('views','desc')->get();
         $kilat = produk::where('status', 1)
-        ->where('limit', '>=', 1)
+        ->where('limit', '<=', 5)
         ->where('namapromo','LIKE','%'.$cari.'%')
         ->get();
         // $jumlahpromo = produk::where('user_id','namapromotor')->count();

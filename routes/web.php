@@ -31,6 +31,7 @@ use App\Http\Controllers\ForgotPasswordController;
 |
 */
 //loginadmin
+
 Route::get('/home',[LoginController::class, 'home'])-> name('home');
 Route::get('/profiladmin',[AdminController::class, 'profiladmin'])->name('profiladmin');
 // Route::get('/loginadmin',[AdminController::class, 'loginadmin']) -> name('loginadmin');
@@ -75,6 +76,7 @@ Route::get('/beranda',[AdminController::class, 'beranda']);
 
 //loginPromotor
 Route::get('/registerGuest', [LoginController::class, 'registerGuest']);
+Route::post('/registerPengunjung', [LoginController::class, 'registerPengunjung']);
 Route::get('/login',[LoginController::class, 'login']) -> name('login');
 Route::post('/loginproses',[LoginController::class, 'loginproses']) -> name('loginproses');
 Route::get('/register',[LoginController::class, 'register']) -> name('register');
@@ -169,7 +171,9 @@ Route::middleware(['auth:sanctum','verified','PromotorMiddleware'])->group(funct
 Route::middleware(['auth:sanctum','verified','AdminMiddleware'])->group(function(){
     Route::get('/beranda', [AdminController::class, 'beranda'])->name('admin');
 });
-Route::group(['middleware' => ['guest']], function(){
-    Route::get('/detpromo/{id}',[DeskripsiFotoController::class, 'detpromo'])->name('detpromo');
-});
+
+Route::get('/detpromo/{id}',[DeskripsiFotoController::class, 'detpromo'])->name('detpromo');
+Route::post('/gunakanpromo/{id}', [DeskripsiFotoController::class, 'gunakanpromo']);
+// Route::group(['middleware' => ['guest']], function(){
+// });
 // End

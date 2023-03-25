@@ -38,7 +38,7 @@ class AdminController extends Controller
     $diterima = produk::where('status', 1)->whereNull('pesan')->count();
     $ditolak = produk::where('status', 2)->whereNotNull('pesan')->count();
     $pending = produk::where('status', 0)->whereNull('pesan')->count();
-    $expired = produk::where('masapromo', '>=' , now())->count();
+    $expired = produk::where('masapromo', '<=' , now())->count();
     $users = User::select(DB::raw("COUNT(*) as count"))
             ->whereYear('created_at',date('Y'))
             ->groupBy(DB::raw("Month(created_at)"))

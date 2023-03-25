@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\kategori;
 use App\Models\promotor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,8 @@ class ProfileController extends Controller
     public function profile()
     {
         $data = User::all();
-        return view('homepromotor.profile',compact('data'));
+        $datak = kategori::all();
+        return view('homepromotor.profile',compact('data','datak'));
     }
 
     public function updateprofile(Request $request, $id)
