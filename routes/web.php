@@ -127,10 +127,10 @@ Route::get('/tampilkilat/{id}',[KilatController::class, 'tampilkilat'])->name('t
 Route::get('/deletekilat/{id}',[KilatController::class, 'deletekilat'])->name('deletekilat');
 
 //daftarpromo
-Route::get('/promopending',[PendingController::class, 'pending']);
-Route::get('/promoditerima',[PendingController::class, 'diterima']);
-Route::get('/promoditolak', [PendingController::class, 'ditolak']);
-Route::get('/promoexpired', [PendingController::class, 'promoexpired']);
+Route::get('/promopending',[PendingController::class, 'pending'])->name('promopending');
+Route::get('/promoditerima',[PendingController::class, 'diterima'])->name('promoditerima');
+Route::get('/promoditolak', [PendingController::class, 'ditolak'])->name('promoditolak');
+Route::get('/promoexpired', [PendingController::class, 'promoexpired'])->name('promoexpired');
 
 Route::get('/search', 'ProdukSimpleController@index')->name('search');
 

@@ -667,7 +667,7 @@
 
                 </div>
                 <div class="col-lg-9">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-12">
                             <div class="top-filter">
                                 <div class="filter-show"><label class="filter-label">Tampil :</label><select
@@ -680,7 +680,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     @if($data)
                     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
                         @foreach ($data as $row)
@@ -689,12 +689,12 @@
                                 <div class="product-media">
                                     <button class="product-wish wish"><i class="fas fa-heart"></i></button><a
                                         class="product-image" href="/deskripsifoto/{{ $row->id}}"><img
-                                            src="{{asset('sampul/'. $row->sampul)}}" alt="product"></a>
+                                            src="{{asset('sampul/'. $row->sampul)}}" alt="product" style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"></a>
                                 </div>
                                 <div class="product-content">
 
                                     <h6 class="product-name"><a href="">{{$row->namapromo}}</a></h6>
-                                    <p style="color: red;">{{$row->masapromo}}</p>
+                                    <p style="color: red;">Berakhir : {{$row->masapromo}}</p>
 
                                     <div class="product-action"><button class="action-minus" title="Quantity Minus"><i
                                                 class="icofont-minus"></i></button><input class="action-input"
@@ -731,6 +731,7 @@
                         </div>
                     </div> --}}
                 </div>
+                {{ $data->links() }}
             </div>
         </div>
     </section>

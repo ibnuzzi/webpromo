@@ -722,7 +722,7 @@
 
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="section-btn-25"><a href="shop-4column.html" class="btn btn-outline"><i
+                    <div class="section-btn-25"><a href="/tampilpopuler" class="btn btn-outline"><i
                                 class="fas fa-eye"></i><span>melihat semua yang terkait</span></a></div>
                 </div>
             </div>

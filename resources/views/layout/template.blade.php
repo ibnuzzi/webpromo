@@ -110,20 +110,10 @@
                                 <ul class="onhover-show-div left-dropdown">
                                     <li class="flyout-right"><a href="javascript:void(0)">Produk</a>
                                         <ul>
-
-                                            <li> <a href="createkategori.html">Tambah Kategori</a></li>
-                                            <li> <a href="tambahterbaru.html">Tambah Terbaru</a></li>
-                                            <li> <a href="tambahunggulan.html">Tambah Unggulan</a></li>
-                                            <li> <a href="tambahterpopuler.html">Tambah Terpopuler</a></li>
-                                            <li> <a href="tambahkilat.html">Tambah Kilat</a></li>
-
+                                            <li> <a href="/promoakfit">Promo Aktif</a></li>
+                                            <li> <a href="/promopendingpromotor">Promo Pending</a></li>
+                                            <li> <a href="/ditolak">Promo DiTolak</a></li>
                                             <!-- <li> <a href="projectcreate.html">Project Create</a></li> -->
-                                        </ul>
-                                    </li>
-
-                                    <li class="flyout-right"><a href="javascript:void(0)">Promo</a>
-                                        <ul>
-                                            <li> <a href="/detail-promo">Detail Promo</a></li>
                                         </ul>
                                     </li>
                                     <li class="flyout-right"><a href="javascript:void(0)">Admin</a>
@@ -135,9 +125,9 @@
                                     </li>
                                     <li class="flyout-right"><a href="javascript:void(0)">Tabel</a>
                                         <ul>
-                                            <li> <a href="projectcreate.html">Produk</a></li>
-                                            <li> <a href="/tabel-promotor">Promotor</a></li>
-                                            <li> <a href="/tabel-grafik">Grafik</a></li>
+                                            <li> <a href="/tabelkategori">Tabel Kategori</a></li>
+                                            <li> <a href="/tabelbanner">Tabel Banner</a></li>
+                                            <li> <a href="/tabelpromotr">Tabel Promotor</a></li>
 
                                             <!-- <li> <a href="user-cards.html">User Cards</a></li> -->
                                         </ul>
@@ -161,7 +151,7 @@
                         </li>
                         <li class="serchinput">
                             <div class="serchbox"><i data-feather="search"></i></div>
-                            <div class="form-group search-form">
+                            <div class="form-group search-form">    
                                 <input type="text" placeholder="Cari Produk Disini...">
                             </div>
                         </li>
@@ -169,48 +159,7 @@
                             <div class="mode"><i class="fa fa-moon-o"></i></div>
                         </li>
 
-                        <li class="onhover-dropdown">
-                            <div class="message"><i data-feather="message-square"></i></div>
-                            <ul class="message-dropdown onhover-show-div">
-                                <li><i data-feather="message-square"> </i>
-                                    <h6 class="f-18 mb-0">Pesan</h6>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-start">
-                                        <div class="message-img bg-light-primary"><img src="../assets/images/user/3.jpg"
-                                                alt=""></div>
-                                        <div class="flex-grow-1">
-                                            <h5 class="mb-1"><a href="email_inbox.html">Emay Walter</a></h5>
-                                            <p>Do you want to go see movie?</p>
-                                        </div>
-                                        <div class="notification-right"><i data-feather="x"></i></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-start">
-                                        <div class="message-img bg-light-primary"><img src="../assets/images/user/6.jpg"
-                                                alt=""></div>
-                                        <div class="flex-grow-1">
-                                            <h5 class="mb-1"><a href="email_inbox.html">Jason Borne</a></h5>
-                                            <p>Thank you for rating us.</p>
-                                        </div>
-                                        <div class="notification-right"><i data-feather="x"></i></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="d-flex align-items-start">
-                                        <div class="message-img bg-light-primary"><img
-                                                src="../assets/images/user/10.jpg" alt=""></div>
-                                        <div class="flex-grow-1">
-                                            <h5 class="mb-1"><a href="email_inbox.html">Sarah Loren</a></h5>
-                                            <p>What`s the project report update?</p>
-                                        </div>
-                                        <div class="notification-right"><i data-feather="x"></i></div>
-                                    </div>
-                                </li>
-                                <li><a class="btn btn-primary" href="email_inbox.html">Check Messages</a></li>
-                            </ul>
-                        </li>
+
                         <li class="maximize"><a href="#!" onclick="javascript:toggleFullScreen()"><i
                                     data-feather="maximize-2"></i></a></li>
 

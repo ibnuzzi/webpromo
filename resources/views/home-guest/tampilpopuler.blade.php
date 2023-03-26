@@ -619,6 +619,22 @@
                                 </div>
                                 @if ($data)
                                     <span class="shop-widget-number">
+                                        @php $no = 0 @endphp
+                                        @endif
+                                        @if ($data)
+                                            @foreach ($data as $a)
+                                                @php ++$no @endphp
+                                            @endforeach
+                                            {{ $no }}
+                                        @endif
+                                    </span>
+                                </li>
+                                <li>
+                                    <div class="shop-widget-content">
+                                        <input type="checkbox" id="terpopuler" name="pilihan[]" value="terpopuler">
+                                        <label for="terpopuler">Promo Terpopuler</label>
+                                    </div>
+                                    <span class="shop-widget-number">
                                         @php $no1 = 0 @endphp
                                         @if ($data)
                                             @foreach ($data as $a)
@@ -672,7 +688,7 @@
 
                 </div>
                 <div class="col-lg-9">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-12">
                             <div class="top-filter">
                                 <div class="filter-show"><label class="filter-label">Tampil :</label><select
@@ -685,7 +701,7 @@
 
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
                         @foreach ($data as $promo)
                             @if (\Carbon\Carbon::parse($promo->masapromo)->isPast())
@@ -693,7 +709,7 @@
                                     <div class="product-card product-disable">
                                         <div class="product-media">
                                             <div class="product-label"></div>
-                                            <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
+                                            <a class="product-image" href="/detpromo/{{ $promo->id }}"><img
                                                     style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
                                                     src="sampul/{{ $promo->sampul }}" alt="product" /></a>
                                             <div class="product-widget"></div>
@@ -717,21 +733,22 @@
                                     <div class="product-card">
                                         <div class="product-media">
                                             <div class="product-label"></div>
-                                            <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
+                                            <a class="product-image" href="/detpromo/{{ $promo->id }}"><img
                                                     style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
                                                     src="sampul/{{ $promo->sampul }}" alt="product" /></a>
                                             <div class="product-widget"></div>
                                         </div>
                                         <div class="product-content">
                                             <h5 class="product-name">{{ $promo->namapromo }}</h5>
-                                            <p style="color: red;">Berakhir{{ $promo->masapromo }}</p>
+                                            <p style="color: red;">Berakhir : {{ $promo->masapromo }}</p>
                                         </div>
                                     </div>
                                 </div>
                             @endif
                         @endforeach
-                        {{ $data->links() }}
+
                     </div>
+                    {{ $data->links() }}
                 </div>
             </div>
         </div>
