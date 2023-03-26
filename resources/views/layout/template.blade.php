@@ -162,7 +162,7 @@
                         <li class="serchinput">
                             <div class="serchbox"><i data-feather="search"></i></div>
                             <div class="form-group search-form">
-                                <input type="text" placeholder="Search here...">
+                                <input type="text" placeholder="Cari Produk Disini...">
                             </div>
                         </li>
                         <li>
@@ -321,14 +321,8 @@
                                                         <li><a href="/tabelpromotor">Tabel Promotor</a></li>
                                                     </ul>
                                                 </li>
-                                                <li><a class="submenu-title" href="javascript:void(0)">Grafik<span
-                                                            class="sub-arrow"><i
-                                                                class="fa fa-angle-right"></i></span></a>
-                                                    <ul class="nav-sub-childmenu submenu-content">
-                                                        <li><a href="/tabel-grafik">Tabel Grafik</a></li>
-                                                    </ul>
-                                                </li>
-                                                <li><a class="submenu-title" href="javascript:void(0)">Promo<span
+
+                                                {{-- <li><a class="submenu-title" href="javascript:void(0)">Promo<span
                                                             class="sub-arrow"><i
                                                                 class="fa fa-angle-right"></i></span></a>
                                                     <ul class="nav-sub-childmenu submenu-content">
@@ -336,9 +330,8 @@
                                                         <li><a href="tabelunggulan.html">Tabel Unggulan</a></li>
                                                         <li><a href="tabelterpopuler.html">Tabel Terpopuler</a></li>
                                                         <li><a href="tabelkilat.html">Tabel Kilat</a></li>
-
                                                     </ul>
-                                                </li>
+                                                </li> --}}
 
                                             </ul>
                                         </li>

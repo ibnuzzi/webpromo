@@ -129,7 +129,15 @@
                     <div class="navbar-content">
                         <ul class="navbar-list">
                             <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="/berandapromotor">Beranda</a>
+                                <a class="navbar-link dropdown-arrow" href="/berandapromotor">Beranda Promotor</a>
+                                <ul class="dropdown-position-list">
+                                    <div style="display: flex;">
+                                        <div>
+                                            <li class="navbar-item dropdown">
+                                                <a class="navbar-link" href="/">Beranda Guest</a>
+                                            </li>
+                                        </div>
+                                </ul>
                             </li>
                             <!-- Product Link -->
                             <li class="navbar-item dropdown">
@@ -158,9 +166,7 @@
                             <li class="navbar-item dropdown">
                                 <a class="navbar-link dropdown" href="/kontak">Kontak Kami</a>
                             </li>
-                            <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="/">Home</a>
-                            </li>
+                            
                         </ul>
                         <di class="navbar-info-group">
                             <div class="navbar-info">

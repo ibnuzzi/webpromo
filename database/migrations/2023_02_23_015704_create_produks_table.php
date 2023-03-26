@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('deskripsipromo');
             $table->bigInteger('kategoripromo');
             $table->date('masapromo')->nullable();
+            $table->text('used_by_guest')->nullable();
             $table->string('sampul');
             $table->integer('limit');
             $table->boolean('status')->default(0);

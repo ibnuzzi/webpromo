@@ -40,7 +40,7 @@ class GuestController extends Controller
         ->get()
         ->take(5);
         $kilat = produk::where('status', 1)
-        ->where('limit', '>=', 1)
+        ->where('limit', '<=', 5)
         ->where('namapromo','LIKE','%'.$cari.'%')
         ->get()
         ->take(5);

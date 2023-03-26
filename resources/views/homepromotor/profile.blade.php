@@ -87,6 +87,7 @@
             </div>
         </div>
     </header>
+    @if (Auth::user()->role == 'guest')
     <nav class="navbar-part">
         <div class="container">
             <div class="row">
@@ -94,7 +95,71 @@
                     <div class="navbar-content">
                         <ul class="navbar-list">
                             <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="/berandapromotor">Beranda</a>
+                                <a class="navbar-link" href="/">Beranda</a>
+                            </li>
+                            <!-- Product Link -->
+                            <li class="navbar-item dropdown-megamenu">
+                                <a class="navbar-link dropdown-arrow" href="#">Kategori</a>
+                                <div class="megamenu">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="megamenu-wrap">
+                                                    <h5 class="megamenu-title">Halaman Kategori</h5>
+                                                    <ul class="megamenu-list row">
+                                                        @foreach ($datak as $kategori => $row)
+                                                            <li class="col-3"><a
+                                                                    href="/produksimple/{{ $row->kategori }}/{{ $row->id }}">{{ $row->kategori }}</a>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <!-- End Link -->
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown" href="/tentangkami">Tentang Kami</a>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown" href="/kontak">Kontak Kami</a>
+                            </li>
+                        </ul>
+                        <div class="navbar-info-group">
+                            <div class="navbar-info">
+                                <i class="icofont-ui-touch-phone"></i>
+                                <p><small>hubungi kami</small><span>(+62) 55 6778 9098</span></p>
+                            </div>
+                            <div class="navbar-info">
+                                <i class="icofont-ui-email"></i>
+                                <p><small>email kami</small><span>xcode@gmail.com</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    @elseif(Auth::user()->role == 'promotor')
+    <nav class="navbar-part">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="navbar-content">
+                        <ul class="navbar-list">
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown-arrow" href="/berandapromotor">Beranda Promotor</a>
+                                <ul class="dropdown-position-list">
+                                    <div style="display: flex;">
+                                        <div>
+                                            <li class="navbar-item dropdown">
+                                                <a class="navbar-link" href="/">Beranda Guest</a>
+                                            </li>
+                                        </div>
+                                </ul>
                             </li>
                             <!-- Product Link -->
                             <li class="navbar-item dropdown">
@@ -124,9 +189,7 @@
                                 <a class="navbar-link dropdown" href="contact.html">Kontak Kami</a>
 
                             </li>
-                            <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="/">Home</a>
-                            </li>
+
 
 
                         </ul>
@@ -145,6 +208,8 @@
             </div>
         </div>
     </nav>
+    @endif
+
     <aside class="category-sidebar">
         <div class="category-header">
             <h4 class="category-title"><i class="fas fa-align-left"></i><span>categories</span></h4><button
@@ -458,7 +523,7 @@
                 class="fas fa-shopping-basket"></i><span>cartlist</span><sup>9+</sup></button><a href="wishlist.html"
             title="Wishlist"><i class="fas fa-heart"></i><span>wishlist</span><sup>0</sup></a><a href="compare.html"
             title="Compare List"><i class="fas fa-random"></i><span>compare</span><sup>0</sup></a></div>
-    <section class="inner-section single-banner" style="background: url(images/single-banner.jpg) no-repeat center;">
+    <section class="inner-section single-banner" style="background: url({{ asset('templatebanner/bannerwebpromosi.jpg') }}) no-repeat center;">
         <div class="container">
             <h2>Profile Saya</h2>
 
@@ -503,9 +568,15 @@
                                 <div class="col-lg-3">
                                     <div class="profile-btn"><a href="/gantipassword">ganti password</a></div>
                                 </div>
+                                @if (Auth::user()->role == 'promotor')
                                 <div class="col-lg-3">
                                     <div class="profile-btn"><a href="/berandapromotor">kembali</a></div>
                                 </div>
+                                @elseif (Auth::user()->role == 'guest')
+                                <div class="col-lg-3">
+                                    <div class="profile-btn"><a href="/">kembali</a></div>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>

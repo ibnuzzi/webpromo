@@ -76,11 +76,11 @@
                             </form>
                         </div>
                     </div>
-                    <div class="user-form-remind">
+                    <div class="user-form-remind mb-2">
                         <p>Tidak punya akun promotor?<a href="/register">Daftar disini</a></p>
                     </div>
                     <div class="user-form-remind">
-                        <p>Tidak punya akun user?<a href="/register">Daftar disini</a></p>
+                        <p>Tidak punya akun user?<a href="/registerGuest">Daftar disini</a></p>
                     </div>
                     <div class="user-form-footer">
                         <p>Gudang Diskon | &COPY; Copyright by <a href="#">XCODE</a></p>

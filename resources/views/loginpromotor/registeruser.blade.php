@@ -49,7 +49,7 @@
                         <div class="user-form-group">
 
 
-                            <form class="user-form" action="/registerUser" method="post" enctype="multipart/form-data">
+                            <form class="user-form" action="/registerPengunjung" method="post" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <div class="form-group"><label class="form-label">Nama Lengkap</label>

@@ -13,21 +13,27 @@
         content="organic, food, shop, ecommerce, store, html, bootstrap, template, agriculture, vegetables, products, farm, grocery, natural, online">
     <title>List Promo - GudangPromo</title>
     <link rel="icon" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/iconremove.png') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/fonts/flaticon/flaticon.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/fonts/icofont/icofont.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/fonts/fontawesome/fontawesome.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/venobox/venobox.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/slickslider/slick.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/niceselect/nice-select.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/bootstrap.min.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/fonts/flaticon/flaticon.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/fonts/icofont/icofont.min.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/fonts/fontawesome/fontawesome.min.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/venobox/venobox.min.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/slickslider/slick.min.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/niceselect/nice-select.min.css') }}" />
+    <link rel="stylesheet"
+        href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/css/main.css') }}" />
-    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/css/profile.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('template/mironmahmud.com/greeny/assets/ltr/css/profile.css') }}" />
     <style>
         .separator {
-    border-bottom: 1px solid #ccc;
-    margin: 10px 0;
-    }
-
+            border-bottom: 1px solid #ccc;
+            margin: 10px 0;
+        }
     </style>
 </head>
 
@@ -54,8 +60,8 @@
                 <div class="col-md-7 col-lg-4">
                     <ul class="header-top-list">
 
-                        <li><a href="{{url('faq')}}">butuh bantuan</a></li>
-                        <li><a href="{{url('kontak')}}">kontak kami</a></li>
+                        <li><a href="{{ url('faq') }}">butuh bantuan</a></li>
+                        <li><a href="{{ url('kontak') }}">kontak kami</a></li>
                     </ul>
                 </div>
             </div>
@@ -66,32 +72,36 @@
         <div class="container">
             <div class="header-content">
                 <div class="header-media-group">
-                    <button class="header-user"><img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/user.png') }}" alt="user" /></button><a
-                        href="home-category.html"><img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}" alt="logo" /></a><button
-                        class="header-src"><i class="fas fa-search"></i></button>
+                    <button class="header-user"><img
+                            src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/user.png') }}"
+                            alt="user" /></button><a href="home-category.html"><img
+                            src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
+                            alt="logo" /></a><button class="header-src"><i class="fas fa-search"></i></button>
                 </div>
-                <a href="home-category.html" class="header-logo"><img style="height:80px;" src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
+                <a href="home-category.html" class="header-logo"><img style="height:80px;"
+                        src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
                         alt="logo" /></a>
-                        {{-- <form action="{{url('tampilpopuler')}}" method="GET" class="header-form">
-                            <input type="search" name="cari" value="{{Request::get('cari')}}" placeholder="Cari sesuatu..." /><button type="submit"><i class="fas fa-search"></i></button>
-                        </form> --}}
-                        @guest
-                        <a href="/login" class="header-widget" title="My Account">
-                            <img src="{{ 'template/mironmahmud.com/greeny/assets/ltr/images/user.png' }}" alt="user" />
+                <form action="{{ url('tampilpopuler') }}" method="GET" class="header-form">
+                    <input type="search" name="cari" value="{{ Request::get('cari') }}"
+                        placeholder="Cari sesuatu..." /><button type="submit"><i class="fas fa-search"></i></button>
+                </form>
+                @guest
+                    <a href="/login" class="header-widget" title="My Account">
+                        <img src="{{ 'template/mironmahmud.com/greeny/assets/ltr/images/user.png' }}" alt="user" />
+                    </a>
+                @else
+                    @if (Auth::user()->fotoprofil)
+                        <a href="/profile" class="header-widget ms-auto" title="My Account">
+                            <img style="height:50px; width:50px;"
+                                src="{{ asset('fotoprofil/' . Auth::user()->fotoprofil) }}" alt="user" />
                         </a>
                     @else
-                        @if (Auth::user()->fotoprofil)
-                            <a href="/profile" class="header-widget ms-auto" title="My Account">
-                                <img style="height:50px; width:50px;"
-                                    src="{{ asset('fotoprofil/' . Auth::user()->fotoprofil) }}" alt="user" />
-                            </a>
-                        @else
-                            <a href="/profile" class="header-widget" title="My Account">
-                                <img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/user.png') }}"
-                                    alt="user" />
-                            </a>
-                        @endif
-                    @endguest
+                        <a href="/profile" class="header-widget" title="My Account">
+                            <img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/user.png') }}"
+                                alt="user" />
+                        </a>
+                    @endif
+                @endguest
                 <div class="header-widget-group">
 
                 </div>
@@ -105,7 +115,7 @@
                     <div class="navbar-content">
                         <ul class="navbar-list">
                             <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="{{url('homeguest')}}">Beranda</a>
+                                <a class="navbar-link" href="{{ url('homeguest') }}">Beranda</a>
                             </li>
                             <!-- Product Link -->
                             {{-- <li class="navbar-item dropdown-megamenu">
@@ -129,7 +139,7 @@
                                     </div>
                                 </div>
                             </li> --}}
-                                <!-- <li class="navbar-item dropdown-megamenu">
+                            <!-- <li class="navbar-item dropdown-megamenu">
                     <a class="navbar-link dropdown-arrow" href="#">Kategori Promo</a>
                     <div class="megamenu">
                       <div class="container">
@@ -163,14 +173,14 @@
                       </div>
                     </div>
                   </li> -->
-                                <!-- End Link -->
+                            <!-- End Link -->
 
-                                <li class="navbar-item dropdown">
-                                    <a class="navbar-link dropdown" href="/tentangkami">Tentang Kami</a>
-                                </li>
-                                <li class="navbar-item dropdown">
-                                    <a class="navbar-link dropdown" href="/kontak">Kontak Kami</a>
-                                </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown" href="/tentangkami">Tentang Kami</a>
+                            </li>
+                            <li class="navbar-item dropdown">
+                                <a class="navbar-link dropdown" href="/kontak">Kontak Kami</a>
+                            </li>
                             <!-- <li class="navbar-item dropdown">
                     <a class="navbar-link dropdown-arrow" href="#">authentic</a>
                     <ul class="dropdown-position-list">
@@ -316,8 +326,9 @@
         </div>
         <ul class="cart-list">
             <li class="cart-item">
-                <div class="cart-media"><a href="#"><img src="images/product/01.jpg" alt="product"></a><button
-                        class="cart-delete"><i class="far fa-trash-alt"></i></button></div>
+                <div class="cart-media"><a href="#"><img src="images/product/01.jpg"
+                            alt="product"></a><button class="cart-delete"><i class="far fa-trash-alt"></i></button>
+                </div>
                 <div class="cart-info-group">
                     <div class="cart-info">
                         <h6><a href="product-single.html">existing product name</a></h6>
@@ -333,8 +344,9 @@
                 </div>
             </li>
             <li class="cart-item">
-                <div class="cart-media"><a href="#"><img src="images/product/02.jpg" alt="product"></a><button
-                        class="cart-delete"><i class="far fa-trash-alt"></i></button></div>
+                <div class="cart-media"><a href="#"><img src="images/product/02.jpg"
+                            alt="product"></a><button class="cart-delete"><i class="far fa-trash-alt"></i></button>
+                </div>
                 <div class="cart-info-group">
                     <div class="cart-info">
                         <h6><a href="product-single.html">existing product name</a></h6>
@@ -350,8 +362,9 @@
                 </div>
             </li>
             <li class="cart-item">
-                <div class="cart-media"><a href="#"><img src="images/product/03.jpg" alt="product"></a><button
-                        class="cart-delete"><i class="far fa-trash-alt"></i></button></div>
+                <div class="cart-media"><a href="#"><img src="images/product/03.jpg"
+                            alt="product"></a><button class="cart-delete"><i class="far fa-trash-alt"></i></button>
+                </div>
                 <div class="cart-info-group">
                     <div class="cart-info">
                         <h6><a href="product-single.html">existing product name</a></h6>
@@ -367,8 +380,9 @@
                 </div>
             </li>
             <li class="cart-item">
-                <div class="cart-media"><a href="#"><img src="images/product/04.jpg" alt="product"></a><button
-                        class="cart-delete"><i class="far fa-trash-alt"></i></button></div>
+                <div class="cart-media"><a href="#"><img src="images/product/04.jpg"
+                            alt="product"></a><button class="cart-delete"><i class="far fa-trash-alt"></i></button>
+                </div>
                 <div class="cart-info-group">
                     <div class="cart-info">
                         <h6><a href="product-single.html">existing product name</a></h6>
@@ -384,8 +398,9 @@
                 </div>
             </li>
             <li class="cart-item">
-                <div class="cart-media"><a href="#"><img src="images/product/05.jpg" alt="product"></a><button
-                        class="cart-delete"><i class="far fa-trash-alt"></i></button></div>
+                <div class="cart-media"><a href="#"><img src="images/product/05.jpg"
+                            alt="product"></a><button class="cart-delete"><i class="far fa-trash-alt"></i></button>
+                </div>
                 <div class="cart-info-group">
                     <div class="cart-info">
                         <h6><a href="product-single.html">existing product name</a></h6>
@@ -409,10 +424,11 @@
         </div>
     </aside>
     <aside class="nav-sidebar">
-        <div class="nav-header"><a href="#"><img src="images/logo.png" alt="logo"></a><button class="nav-close"><i
-                    class="icofont-close"></i></button></div>
+        <div class="nav-header"><a href="#"><img src="images/logo.png" alt="logo"></a><button
+                class="nav-close"><i class="icofont-close"></i></button></div>
         <div class="nav-content">
-            <div class="nav-btn"><a href="login.html" class="btn btn-inline"><i class="fa fa-unlock-alt"></i><span>join
+            <div class="nav-btn"><a href="login.html" class="btn btn-inline"><i
+                        class="fa fa-unlock-alt"></i><span>join
                         here</span></a></div>
             <div class="nav-select-group">
                 <div class="nav-select"><i class="icofont-world"></i><select class="select">
@@ -537,7 +553,8 @@
                                 </div>
 
                                 <p style="font-size:16px;font-weight: bold;">Deskripsi Promo</p>
-                                <p class="view-desc mt-2">Bebas pilih Hokkaido Miso atau Tori Paitan sudah termasuk Fried Dumpling plus Ocha*, only 55k nett*. yang #pedasnyanampol!!!
+                                <p class="view-desc mt-2">Bebas pilih Hokkaido Miso atau Tori Paitan sudah termasuk
+                                    Fried Dumpling plus Ocha*, only 55k nett*. yang #pedasnyanampol!!!
 
                                     Cuss langsung dine in ke store HokBen terdekat. Sama-sama kita #ngerameninhokben</p>
 
@@ -565,7 +582,8 @@
             </div>
         </div>
     </div>
-    <section class="inner-section single-banner" style="background: url(/templatebanner/bannerwebpromosi.jpg) no-repeat center;') }}) no-repeat center;">
+    <section class="inner-section single-banner"
+        style="background: url(/templatebanner/bannerwebpromosi.jpg) no-repeat center;') }}) no-repeat center;">
         <div class="container">
             <h2>Cari Jenis-Jenis Promo Sesuai Dengan Keinginan mu</h2>
 
@@ -576,16 +594,16 @@
             <div class="row content-reverse">
                 <div class="col-lg-3">
                     @php
-                    $no=0;
+                        $no = 0;
                     @endphp
 
-                     @php
-                     $no1=0;
-                     @endphp
+                    @php
+                        $no1 = 0;
+                    @endphp
 
                     @php
-                     $no2=0;
-                     @endphp
+                        $no2 = 0;
+                    @endphp
 
 
                 {{-- Filter --}}
@@ -601,67 +619,56 @@
                                 </div>
                                 @if ($data)
                                     <span class="shop-widget-number">
-                                        @php $no = 0 @endphp
-                                        @foreach ($data as $a)
-                                            @php ++$no @endphp
-                                        @endforeach
-                                        {{ $no }}
+                                        @php $no1 = 0 @endphp
+                                        @if ($data)
+                                            @foreach ($data as $a)
+                                                @php ++$no1 @endphp
+                                            @endforeach
+                                            {{ $no1 }}
+                                        @endif
                                     </span>
-                                @endif
-                            </li>
-                            <li>
-                                <div class="shop-widget-content">
-                                    <input type="checkbox" id="terpopuler" name="pilihan[]" value="terpopuler">
-                                    <label for="terpopuler">Promo Terpopuler</label>
+                                </li>
+                                <li>
+                                    <div class="shop-widget-content">
+                                        <input type="checkbox" id="unggulan" name="pilihan[]" value="unggulan">
+                                        <label for="unggulan">Promo Unggulan</label>
+                                    </div>
+                                    <span class="shop-widget-number">
+                                        @if ($data)
+                                            @php $no2 = 0 @endphp
+                                            @foreach ($data as $a)
+                                                @php ++$no2 @endphp
+                                            @endforeach
+                                            {{ $no2 }}
+                                        @else
+                                            0
+                                        @endif
+                                    </span>
+                                </li>
+                                <div class="separator"></div>
+                                <div style="height: 200px; overflow-y: scroll;">
+                                    @foreach ($kategori as $item)
+                                        <li>
+                                            <div class="shop-widget-content">
+                                                <input type="checkbox" name="kategori[]" id="{{ $item->kategori }}"
+                                                    value="{{ $item->id }}">
+                                                <label for="{{ $item->kategori }}">{{ $item->kategori }}</label>
+                                            </div>
+                                            <span class="shop-widget-number"></span>
+                                        </li>
+                                    @endforeach
+                                    {{ $data->links() }}
                                 </div>
-                                <span class="shop-widget-number">
-                                    @php $no1 = 0 @endphp
-                                    @if ($data)
-                                        @foreach ($data as $a)
-                                            @php ++$no1 @endphp
-                                        @endforeach
-                                        {{ $no1 }}
-                                    @endif
-                                </span>
-                            </li>
-                            <li>
-                                <div class="shop-widget-content">
-                                    <input type="checkbox" id="unggulan" name="pilihan[]" value="unggulan">
-                                    <label for="unggulan">Promo Unggulan</label>
-                                </div>
-                                <span class="shop-widget-number">
-                                    @if ($data)
-                                        @php $no2 = 0 @endphp
-                                        @foreach ($data as $a)
-                                            @php ++$no2 @endphp
-                                        @endforeach
-                                        {{ $no2 }}
-                                    @else
-                                        0
-                                    @endif
-                                </span>
-                            </li>
-                            <div class="separator"></div>
-                            <div style="height: 200px; overflow-y: scroll;">
-                                @foreach ($kategori as $item)
-                                    <li>
-                                        <div class="shop-widget-content">
-                                            <input type="checkbox" name="kategori[]" id="{{$item->kategori}}" value="{{$item->id}}">
-                                            <label for="{{$item->kategori}}">{{$item->kategori}}</label>
-                                        </div>
-                                        <span class="shop-widget-number"></span>
-                                    </li>
-                                @endforeach
-                                {{ $data->links() }}
-                            </div>
 
-                        </ul>
-                        <button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
-                        <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
-                    </form>
-                </div>
+                            </ul>
+                            <button class="shop-widget-btn mb-2" type="submit"><i
+                                    class="fas fa-search"></i><span>Cari Filter</span></button>
+                            <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus
+                                    Filter</span></button>
+                        </form>
+                    </div>
 
-                {{-- EndFilter --}}
+                    {{-- EndFilter --}}
 
                 </div>
                 <div class="col-lg-9">
@@ -681,17 +688,17 @@
                     </div>
                     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
                         @foreach ($data as $promo)
-                        @if(\Carbon\Carbon::parse($promo->masapromo)->isPast())
-                        <div class="col">
-                            <div class="product-card product-disable">
-                                <div class="product-media">
-                                    <div class="product-label"></div>
-                                    <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
-                                            style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
-                                            src="sampul/{{ $promo->sampul }}" alt="product" /></a>
-                                    <div class="product-widget"></div>
-                                </div>
-                                {{-- <div class="product-content">
+                            @if (\Carbon\Carbon::parse($promo->masapromo)->isPast())
+                                <div class="col">
+                                    <div class="product-card product-disable">
+                                        <div class="product-media">
+                                            <div class="product-label"></div>
+                                            <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
+                                                    style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
+                                                    src="sampul/{{ $promo->sampul }}" alt="product" /></a>
+                                            <div class="product-widget"></div>
+                                        </div>
+                                        {{-- <div class="product-content">
                                     <h5 class="product-name">{{ $promo->namapromo }}</h5>
                                     <h6 class="mb-2">
                                         Status : <span class="badge {{ ($promo->status == 1) ? 'bg-success text-white' : 'bg-success text-white' }}" >{{ ($promo->status == 0) ? 'menunggu' : 'diterima' }} </span>
@@ -703,27 +710,27 @@
                                         <button class="btn btn-danger" type="button"><i class="fa-solid fa-trash"></i></button>
                                     </a>
                                 </div> --}}
-                            </div>
-                        </div>
-                        @else
-                        <div class="col">
-                            <div class="product-card">
-                                <div class="product-media">
-                                    <div class="product-label"></div>
-                                    <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
-                                            style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
-                                            src="sampul/{{ $promo->sampul }}" alt="product" /></a>
-                                    <div class="product-widget"></div>
+                                    </div>
                                 </div>
-                                <div class="product-content">
-                                    <h5 class="product-name">{{ $promo->namapromo }}</h5>
-                                    <p style="color: red;">Berakhir{{$promo->masapromo}}</p>
+                            @else
+                                <div class="col">
+                                    <div class="product-card">
+                                        <div class="product-media">
+                                            <div class="product-label"></div>
+                                            <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
+                                                    style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
+                                                    src="sampul/{{ $promo->sampul }}" alt="product" /></a>
+                                            <div class="product-widget"></div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h5 class="product-name">{{ $promo->namapromo }}</h5>
+                                            <p style="color: red;">Berakhir{{ $promo->masapromo }}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        @endif
-                    @endforeach
-                        {{$data->links()}}
+                            @endif
+                        @endforeach
+                        {{ $data->links() }}
                     </div>
                 </div>
             </div>
@@ -735,11 +742,14 @@
             <div class="row">
                 <div class="col-sm-6 col-xl-4">
                     <div class="footer-widget">
-                        <a class="footer-logo" href="#"><img src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}" alt="logo" /></a>
+                        <a class="footer-logo" href="#"><img
+                                src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
+                                alt="logo" /></a>
                         <p class="footer-desc"><a style="color:red;">Gudang Promo</a> adalah suatu website yang berisi
                             tentang
                             brbagai macam diskon dengan berbagai macam kategori. Website ini adalah website resmi <a
-                                href="#">X-CODE</a> yang dibuat untuk memenuhi tugas Mini Project bertemakan Promo.</p>
+                                href="#">X-CODE</a> yang dibuat untuk memenuhi tugas Mini Project bertemakan
+                            Promo.</p>
                         <ul class="footer-social">
                             <li><a class="icofont-facebook" href="#"></a></li>
                             <li><a class="icofont-twitter" href="#"></a></li>
@@ -795,7 +805,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="footer-bottom">
-                        <p class="footer-copytext">&copy; All Copyrights Reserved by <a href="#">X-CODE TEAM</a></p>
+                        <p class="footer-copytext">&copy; All Copyrights Reserved by <a href="#">X-CODE TEAM</a>
+                        </p>
                         <!-- <div class="footer-card">
                   <a href="#"><img src="images/payment/jpg/01.jpg" alt="payment" /></a><a href="#"><img
                       src="images/payment/jpg/02.jpg" alt="payment" /></a><a href="#"><img src="images/payment/jpg/03.jpg"
@@ -807,18 +818,18 @@
         </div>
     </footer>
     <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/jquery-1.12.4.min.js') }}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/popper.min.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/bootstrap.min.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/countdown/countdown.min.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/niceselect/nice-select.min.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/slickslider/slick.min.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/venobox/venobox.min.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/nice-select.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/countdown.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/accordion.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/venobox.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/slick.js')}}"></script>
-    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/main.js')}}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/popper.min.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/bootstrap/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/countdown/countdown.min.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/niceselect/nice-select.min.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/slickslider/slick.min.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/vendor/venobox/venobox.min.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/nice-select.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/countdown.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/accordion.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/venobox.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/slick.js') }}"></script>
+    <script src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/js/main.js') }}"></script>
 </body>
 <!-- Mirrored from mironmahmud.com/greeny/assets/ltr/shop-4column.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 06:52:54 GMT -->
 <script>
@@ -839,48 +850,50 @@
     for (var i = 0; i < checkboxes.length; i++) {
         checkboxes[i].addEventListener('click', checkboxClicked);
     }
-    </script>
-    <script>
-        // Menangani submit form pencarian dengan AJAX
-$('#search-form').submit(function(e) {
-    e.preventDefault();
+</script>
+<script>
+    // Menangani submit form pencarian dengan AJAX
+    $('#search-form').submit(function(e) {
+        e.preventDefault();
 
-    var url = $(this).attr('action');
-    var query = $('input[name="query"]').val();
+        var url = $(this).attr('action');
+        var query = $('input[name="query"]').val();
 
-    $.ajax({
-        url: url,
-        type: 'GET',
-        data: {
-            query: query
-        },
-        success: function(data) {
-            $('#search-results').html(data);
-        }
+        $.ajax({
+            url: url,
+            type: 'GET',
+            data: {
+                query: query
+            },
+            success: function(data) {
+                $('#search-results').html(data);
+            }
+        });
     });
-});
-    </script>
+</script>
 
-    <script>
-        $(document).ready(function() {
-          $('#search-form').on('submit', function(event) {
+<script>
+    $(document).ready(function() {
+        $('#search-form').on('submit', function(event) {
             event.preventDefault();
             var form = $(this);
             var url = form.attr('action');
             var input = $('#search-input').val();
             $.ajax({
-              url: url,
-              type: 'GET',
-              data: {cari: input},
-              success: function(response) {
-                $('#search-results').html(response);
-              },
-              error: function(xhr) {
-                console.log(xhr.responseText);
-              }
+                url: url,
+                type: 'GET',
+                data: {
+                    cari: input
+                },
+                success: function(response) {
+                    $('#search-results').html(response);
+                },
+                error: function(xhr) {
+                    console.log(xhr.responseText);
+                }
             });
-          });
         });
-        </script>
+    });
+</script>
 
 </html>

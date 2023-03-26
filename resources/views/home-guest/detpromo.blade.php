@@ -117,12 +117,12 @@
                                 <div class="megamenu">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-lg-3">
+                                            <div class="col-lg-12">
                                                 <div class="megamenu-wrap">
                                                     <h5 class="megamenu-title">Halaman Kategori</h5>
                                                     <ul class="megamenu-list row">
                                                             @foreach ($data1 as $kategori => $row)
-                                                            <li class="col-6">
+                                                            <li class="col-3">
                                                                 <a href="/produksimple/{{ $row->kategori }}/{{$row->id}}">{{ $row->kategori }}</a>
                                                             </li>
                                                             @endforeach
@@ -533,6 +533,85 @@
             <h2>Gabung Dalam Promo Kami</h2>
         </div>
     </section>
+    @if ($promo->limit <= 5)
+    <section class="inner-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                        <div class="home-category-slider slider-arrow slider-dots">
+                            @foreach ($fotoproduk as $data)
+                                <a class="slider-card">
+                                    <img style="height:560px; width:100%;"
+                                        src="{{ asset('fotopromo/' . $data->fotoproduk) }}" alt="fotoproduk" />
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="product-navigation">
+                        <li class="product-nav-prev"><a href="{{ $promo->id - 1 }}"><i
+                                    class="icofont-arrow-left"></i>produk
+                                sebelumnya <span class="product-nav-popup"><img class="image"
+                                        src="{{ asset('sampul/' . $promo->sampul) }}"
+                                        alt="product"><small>{{ $promo->fotoproduk }}</small></span></a></li>
+                        <li class="product-nav-next"><a href="{{ $promo->id + 1 }}">Produk selanjutnya <i
+                                    class="icofont-arrow-right"></i><span class="product-nav-popup"><img
+                                        class="image" src="{{ asset('sampul/' . $promo->sampul) }}"
+                                        alt="product"><small>{{ $promo->fotoproduk }}</small></span></a></li>
+                    </ul>
+                    <div class="details-content">
+                        <h3 class="details-name">{{ $promo->namapromo }}</h3>
+                        <div class="details-meta">
+
+                            <p style="color: red; font-weight: bold; font-size: medium;">Berlaku Hingga :
+                                {{ $promo->masapromo }}</p>
+
+                        </div>
+
+                        <hr>
+
+                        <div class="view-list-group">
+                            <label class="view-list-title">Bagikan :</label>
+                            <ul class="view-share-list">
+                                <li><a href="#" class="icofont-facebook" title="Facebook"></a></li>
+                                <li><a href="#" class="icofont-twitter" title="Twitter"></a></li>
+                                <li><a href="#" class="icofont-instagram" title="Instagram"></a></li>
+                            </ul>
+                        </div>
+                        <div class="details-list-group">
+                            <label class="details-list-title">Kategori :</label>
+                            <ul class="details-tag-list">
+                                <li><a href="/produksimple">{{ $promo->kategoris->kategori }}</a></li>
+                            </ul>
+                        </div>
+                        <div class="details-list-group">
+                            <label class="details-list-title">Deskripsi Promo :</label>
+                            <ul class="details-tag-list">
+                                <li>
+                                    <p>{{ $promo->deskripsipromo }} </p>
+                                </li>
+                            </ul>
+                        </div>
+                        @guest
+                        <a href="/login" type="submit" class="btn btn-warning">
+                            Gunakan Promo
+                        </a>
+                        @elseif (Auth::user()->role == 'guest')
+                            <form action="/gunakanpromo/{{ $promo->id }}" method="post">
+                                @csrf
+                                <button type="submit" class="btn btn-warning">
+                                    Gunakan Promo
+                                </button>
+                            </form>
+                        @endguest
+
+                    </div>
+                </div>
+            </div>
+    </section>
+    @else
     <section class="inner-section">
         <div class="container">
             <div class="row">
@@ -600,18 +679,7 @@
                 </div>
             </div>
     </section>
-    <section class="inner-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-
+    @endif
     <section class="inner-section">
         <div class="container">
             <div class="row">

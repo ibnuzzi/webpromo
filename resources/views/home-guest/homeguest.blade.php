@@ -125,6 +125,8 @@
         </div>
         </div>
     </header>
+
+    @if(Auth::check() && Auth::user()->role == 'promotor')
     <nav class="navbar-part">
         <div class="container">
             <div class="row">
@@ -132,7 +134,15 @@
                     <div class="navbar-content">
                         <ul class="navbar-list">
                             <li class="navbar-item dropdown">
-                                <a class="navbar-link" href="/">Beranda</a>
+                                <a class="navbar-link dropdown-arrow" href="/berandapromotor">Beranda Promotor</a>
+                                <ul class="dropdown-position-list">
+                                    <div style="display: flex;">
+                                        <div>
+                                            <li class="navbar-item dropdown">
+                                                <a class="navbar-link" href="/">Beranda Guest</a>
+                                            </li>
+                                        </div>
+                                </ul>
                             </li>
                             <!-- Product Link -->
                             <li class="navbar-item dropdown-megamenu">
@@ -144,7 +154,7 @@
                                                 <div class="megamenu-wrap">
                                                     <h5 class="megamenu-title">Halaman Kategori</h5>
                                                     <ul class="megamenu-list row">
-                                                        @foreach ($data as $kategori => $row)
+                                                        @foreach ($datak as $kategori => $row)
                                                             <li class="col-3"><a
                                                                     href="/produksimple/{{ $row->kategori }}/{{ $row->id }}">{{ $row->kategori }}</a>
                                                             </li>
@@ -156,79 +166,18 @@
                                     </div>
                                 </div>
                             </li>
+                                <!-- End Link -->
 
-                            {{-- <li class="navbar-item dropdown">
-                                <a class="navbar-link dropdown-arrow" href="#">Kategori</a>
-                                <ul class="dropdown-position-list">
-                                    <div style="display: flex;">
-                                        <div>
-
-                                            <li><a href="/produksimple/{{$row->kategori}}">{{$row->kategori}}</a></li>
-
-                                        </div>
-                                        <div style="display: flex;">
-                                            <div>
-
-                                            </div>
-                                        </div>
-                                </ul> --}}
-                            <!-- <li class="navbar-item dropdown-megamenu">
-                <a class="navbar-link dropdown-arrow" href="#">Kategori Promo</a>
-                <div class="megamenu">
-                  <div class="container">
-                    <div class="row row-cols-5">
-                      <div class="col">
-                        <div class="megamenu-wrap">
-
-                          <ul class="megamenu-list">
-                            <li><a href="product-simple.html">Promo Makanan</a></li>
-                            <li><a href="#">Promo Kecantikan</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="megamenu-wrap">
-                          <ul class="megamenu-list">
-                            <li><a href="#">Promo Bioskop</a></li>
-                            <li><a href="#">Promo Valentain</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="megamenu-wrap">
-                          <ul class="megamenu-list">
-                            <li><a href="#">Promo Pakaian</a></li>
-                            <li><a href="jasa-promo.html">Promo Jasa</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </li> -->
-                            <!-- End Link -->
                             <li class="navbar-item dropdown">
-                                <a class="navbar-link dropdown" href="/tentangkami">Tentang Kami</a>
+                                <a class="navbar-link dropdown" href="about.html">Tentang Kami</a>
+
                             </li>
                             <li class="navbar-item dropdown">
-                                <a class="navbar-link dropdown" href="/kontak">Kontak Kami</a>
+                                <a class="navbar-link dropdown" href="contact.html">Kontak Kami</a>
+
                             </li>
-                            @auth
-                                @if (Auth::user()->role == 'promotor')
-                                    <li class="navbar-item dropdown">
-                                        <a class="navbar-link dropdown" href="/berandapromotor">Beranda Promotor</a>
-                                    </li>
-                                @endif
-                            @endauth
-                            <!-- <li class="navbar-item dropdown">
-                <a class="navbar-link dropdown-arrow" href="#">authentic</a>
-                <ul class="dropdown-position-list">
-                  <li><a href="login.html">login</a></li>
-                  <li><a href="register.html">register</a></li>
-                  <li><a href="reset-password.html">reset password</a></li>
-                  <li><a href="change-password.html">change password</a></li>
-                </ul>
-              </li> -->
+
+
 
                         </ul>
                         <div class="navbar-info-group">
@@ -246,6 +195,62 @@
             </div>
         </div>
     </nav>
+@else
+<nav class="navbar-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="navbar-content">
+                    <ul class="navbar-list">
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link" href="/">Beranda</a>
+                        </li>
+                        <!-- Product Link -->
+                        <li class="navbar-item dropdown-megamenu">
+                            <a class="navbar-link dropdown-arrow" href="#">Kategori</a>
+                            <div class="megamenu">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="megamenu-wrap">
+                                                <h5 class="megamenu-title">Halaman Kategori</h5>
+                                                <ul class="megamenu-list row">
+                                                    @foreach ($datak as $kategori => $row)
+                                                        <li class="col-3"><a
+                                                                href="/produksimple/{{ $row->kategori }}/{{ $row->id }}">{{ $row->kategori }}</a>
+                                                        </li>
+                                                    @endforeach
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- End Link -->
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link dropdown" href="/tentangkami">Tentang Kami</a>
+                        </li>
+                        <li class="navbar-item dropdown">
+                            <a class="navbar-link dropdown" href="/kontak">Kontak Kami</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-info-group">
+                        <div class="navbar-info">
+                            <i class="icofont-ui-touch-phone"></i>
+                            <p><small>hubungi kami</small><span>(+62) 55 6778 9098</span></p>
+                        </div>
+                        <div class="navbar-info">
+                            <i class="icofont-ui-email"></i>
+                            <p><small>email kami</small><span>xcode@gmail.com</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+@endif
     <!-- Product Category -->
     <aside class="category-sidebar">
         <div class="category-header">
