@@ -97,10 +97,12 @@
                 <a href="home-category.html" class="header-logo"><img style="height:80px;"
                         src="{{ 'template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png' }}"
                         alt="logo" /></a>
-                <form action="{{ url('/') }}" method="GET" class="header-form">
+
+                <form action="{{ url('/filter') }}" method="GET" class="header-form">
                     <input type="search" name="cari" value="{{ Request::get('cari') }}"
                         placeholder="Cari sesuatu..." /><button type="submit"><i class="fas fa-search"></i></button>
                 </form>
+
                 @guest
                     <a href="/login" class="header-widget" title="My Account">
                         <img src="{{ 'template/mironmahmud.com/greeny/assets/ltr/images/user.png' }}" alt="user" />
@@ -1956,10 +1958,22 @@
                         </div>
                     </div>
                 @endforeach
+
             </div>
         </div>
+    </div>
+</section>
+@if ($baru->count()>= 4)
+<div class="row">
+    <div class="col-lg-12">
+        <div class="section-btn-25">
+            <a href="/filter" class="btn btn-outline"><i class="fas fa-eye"></i><span>
+                lebih
+                banyak</span></a>
         </div>
-    </section>
+    </div>
+</div>
+@endif
     <!-- <div class="section promo-part">
     <div class="container">
       <div class="row">
@@ -2367,7 +2381,16 @@
                         </div>
                     </div>
                 @endforeach
-    </section>
+            </section>
+            @if ($unggul->count()>= 4)
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-btn-25">
+                            <a href="/filter" class="btn btn-outline"><i class="fas fa-eye"></i><span>lebih banyak</span></a>
+                        </div>
+                    </div>
+                </div>
+                @endif
     <section class="section newitem-part">
         <div class="container">
             <div class="row">
@@ -2410,6 +2433,19 @@
         </div>
         </div>
     </section>
+
+                    @if ($populer->count()>= 4)
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="section-btn-25">
+                                    <a href="/filter" class="btn btn-outline"><i class="fas fa-eye"></i><span>
+                                        lebih
+                                        banyak</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    @endif
+
     <div class="section promo-part">
         <div class="container">
             <div class="row">
@@ -2489,6 +2525,17 @@
                     @endforeach
                 </div>
             </div>
+            @if ($kilat->count()>= 4)
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-btn-25">
+                        <a href="/filter" class="btn btn-outline"><i class="fas fa-eye"></i><span>
+                            lebih
+                            banyak</span></a>
+                    </div>
+                </div>
+            </div>
+            @endif
             <div class="tab-pane fade" id="top-rate">
                 <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
                     <div class="col">
@@ -3231,8 +3278,8 @@
                 <div class="col-lg-12">
                     <div class="section-btn-25">
                         <a href="/tampilpopuler" class="btn btn-outline"><i class="fas fa-eye"></i><span>Tampilkan
-                                lebih
-                                banyak</span></a>
+                            lebih
+                            banyak</span></a>
                     </div>
                 </div>
             </div>

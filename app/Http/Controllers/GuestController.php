@@ -21,7 +21,9 @@ class GuestController extends Controller
         ->where('namapromo','LIKE','%'.$cari.'%')
         ->where('views', '>=', 5)
         ->where('masapromo','>',Carbon::now())
-        ->orderBy('views','desc')->get();
+        ->orderBy('views','desc')
+        ->get()
+        ->take(5);
         $datab = banners::all();
         $brand = promotor::all();
         $baru = DB::table('produks')
@@ -29,15 +31,19 @@ class GuestController extends Controller
             ->where('status', 1)->orderBy('created_at', 'desc')
             ->where('masapromo','>',Carbon::now())
             ->orderBy('views','desc')
-            ->get();
+            ->get()
+            ->take(5);
         $unggul = DB::table('produks')->where('status', 1)
         ->where('namapromo','LIKE','%'.$cari.'%')
         ->where('views', '>=', 100)
-        ->orderBy('views','desc')->get();
+        ->orderBy('views','desc')
+        ->get()
+        ->take(5);
         $kilat = produk::where('status', 1)
         ->where('limit', '>=', 1)
         ->where('namapromo','LIKE','%'.$cari.'%')
-        ->get();
+        ->get()
+        ->take(5);
         // $jumlahpromo = produk::where('user_id','namapromotor')->count();
         return view('home-guest.homeguest', compact('data','datab', 'datak', 'brand', 'populer', 'baru','unggul','kilat'));
     }

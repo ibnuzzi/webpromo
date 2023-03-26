@@ -595,7 +595,6 @@
                     <div class="shop-widget">
                         <h6 class="shop-widget-title">Filter Jenis Deals</h6>
                         <form action="/filter" method="GET">
-                            @csrf
                             <input class="shop-widget-search" type="text" name="cari" placeholder="Search...">
                             <ul class="shop-widget-list">
                                 <li>
@@ -656,7 +655,7 @@
                                             <span class="shop-widget-number"></span>
                                         </li>
                                     @endforeach
-                                  
+
                                 </div>
 
                             </ul>
