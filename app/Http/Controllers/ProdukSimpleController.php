@@ -7,6 +7,7 @@ use App\Models\kategori;
 use App\Models\kilat;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ProdukSimpleController extends Controller
 {
@@ -18,9 +19,7 @@ class ProdukSimpleController extends Controller
     public function detailkategori($kategori, $id){
         $data = kategori::find($id);
         $kategori = kategori::all();
-        // dd($data);
         $promo = DB::table('produks')->where('kategoripromo','=',$id)->where('status',1)->get();
-        // dd($promo);
         return view('produksimple.produksimple', compact('data','promo','kategori'));
     }
 
@@ -57,71 +56,76 @@ class ProdukSimpleController extends Controller
         return view('home-guest.homeguest', compact('promo'));
     }
 
-    public function filter(Request $request)
-{
-    $cari = $request->cari;
-    $items = Kategori::all();
-    $active = $request->kategori;
-    $status = null;
-    $data = null;
+        public function filter(Request $request)
+    {
+        $cari = $request->cari;
+        $items = Kategori::all();
+        $active = $request->kategori;
+        $status = null;
+        $data = null;
 
-    if ($request->has('pilihan') && $request->pilihan === 'terbaru') {
-        $status = 1;
-        $query = Produk::where('status', 1)
-            ->latest()
-            ->where('namapromo', 'LIKE', '%' . $cari . '%');
-        if ($request->has('kategori')) {
-            $kategori = $request->kategori;
-            if (is_array($kategori)) {
-                $query->whereIn('kategoripromo', $kategori);
-            } else {
-                $query->where('kategoripromo', $kategori);
-            }
-        }
-        $data = $query->get();
-    } elseif ($request->has('pilihan') && $request->pilihan === 'terpopuler') {
-        $status = 2;
-        $query = Produk::where('status', 1)
-            ->orderBy('views', 'desc')
-            ->where('namapromo', 'LIKE', '%' . $cari . '%');
-        if ($request->has('kategori')) {
-            $kategori = $request->kategori;
-            if (is_array($kategori)) {
-                $query->whereIn('kategoripromo', $kategori);
-            } else {
-                $query->where('kategoripromo', $kategori);
-            }
-        }
-        $data = $query->get();
-    } elseif ($request->has('pilihan') && $request->pilihan === 'kilat') {
-        $status = 3;
-        $data = Kilat::where('status', 1)
-            ->orderBy('views', 'desc')
-            ->get();
-    } elseif ($request->has('kategori')) {
-        $status = 4;
-        $kategori = $request->kategori;
-        if (is_array($kategori)) {
-            $data = Produk::whereIn('kategoripromo', $kategori)
+        if ($request->has('pilihan') && $request->pilihan === 'terbaru') {
+            $status = 1;
+            $month = Carbon::now()->month;
+            $query = Produk::where('status', 1)
+                ->latest()
                 ->where('namapromo', 'LIKE', '%' . $cari . '%')
-                ->get();
-        } else {
-            $data = Produk::where('kategoripromo', $kategori)
-                ->where('namapromo', 'LIKE', '%' . $cari . '%')
-                ->get();
-        }
-    } else {
-        $data = Produk::where('status', 1)
+                ->whereMonth('created_at', Carbon::now()->month);
+            if ($request->has('kategori')) {
+                $kategori = $request->kategori;
+                if (is_array($kategori)) {
+                    $query->whereIn('kategoripromo', $kategori);
+                } else {
+                    $query->where('kategoripromo', $kategori);
+                }
+            }
+            $data = $query->get();
+        } elseif ($request->has('pilihan') && $request->pilihan === 'terpopuler') {
+            $status = 2;
+            $query = Produk::where('status', 1)
             ->where('namapromo', 'LIKE', '%' . $cari . '%')
-            ->get();
+            ->where('views', '>=', 100)
+            ->orderBy('views', 'desc');
+            if ($request->has('kategori')) {
+                $kategori = $request->kategori;
+                if (is_array($kategori)) {
+                    $query->whereIn('kategoripromo', $kategori);
+                } else {
+                    $query->where('kategoripromo', $kategori);
+                }
+            }
+            $data = $query->get();
+        } elseif ($request->has('pilihan') && $request->pilihan === 'unggulan') {
+            $status = 3;
+            $data = produk::where('status', 1)
+                ->where('views', '>=', 10)
+                ->orderBy('views', 'desc')
+                ->get();
+                dd($data);
+        } elseif ($request->has('kategori')) {
+            $status = 4;
+            $kategori = $request->kategori;
+            if (is_array($kategori)) {
+                $data = Produk::whereIn('kategoripromo', $kategori)
+                    ->where('namapromo', 'LIKE', '%' . $cari . '%')
+                    ->get();
+            } else {
+                $data = Produk::where('kategoripromo', $kategori)
+                    ->where('namapromo', 'LIKE', '%' . $cari . '%')
+                    ->get();
+            }
+        } else {
+            $data = Produk::where('status', 1)
+                ->where('namapromo', 'LIKE', '%' . $cari . '%')
+                ->get();
+        }
+
+        $terbaruCount = Produk::where('status', 1)
+            ->where('namapromo', 'LIKE', '%' . $cari . '%')
+            ->count();
+
+        return view('home-guest.filter', compact('data', 'status', 'items', 'active', 'terbaruCount'));
     }
-
-    $terbaruCount = Produk::where('status', 1)
-        ->where('namapromo', 'LIKE', '%' . $cari . '%')
-        ->count();
-
-    return view('home-guest.filter', compact('data', 'status', 'items', 'active', 'terbaruCount'));
-}
 
 
 }

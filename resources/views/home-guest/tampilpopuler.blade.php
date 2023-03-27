@@ -619,6 +619,22 @@
                                 </div>
                                 @if ($data)
                                     <span class="shop-widget-number">
+                                        @php $no = 0 @endphp
+                                        @if ($data)
+                                            @foreach ($data as $a)
+                                                @php ++$no @endphp
+                                            @endforeach
+                                            {{ $no }}
+                                        @endif
+                                    </span>
+                                    @endif
+                                </li>
+                                <li>
+                                    <div class="shop-widget-content">
+                                        <input type="checkbox" id="terpopuler" name="pilihan[]" value="terpopuler">
+                                        <label for="terpopuler">Promo Terpopuler</label>
+                                    </div>
+                                    <span class="shop-widget-number">
                                         @php $no1 = 0 @endphp
                                         @if ($data)
                                             @foreach ($data as $a)

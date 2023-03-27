@@ -594,7 +594,7 @@
                     {{-- Filter --}}
                     <div class="shop-widget">
                         <h6 class="shop-widget-title">Filter Jenis Deals</h6>
-                        <form action="/filter" method="GET">
+                        <form action="{{ url('/filter') }}" method="GET">
                             <input class="shop-widget-search" type="text" name="cari" placeholder="Search...">
                             <ul class="shop-widget-list">
                                 <li>
@@ -603,13 +603,9 @@
                                         <label for="terbaru">Promo Terbaru</label>
                                     </div>
                                     @if ($data)
-                                        <span class="shop-widget-number">
-                                            @php $no = 0 @endphp
-                                            @foreach ($data as $a)
-                                                @php ++$no @endphp
-                                            @endforeach
-                                            {{ $no }}
-                                        </span>
+                                    <span class="shop-widget-number">
+                                        {{ $data->where('jenis', 'terbaru')->count() }}
+                                    </span>
                                     @endif
                                 </li>
                                 <li>
@@ -618,13 +614,7 @@
                                         <label for="terpopuler">Promo Terpopuler</label>
                                     </div>
                                     <span class="shop-widget-number">
-                                        @php $no1 = 0 @endphp
-                                        @if ($data)
-                                            @foreach ($data as $a)
-                                                @php ++$no1 @endphp
-                                            @endforeach
-                                            {{ $no1 }}
-                                        @endif
+                                        {{ $data->where('jenis', 'terpopuler')->count() }}
                                     </span>
                                 </li>
                                 <li>
@@ -633,36 +623,32 @@
                                         <label for="unggulan">Promo Unggulan</label>
                                     </div>
                                     <span class="shop-widget-number">
-                                        @if ($data)
-                                            @php $no2 = 0 @endphp
-                                            @foreach ($data as $a)
-                                                @php ++$no2 @endphp
-                                            @endforeach
-                                            {{ $no2 }}
-                                        @else
-                                            0
-                                        @endif
+                                        {{ $data->where('jenis', 'unggulan')->count() }}
                                     </span>
                                 </li>
                                 <div class="separator"></div>
                                 <div style="height: 200px; overflow-y: scroll;">
                                     @foreach ($items as $item)
-                                        <li>
-                                            <div class="shop-widget-content">
-                                                <input type="checkbox" name="kategori[]" id="{{$item->kategori}}" value="{{$item->id}}">
-                                                <label for="{{$item->kategori}}">{{$item->kategori}}</label>
-                                            </div>
-                                            <span class="shop-widget-number"></span>
-                                        </li>
+                                    <li>
+                                        <div class="shop-widget-content">
+                                            <input type="checkbox" name="kategori[]" id="{{ $item->kategori }}" value="{{ $item->kategori }}">
+                                            <label for="{{ $item->kategori }}">{{ $item->kategori }}</label>
+                                        </div>
+                                        <span class="shop-widget-number">
+                                            {{ $data->where('kategoripromo', $item->kategori)->count() }}
+                                        </span>
+                                    </li>
                                     @endforeach
-
                                 </div>
-
                             </ul>
-                            <button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
-                            <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
+                            <div class="shop-widget-buttons">
+                                <button class="shop-widget-btn mb-2" type="submit"><i class="fas fa-search"></i><span>Cari Filter</span></button>
+                                <button class="shop-widget-btn"><i class="far fa-trash-alt"></i><span>Hapus Filter</span></button>
+                            </div>
                         </form>
                     </div>
+
+
                     {{-- EndFilter --}}
 
                 </div>
@@ -681,35 +667,51 @@
                             </div>
                         </div>
                     </div>
-                    @if($data)
                     <div class="row row-cols-2 row-cols-md-3 row-cols-lg-3 row-cols-xl-4">
-                        @foreach ($data as $row)
-                        <div class="col">
-                            <div class="product-card">
-                                <div class="product-media">
-                                    <button class="product-wish wish"><i class="fas fa-heart"></i></button><a
-                                        class="product-image" href="/deskripsifoto/{{ $row->id}}"><img
-                                            src="{{asset('sampul/'. $row->sampul)}}" alt="product"></a>
-                                </div>
-                                <div class="product-content">
-
-                                    <h6 class="product-name"><a href="">{{$row->namapromo}}</a></h6>
-                                    <p style="color: red;">{{$row->masapromo}}</p>
-
-                                    <div class="product-action"><button class="action-minus" title="Quantity Minus"><i
-                                                class="icofont-minus"></i></button><input class="action-input"
-                                            title="Quantity Number" type="text" name="quantity" value="1"><button
-                                            class="action-plus" title="Quantity Plus"><i
-                                                class="icofont-plus"></i></button>
+                        @foreach ($data as $promo)
+                            @if (\Carbon\Carbon::parse($promo->masapromo)->isPast())
+                                <div class="col">
+                                    <div class="product-card product-disable">
+                                        <div class="product-media">
+                                            <div class="product-label"></div>
+                                            <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
+                                                    style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
+                                                    src="sampul/{{ $promo->sampul }}" alt="product" /></a>
+                                            <div class="product-widget"></div>
+                                        </div>
+                                        {{-- <div class="product-content">
+                                    <h5 class="product-name">{{ $promo->namapromo }}</h5>
+                                    <h6 class="mb-2">
+                                        Status : <span class="badge {{ ($promo->status == 1) ? 'bg-success text-white' : 'bg-success text-white' }}" >{{ ($promo->status == 0) ? 'menunggu' : 'diterima' }} </span>
+                                    </h6>
+                                    <a href="/tampilpromo/{{ $promo->id }}">
+                                        <button class="btn btn-success" type="button"><i class="fa-solid fa-pen"></i></button>
+                                    </a>
+                                    <a class="deletesiswa" href="{{ Route('deletepromo', ['id' => $promo->id]) }}" type="button" data-nama="{{ $promo->namapromo }}">
+                                        <button class="btn btn-danger" type="button"><i class="fa-solid fa-trash"></i></button>
+                                    </a>
+                                </div> --}}
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            @else
+                                <div class="col">
+                                    <div class="product-card">
+                                        <div class="product-media">
+                                            <div class="product-label"></div>
+                                            <a class="product-image" href="/deskripsifoto/{{ $promo->id }}"><img
+                                                    style="height: 200px; width:200px; margin-right: 50px margin-top: 50px;"
+                                                    src="sampul/{{ $promo->sampul }}" alt="product" /></a>
+                                            <div class="product-widget"></div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h5 class="product-name">{{ $promo->namapromo }}</h5>
+                                            <p style="color: red;">Berakhir{{ $promo->masapromo }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                         @endforeach
                     </div>
-                    @else
-                        <p>Tidak ada data yang ditemukan.</p>
-                    @endif
 
                     {{-- <div class="row">
                         <div class="col-lg-12">
@@ -845,9 +847,9 @@
         for (var i = 0; i < checkboxes.length; i++) {
             checkboxes[i].addEventListener('click', checkboxClicked);
         }
-        </script>
+    </script>
+
         <script>
-            // Menangani submit form pencarian dengan AJAX
     $('#search-form').submit(function(e) {
         e.preventDefault();
 
