@@ -66,9 +66,10 @@
                 </div>
                 <a href="home-category.html" class="header-logo"><img style="height:80px;" src="{{ asset('template/mironmahmud.com/greeny/assets/ltr/images/removepromo.png') }}"
                         alt="logo" /></a>
-                <form class="header-form">
-                    <input type="text" placeholder="Cari sesuatu..." /><button><i class="fas fa-search"></i></button>
-                </form>
+                        <form class="header-form" action="{{ route('promopending') }}" method="GET">
+                            <input type="text" name="cari" placeholder="Cari sesuatu..." value="{{ old('cari') }}" />
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
                 @if(Auth::user()->fotoprofil)
     <a href="/profile" class="header-widget ms-auto" title="My Account">
         <img style="height:50px; width:50px;" src="{{ asset('fotoprofil/'. Auth::user()->fotoprofil)}}" alt="user" />

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\produk;
 use App\Models\kategori;
 use App\Models\kilat;
+use App\Models\produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
@@ -16,43 +16,47 @@ class ProdukSimpleController extends Controller
     //     return view('produksimple.produksimple', compact('data'));
     // }
 
-    public function detailkategori($kategori, $id){
+    public function detailkategori($kategori, $id)
+    {
         $data = kategori::find($id);
         $kategori = kategori::all();
         $promo = DB::table('produks')->where('kategoripromo','=',$id)->where('status',1)->get();
         return view('produksimple.produksimple', compact('data','promo','kategori'));
     }
 
-    public function tampilpopuler(Request $request) {
+    public function tampilpopuler(Request $request)
+    {
         $cari = $request->input('cari');
         $kategori = Kategori::all();
         $query = Produk::query();
         if ($request->has('category')) {
-          $category = $request->input('category');
-          $query->where('category', $category);
+            $category = $request->input('category');
+            $query->where('category', $category);
         }
         $products = $query->get();
         $data = Produk::where('status', 1)
-                  ->where('namapromo', 'LIKE', '%'.$cari.'%')
-                  ->paginate(4);
+            ->where('namapromo', 'LIKE', '%' . $cari . '%')
+            ->paginate(1);
         if ($request->ajax()) {
-          return response()->json([
-            'view' => view('home-guest.tampilpopuler-ajax', compact('data'))->render(),
-          ]);
+            return response()->json([
+                'view' => view('home-guest.tampilpopuler-ajax', compact('data'))->render(),
+            ]);
         }
+        $data->appends(['cari' => $cari]);
+
         return view('home-guest.tampilpopuler', compact('data', 'kategori', 'query'));
     }
 
-
-
-    public function tampilterbaru(){
+    public function tampilterbaru()
+    {
         $kategori = kategori::all();
         $data = produk::where('status', 1)->get();
         return view('home-guest.tampilterbaru', compact('data', 'kategori'));
     }
-    public function promoterbaru(){
+    public function promoterbaru()
+    {
         $promo = produk::where('status', 1)
-        ->where('masapromo', '>', now())->get();
+            ->where('masapromo', '>', now())->get();
         return view('home-guest.homeguest', compact('promo'));
     }
 

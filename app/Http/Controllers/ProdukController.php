@@ -17,6 +17,9 @@ class ProdukController extends Controller
         $data = produk::where('namapromo', 'LIKE', '%' . $request->cari . '%')
             ->where('user_id', auth()->id())
             ->paginate(10);
+
+        $data->appends(['cari' => $keyword]);
+
         return view('homepromotor.homepromotor', compact('data'));
     }
 

@@ -653,7 +653,7 @@
 
                 </div>
                 <div class="col-lg-9">
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-lg-12">
                             <div class="top-filter">
                                 <div class="filter-show"><label class="filter-label">Tampil :</label><select
@@ -733,6 +733,7 @@
                         </div>
                     </div> --}}
                 </div>
+                {{ $data->links() }}
             </div>
         </div>
     </section>
