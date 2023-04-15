@@ -382,7 +382,7 @@
                         class="fa fa-unlock-alt"></i><span>join
                         here</span></a></div>
             <div class="nav-select-group">
-                <div class="nav-select"><i class="icofont-world"></i><select class="select">
+                <div class="nav-select"><i class="icofont-world"></i><select class="selecqt">
                         <option value="english" selected>English</option>
                         <option value="bangali">Bangali</option>
                         <option value="arabic">Arabic</option>

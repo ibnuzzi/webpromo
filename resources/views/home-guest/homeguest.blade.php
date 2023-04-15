@@ -3408,9 +3408,7 @@
                         <ul class="footer-social">
                             <li><a class="icofont-facebook" href="#"></a></li>
                             <li><a class="icofont-twitter" href="#"></a></li>
-
-                            <li><a class="icofont-instagram" href="#"></a></li>
-                            <li><a class="icofont-pinterest" href="#"></a></li>
+                            <li><a class="icofont-instagram" href="https://www.instagram.com/hummasoft_xcode/"></a></li>
                         </ul>
                     </div>
                 </div>
