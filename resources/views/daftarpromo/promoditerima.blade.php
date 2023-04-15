@@ -90,7 +90,7 @@
                             alt="user" />
                     </a>
                 @endif
-                <div class="header-widget-group">
+                <div class="header-widget-group"> 
 
                 </div>
             </div>
