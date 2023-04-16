@@ -650,7 +650,7 @@
                     enctype="multipart/form-data">
                     @csrf
                     <div class="form-title">
-                        <h3>edit info profil</h3>
+                        <h3>Edit Profil</h3>
                     </div>
                     <div class="form-group"><label class="form-label">Foto Profil</label>
                         <input class="form-control" name="fotoprofil" type="file">
@@ -659,7 +659,7 @@
                         <input class="form-control" type="text" name="name"
                             value="{{ Auth::user()->name }}">
                     </div>
-                    <button class="form-btn" type="submit">Simpan Info Profil</button>
+                    <button class="form-btn" type="submit">Simpan</button>
                 </form>
             </div>
         </div>

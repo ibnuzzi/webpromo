@@ -475,12 +475,14 @@
                             <div class="row">
                                 <form action="/insertpromo" method="post" enctype="multipart/form-data">
                                     @csrf
+                                 
                                     <div class="col-md-6 col-lg-12">
                                         <div class="form-group"><label class="form-label">Nama Promo</label><input
                                                 class="form-control" type="text" value="{{ old('namapromo') }}"
                                                 name="namapromo" placeholder="">
                                         </div>
                                     </div>
+                                    
                                     @error('namapromo')
                                         <div class="alert alert-danger mb-3"> {{ $message }} </div>
                                     @enderror
@@ -914,6 +916,26 @@
             $('.dropdown-toggle').dropdown();
         });
     </script>
+    {{-- <script>
+        function validasideskripsi(){
+            var desc = document.getElementById('deskripsipromo').value;
+            if (desc.length > 500){
+                alert("Deskripsi maksimal 500 karakter.");
+                return false;
+            }
+            return true;
+        }
+        </script> --}}
+        {{-- <script>
+            function validasijudul(){
+                var desc = document.getElementById('deskripsipromo').value;
+                if (desc.length > 200){
+                    alert("Judul maksimal 200 karakter.");
+                    return false;
+                }
+                return true;
+            }
+            </script> --}}
 </body>
 <!-- Mirrored from mironmahmud.com/greeny/assets/ltr/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Feb 2023 06:53:02 GMT -->
 

@@ -12,7 +12,8 @@ class PendingController extends Controller
     public function pending(Request $request)
     {
         $keyword = $request->cari;
-        $data = produk::where('status', 0)
+        $data = DB::table('produks')
+            ->where('status', 0)->orderBy('created_at', 'desc')
             ->where('namapromo', 'LIKE', '%' . $request->cari . '%')
             ->whereNull('pesan')
             ->where('user_id', auth()->id())
