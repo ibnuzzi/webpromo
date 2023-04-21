@@ -611,7 +611,7 @@
                                 <li>
                                     <div class="shop-widget-content">
                                         <input type="checkbox" id="terpopuler" name="pilihan[]" value="terpopuler">
-                                        <label for="terpopuler">Promo Terpopuler</label>
+                                        <label for="terpopuler">Promo Terpopuler.</label>
                                     </div>
                                     <span class="shop-widget-number">
                                         {{ $data->where('jenis', 'terpopuler')->count() }}
