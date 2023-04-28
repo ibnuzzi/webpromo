@@ -10,6 +10,7 @@ use App\Models\fotoproduk;
 use App\Models\fotoproduks;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Bookmark;
 
 class ListProductController extends Controller
 {
@@ -64,4 +65,51 @@ class ListProductController extends Controller
         $data->delete();
         return redirect('promoaktif');
     }
+    public function bookmark($id)
+    {
+        if (Auth::check()) {
+            $produk = bookmark::where('produk_id', $id)
+                ->where('user_id', Auth::user()->id)->get();
+            $produk1 = produk::find($id);
+                $bookmark1 = new bookmark();
+                $bookmark1->user_id = Auth::user()->id;
+                $bookmark1->produk_id = $id;
+                $bookmark1->bookmark = 1;
+                $bookmark1->sampul = $produk1->sampul;
+                $bookmark1->save();
+                $message = 'Promo berhasil Disimpan';
+            return redirect()->back()->with('success', $message);
+        } else {
+            return redirect()->back()->with('error', 'Anda Harus Login Terlebih Dahulu');
+        }
+    }
+
+
+    public function unbookmark($produk_id)
+    {
+        $user_id = Auth::id();
+        $bookmark = Bookmark::where('user_id', $user_id)
+            ->where('produk_id', $produk_id)
+            ->first();
+        // dd($produk_id);
+        if (!$bookmark) {
+            return redirect()->back()->with('error', 'Produk tidak ditemukan.');
+        }
+
+        $produk = $bookmark->produk;
+        $bookmark->delete();
+
+        return redirect()->back()->with('success', 'Bookmark berhasil dihapus.');
+    }
+
+
+    public function disimpan(Request $request)
+    {
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+        $data = bookmark::where('user_id', Auth::user()->id)->get();
+        return view('home-guest.bookmark', ['data' => $data]);
+    }
 }
+

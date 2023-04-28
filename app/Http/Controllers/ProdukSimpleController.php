@@ -8,6 +8,8 @@ use App\Models\produk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Bookmark;
 
 class ProdukSimpleController extends Controller
 {
@@ -60,21 +62,26 @@ class ProdukSimpleController extends Controller
         return view('home-guest.homeguest', compact('promo'));
     }
 
-        public function filter(Request $request)
+    public function filter(Request $request)
     {
-        $cari = $request->cari;
+        if(Auth::check()){
+            $cari = $request->cari;
         $items = Kategori::all();
         $active = $request->kategori;
         $status = null;
         $data = null;
+        $data = bookmark::where('user_id', Auth::user()->id)->get();
+        $bookmark = bookmark::where('user_id', Auth::user()->id)->pluck('produk_id')->toarray();
 
-        if ($request->has('pilihan') && $request->pilihan === 'terbaru') {
+        if ($request->pilihan === 'terbaru') {
             $status = 1;
             $month = Carbon::now()->month;
-            $query = Produk::where('status', 1)
-                ->latest()
+            $year = Carbon::now()->year;
+            $query = Produk::where('status', $status)
                 ->where('namapromo', 'LIKE', '%' . $cari . '%')
-                ->whereMonth('created_at', Carbon::now()->month);
+                ->whereMonth('masapromo', $month)
+                ->whereYear('masapromo', $year)
+                ->where('limit', '>', 0);
             if ($request->has('kategori')) {
                 $kategori = $request->kategori;
                 if (is_array($kategori)) {
@@ -83,13 +90,15 @@ class ProdukSimpleController extends Controller
                     $query->where('kategoripromo', $kategori);
                 }
             }
-            $data = $query->get();
-        } elseif ($request->has('pilihan') && $request->pilihan === 'terpopuler') {
+            $data = $query->paginate(4);
+        } elseif ($request->pilihan === 'terpopuler') {
             $status = 2;
             $query = Produk::where('status', 1)
-            ->where('namapromo', 'LIKE', '%' . $cari . '%')
-            ->where('views', '>=', 100)
-            ->orderBy('views', 'desc');
+                ->where('views', '>=', 5)
+                ->where('namapromo', 'LIKE', '%' . $cari . '%')
+
+                ->orderBy('views', 'desc');
+
             if ($request->has('kategori')) {
                 $kategori = $request->kategori;
                 if (is_array($kategori)) {
@@ -98,37 +107,69 @@ class ProdukSimpleController extends Controller
                     $query->where('kategoripromo', $kategori);
                 }
             }
-            $data = $query->get();
-        } elseif ($request->has('pilihan') && $request->pilihan === 'unggulan') {
+            $data = $query->paginate(4);
+        } elseif ($request->pilihan === 'unggulan') {
             $status = 3;
-            $data = produk::where('status', 1)
-                ->where('views', '>=', 10)
-                ->orderBy('views', 'desc')
-                ->get();
-                dd($data);
-        } elseif ($request->has('kategori')) {
+            $query = Produk::where('status', 1)
+                ->where('views', '>=', 100)
+                ->where('namapromo', 'LIKE', '%' . $cari . '%')
+                ->orderBy('views', 'desc');
+
+            if ($request->has('kategori')) {
+                $kategori = $request->kategori;
+                if (is_array($kategori)) {
+                    $query->whereIn('kategoripromo', $kategori);
+                } else {
+                    $query->where('kategoripromo', $kategori);
+                }
+            }
+            $data = $query->paginate(4);
+        } elseif ($request->pilihan === 'kilat') {
             $status = 4;
+            $query = Produk::where('status', 1)
+                ->where('namapromo', 'LIKE', '%' . $cari . '%')
+                ->orderBy('views', 'desc')
+                ->where('limit', '<=', 5)
+                ->where('limit', '>', 0); //menambahkan pengkondisian limit > 0
+
+            if ($request->has('kategori')) {
+                $kategori = $request->kategori;
+                if (is_array($kategori)) {
+                    $query->whereIn('kategoripromo', $kategori);
+                } else {
+                    $query->where('kategoripromo', $kategori);
+                }
+            }
+            $data = $query->paginate(4);
+        } elseif ($request->has('kategori')) {
+            $status = 5;
             $kategori = $request->kategori;
             if (is_array($kategori)) {
                 $data = Produk::whereIn('kategoripromo', $kategori)
                     ->where('namapromo', 'LIKE', '%' . $cari . '%')
-                    ->get();
+                    ->paginate(4);
             } else {
                 $data = Produk::where('kategoripromo', $kategori)
                     ->where('namapromo', 'LIKE', '%' . $cari . '%')
-                    ->get();
+                    ->paginate(4);
             }
         } else {
             $data = Produk::where('status', 1)
                 ->where('namapromo', 'LIKE', '%' . $cari . '%')
-                ->get();
+                ->paginate(4);
         }
 
         $terbaruCount = Produk::where('status', 1)
             ->where('namapromo', 'LIKE', '%' . $cari . '%')
             ->count();
 
-        return view('home-guest.filter', compact('data', 'status', 'items', 'active', 'terbaruCount'));
+        $data->appends(['cari' => $cari, 'pilihan' => $request->pilihan, 'kategori' => $request->kategori]);
+
+        return view('home-guest.filter', compact('data', 'status', 'items', 'active', 'terbaruCount', 'bookmark'));
+        } else {
+            return redirect()->back()->with('error', 'Anda Harus Login Terlebih Dahulu' );
+        }
+        // return view('home-guest.filter', compact('data', 'items'));
     }
 
 
